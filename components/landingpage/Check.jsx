@@ -1,12 +1,12 @@
 'use client'
 import Link from 'next/link'
 import React from 'react'
-import AOSWrapper from '../aos/AOSWrapper'
+
 
 const Check = () => {
   return (
-    <AOSWrapper>
-      <section className="hidden md:block relative w-full h-[95vh] flex items-center justify-center overflow-hidden">
+
+      <section className="hidden md:block relative w-full h-auto flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -22,8 +22,7 @@ const Check = () => {
           {/* Left Machine */}
           <div
             className="flex justify-center md:justify-end"
-            data-aos="fade-right"
-            data-aos-duration="1200"
+        
           >
             <img
               src="/feature2.webp"
@@ -35,8 +34,7 @@ const Check = () => {
           {/* Center Text */}
           <div
             className="text-center md:text-left col-span-1 md:col-span-1 space-y-4 relative z-20"
-            data-aos="zoom-in"
-            data-aos-delay="200"
+     
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white leading-snug">
               Reliable Partnerships for Every Building Need
@@ -49,8 +47,7 @@ const Check = () => {
             <Link href="/products">
                 <button
               className="px-6 py-3 cursor-pointer bg-black text-white font-semibold rounded-2xl shadow-lg hover:bg-gray-900 transition"
-              data-aos="fade-up"
-              data-aos-delay="400"
+         
             >
               Learn More
             </button>
@@ -61,8 +58,7 @@ const Check = () => {
           {/* Right Machine */}
           <div
             className="flex justify-center md:justify-start"
-            data-aos="fade-left"
-            data-aos-duration="1200"
+    
           >
             <img
               src="/home/smog-gun.webp"
@@ -79,7 +75,7 @@ const Check = () => {
           }
         `}</style>
       </section>
-    </AOSWrapper>
+ 
   )
 }
 

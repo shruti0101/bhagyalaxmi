@@ -41,13 +41,13 @@ const GallerySection = () => {
             <Link
               key={index}
               href={item.link}
-              className="relative overflow-hidden rounded-2xl group shadow-xl aspect-[4/3] block"
+              className="relative overflow-hidden  group shadow-xl aspect-[6/6]  block"
             >
               <Image
                 src={item.src}
                 alt={`Gallery ${index + 1}`}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                className="object-contain transition-transform duration-700 group-hover:scale-110"
               />
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">

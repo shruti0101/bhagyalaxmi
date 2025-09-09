@@ -38,7 +38,7 @@ const Footer = () => {
       style={{ backgroundImage: "url('/home/bg-footer.webp')" }}
       className="relative bg-cover bg-center text-gray-300 pt-12 pb-6"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-22">
+      <div className="max-w-7xl mx-auto px-6 md:px-13">
         <div className="mb-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             {/* Column 1: Logo + About + Address + Social */}
@@ -67,7 +67,7 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-[#FAAC18]" />
                 <p>
                   4A, S-Block, Vishwas Park, Raja Puri Main Road,
-                  <br /> Opp. Sec – 3, Dwarka, New Delhi – 110059
+                   Opp. Sec – 3, Dwarka, New Delhi – 110059
                 </p>
               </div>
 
@@ -95,7 +95,7 @@ const Footer = () => {
             </div>
 
             {/* Column 2: About (Desktop) */}
-            <div className="hidden md:mt-10 md:block md:ml-10">
+            <div className="hidden  md:block md:ml-10">
               <h3 className="text-white font-semibold text-lg mb-4">About</h3>
               <ul className="space-y-2 text-sm text-white">
                 <li><Link href="/" className="hover:text-[#FAAC18]">HOME</Link></li>
@@ -107,7 +107,7 @@ const Footer = () => {
             </div>
 
             {/* Column 3: Products (Desktop) */}
-            <div className="hidden md:mt-10 md:block">
+            <div className="hidden  md:block">
               <h3 className="text-white font-semibold text-lg mb-4">Products</h3>
               <ul className="space-y-2 text-sm text-white uppercase">
                 {categories.map((cat) => (
@@ -121,7 +121,7 @@ const Footer = () => {
             </div>
 
             {/* Mobile Accordion */}
-            <div className="md:hidden space-y-4 mt-6">
+            <div className="md:hidden space-y-4 ">
               {/* About */}
               <div>
                 <button
@@ -191,7 +191,7 @@ const Footer = () => {
               />
               <p className="text-sm leading-relaxed">
                 We are proud to present the Trust Elite Certificate of
-                Excellence to Shree Anand and Balaji Co., recognizing their
+                Excellence to Shree Shakti Infratech, recognizing their
                 commitment to exceptional customer service, outstanding
                 business practices, and a dedication to building trust with
                 their customers.
@@ -203,7 +203,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-700 mt-10 pt-4 text-center text-sm text-gray-400">
-        © 2022 Shree Shakti Infratech, All Rights Reserved. Managed and
+        © 2025 Shree Shakti Infratech, All Rights Reserved. Managed and
         Developed By{" "}
         <a
           href="https://promozionebranding.com/"

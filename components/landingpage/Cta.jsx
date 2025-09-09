@@ -59,7 +59,7 @@ const Cta = () => {
               alt="Construction Equipment"
               width={500}
               height={400}
-              className="object-contain"
+              className="hidden md:block object-contain"
             />
           </div>
 

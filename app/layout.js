@@ -1,7 +1,10 @@
 import { Roboto } from "next/font/google";
 import Script from "next/script"; 
 import "./globals.css";
-
+import ScrollToTop from "@/components/ScrollToTop";
+import Social from "@/components/landingpage/Social";
+import Stickybutton from "@/components/landingpage/Stickybutton";
+import Whatsapp from "@/components/Whatsapp";
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -28,6 +31,14 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${roboto.variable} font-sans antialiased`}>
+
+
+        <Stickybutton />
+        <Social />
+        <ScrollToTop />
+        <Whatsapp></Whatsapp>
+
+
         <main>{children}</main>
       </body>
     </html>

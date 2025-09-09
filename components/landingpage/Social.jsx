@@ -1,5 +1,5 @@
 'use client'
-import { FaWhatsapp, FaInstagram, FaEnvelope } from 'react-icons/fa'
+import { FaWhatsapp, FaInstagram, FaEnvelope, FaFacebookF } from 'react-icons/fa'
 
 const SocialBar = () => {
   return (
@@ -34,8 +34,23 @@ const SocialBar = () => {
         </div>
       </a>
 
-      {/* Email */}
+      {/* Facebook */}
       <a
+        href="https://www.facebook.com/ShreeShaktiInfratech" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative flex items-center w-44 translate-x-[130px] hover:translate-x-0 rounded-l-lg bg-white text-blue-600 shadow-md border border-gray-200 transition-all duration-300"
+      >
+        <div className="flex items-center gap-3 px-4 py-3">
+          <FaFacebookF size={20} className="min-w-[20px]" />
+          <span className="whitespace-nowrap text-sm font-medium">
+            Facebook
+          </span>
+        </div>
+      </a>
+
+      {/* Email */}
+      {/* <a
         href="mailto:shreeshaktiinfratech@gmail.com"
         className="group relative flex items-center w-44 translate-x-[130px] hover:translate-x-0 rounded-l-lg bg-white text-gray-700 shadow-md border border-gray-200 transition-all duration-300"
       >
@@ -45,7 +60,7 @@ const SocialBar = () => {
             Email
           </span>
         </div>
-      </a>
+      </a> */}
     </div>
   )
 }

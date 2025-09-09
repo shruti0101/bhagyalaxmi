@@ -1,8 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-
-import AOSWrapper from "@/components/aos/AOSWrapper";
+import Cta from "@/components/landingpage/Cta";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/landingpage/Footer";
 import Link from "next/link";
@@ -154,7 +153,7 @@ const Page = () => {
 
       <Navbar></Navbar>
 
-      <AOSWrapper>
+    
         <section className="relative w-full h-[400px] md:h-[650px] flex items-center justify-center overflow-hidden">
           {/* Background with parallax style */}
           <div
@@ -176,8 +175,7 @@ const Page = () => {
             {/* Text Content */}
             <div
               className="text-center md:text-left"
-              data-aos="fade-right"
-              data-aos-duration="1000"
+
             >
               <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight drop-shadow-lg">
                 Transform Your <br />
@@ -188,34 +186,19 @@ const Page = () => {
               </h2>
               <p
                 className="mt-4 text-lg md:text-xl text-gray-100 max-w-md mx-auto md:mx-0"
-                data-aos="fade-up"
-                data-aos-delay="200"
+          
               >
                 We empower companies with modern solutions that drive growth,
                 efficiency, and results.
               </p>
 
-              {/* CTA Button */}
-              <div
-                className="mt-6"
-                data-aos="zoom-in"
-                data-aos-delay="400"
-                data-aos-duration="800"
-              >
-                <a
-                  href="#contact"
-                  className="px-6 py-3 bg-[#FAAC18] text-black font-semibold rounded-full shadow-lg hover:bg-yellow-400 transition transform hover:scale-105"
-                >
-                  Get Started
-                </a>
-              </div>
+           
             </div>
 
             {/* Right Side Image */}
             <div
               className="hidden md:block relative w-72 h-72 md:w-96 md:h-96"
-              data-aos="fade-left"
-              data-aos-duration="1000"
+         
             >
               <div className="absolute inset-0 rounded-2xl border-4 border-[#FAAC18] animate-pulse" />
               <img
@@ -226,7 +209,7 @@ const Page = () => {
             </div>
           </div>
         </section>
-      </AOSWrapper>
+ 
 
       {/* About Content */}
       <section className="mt-8 bg-white">
@@ -240,56 +223,60 @@ const Page = () => {
         </div>
       </section>
 
-      {/* About Details */}
-      <section className="bg-white mb-10 px-4 md:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="flex justify-center md:justify-start">
-            <Image
-              src="/aboutus/imgstack.webp"
-              alt="Bar Bending Machine"
-              width={450}
-              height={350}
-              className="rounded-md md:ml-20 w-full max-w-[400px] h-auto"
-            />
-          </div>
-          <div className="text-base md:text-lg leading-relaxed text-gray-700">
-            <p>
-              Since our inception in{" "}
-              <strong>2013, Shree Shakti Infratech</strong> has been a renowned
-              name in the construction machinery industry, delivering quality,
-              durability, and unmatched service. As an{" "}
-              <strong>ISO 9001:2013 certified company</strong>, we were founded
-              with a clear vision — to bridge the gap between sophisticated
-              customer demands and the limited product options available in the
-              market.
-            </p>
-            <p className="mt-4">
-              Today, we are recognized as a leading
-              <strong> Bar Bending Machine Supplier in India</strong>, offering
-              over <strong>100 high-standard products</strong> designed for
-              superior performance and reliability.
-            </p>
-            <p className="mt-4">
-              We believe that{" "}
-              <strong>quality products and dependable service</strong> go hand
-              in hand. That’s why we use only the{" "}
-              <strong>best raw materials</strong>, follow
-              <strong> rigorous quality checks</strong>, and ensure our machines
-              are built to last in Indian climatic and working conditions.
-            </p>
-            <p className="mt-4">
-              From{" "}
-              <strong>
-                Bar Cutting Machines, Bar Bending Machines, Hopper Mixers,
-                Concrete Mixers, Hanging Platforms, Monkey Hoists, Builder
-                Hoists, Digital Compression Testing Machines
-              </strong>{" "}
-              to <strong>Safety Jackets</strong>, our diverse product range
-              caters to every construction need.
-            </p>
-          </div>
-        </div>
-      </section>
+  {/* About Details */}
+<section className="bg-white mb-10 px-4 md:px-20 ">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+    {/* Image */}
+    <div className="flex justify-center md:justify-start">
+      <Image
+        src="/aboutus/imgstack.webp"
+        alt="Bar Bending Machine"
+        width={450}
+        height={350}
+        className="rounded-md w-full max-w-[520px] h-auto"
+      />
+    </div>
+
+    {/* Text */}
+    <div className="text-base  md:text-lg leading-relaxed text-gray-700 space-y-4">
+      <p>
+        Since our inception in{" "}
+        <strong>2013, Shree Shakti Infratech</strong> has been a renowned
+        name in the construction machinery industry, delivering quality,
+        durability, and unmatched service. As an{" "}
+        <strong>ISO 9001:2013 certified company</strong>, we were founded
+        with a clear vision — to bridge the gap between sophisticated
+        customer demands and the limited product options available in the
+        market.
+      </p>
+      <p>
+        Today, we are recognized as a leading
+        <strong> Bar Bending Machine Supplier in India</strong>, offering
+        over <strong>100 high-standard products</strong> designed for
+        superior performance and reliability.
+      </p>
+      <p>
+        We believe that{" "}
+        <strong>quality products and dependable service</strong> go hand
+        in hand. That’s why we use only the{" "}
+        <strong>best raw materials</strong>, follow
+        <strong> rigorous quality checks</strong>, and ensure our machines
+        are built to last in Indian climatic and working conditions.
+      </p>
+      <p>
+        From{" "}
+        <strong>
+          Bar Cutting Machines, Bar Bending Machines, Hopper Mixers,
+          Concrete Mixers, Hanging Platforms, Monkey Hoists, Builder
+          Hoists, Digital Compression Testing Machines
+        </strong>{" "}
+        to <strong>Safety Jackets</strong>, our diverse product range
+        caters to every construction need.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       {/* Vision Section */}
       <section className="relative h-[505px] md:h-[600px] w-full overflow-hidden">
@@ -508,12 +495,7 @@ const Page = () => {
 
               {/* Button */}
               <div className="flex items-center gap-4">
-                <Link href="/about-us">
-                  <button className="group relative overflow-hidden px-6 py-3 rounded-full bg-yellow-500 text-black font-semibold transition-all duration-300 hover:bg-yellow-400 hover:scale-105">
-                    <span className="relative z-10">Learn More</span>
-                    <div className="absolute inset-0 bg-yellow-600 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
-                  </button>
-                </Link>
+            
 
                 {/* Mobile image */}
                 <div className="block md:hidden">
@@ -573,30 +555,9 @@ const Page = () => {
       </div>
 
       {/* Final CTA */}
-      <section className="bg-[#fff8ee] py-16 px-6 md:px-20">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Let’s Build Your Success –{" "}
-            <span className="text-[#FAAC18]">Start Today!</span>
-          </h2>
-          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            Looking for a reliable <strong>Bar Bending Machine Supplier</strong>{" "}
-            who delivers quality, durability, and unmatched service? At{" "}
-            <strong>Shree Shakti Infratech</strong>, we’re here to equip your
-            construction projects with world-class machinery that works as hard
-            as you do.
-          </p>
-          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            Whether you need a single machine or a complete construction
-            equipment solution, our experts are ready to guide you to the
-            perfect choice — with fast delivery, competitive pricing, and full
-            after-sales support.
-          </p>
-          <p className="text-xl font-bold text-gray-900">
-            Don’t wait — get your project moving!
-          </p>
-        </div>
-      </section>
+     <Cta>
+
+     </Cta>
 
       <Footer></Footer>
     </>

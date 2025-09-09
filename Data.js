@@ -2,12 +2,14 @@ export const categories = [
   { id: "bar-processing-machines", name: "Bar Processing Machines" ,image:"/products/automaticbarmachine.png" },
   { id: "concrete-mixers", name: "Concrete Mixers" },
   { id: "anti-fog-cannon-machine", name: "Anti-Fog Cannon Machine" ,image:"/products/asg2.webp" },
+  { id: "trolley-vibrator", name: "Trolley Vibrator" },
+  { id: "ride-on-roller-plate-compactor", name: "Ride On Roller/Plate Compactor" },
   { id: "lab-testing-equipment", name: "Lab Testing Equipment" },
   { id: "material-lifting-equipment", name: "Material Lifting Equipment" },
   { id: "safety-instrument", name: "Safety Instruments" },
-  { id: "ride-on-roller-plate-compactor", name: "Ride On Roller/Plate Compactor" },
+  
   { id: "surveying-instrument", name: "Surveying Instruments" },
-  { id: "trolley-vibrator", name: "Trolley Vibrator" },
+  
 
 ];
 

@@ -12,22 +12,19 @@ import Cta2 from "@/components/landingpage/Cta2";
 import Testimonials from "@/components/landingpage/Testimonials";
 import Youtube from "@/components/landingpage/Youtube";
 
-import Stickybutton from "@/components/landingpage/Stickybutton";
+
 import Productcategory from "@/components/landingpage/Productcategory";
 import Check from "@/components/landingpage/Check";
 import Popup from "@/components/Popup";
 import Footer from "@/components/landingpage/Footer";
-import Social from "@/components/landingpage/Social";
+
 import Gallery from "@/components/landingpage/Gallery";
-import ScrollToTop from "@/components/ScrollToTop";
+
 export default function Home() {
   return (
     <>
 
 
-      <Stickybutton></Stickybutton>
-      <Social></Social>
-<ScrollToTop />
       <Navbar />
       <Popup></Popup>
       <AccordionHero></AccordionHero>

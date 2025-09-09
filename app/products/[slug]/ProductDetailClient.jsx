@@ -71,7 +71,7 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
           {/* Product Preview */}
 
           <div className="sticky md:top-30 md:px-10">
-            <div className="w-full  md:w-[500px] bg-yellow-50 h-[300px] md:h-[400px] rounded-xl shadow-xl border bg-white overflow-hidden">
+            <div className="w-full  md:w-[500px] bg-yellow-50 h-[300px] md:h-[450px] rounded-xl shadow-xl border bg-white overflow-hidden">
               <div
                 className="relative w-full h-full overflow-hidden cursor-zoom-in"
                 onMouseEnter={() => setIsZoomed(true)}
@@ -98,14 +98,14 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
                 ) : (
                   <Image
                     src={activeImage.src}
-                    alt={activeImage.alt}
+                    alt="Bar Bending Machine Supplier"
                     width={600}
                     height={400}
                     unoptimized
-                    className="object-cover w-full h-full transition-transform duration-100 ease-linear"
+                    className="object-contain w-full h-full transition-transform duration-100 ease-linear"
                     style={{
                       transformOrigin: origin,
-                      transform: isZoomed ? "scale(2)" : "scale(1)",
+                      transform: isZoomed ? "scale(1.5)" : "scale(1)",
                     }}
                   />
                 )}

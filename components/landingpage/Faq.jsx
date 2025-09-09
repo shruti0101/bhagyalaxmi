@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import AOSWrapper from "../aos/AOSWrapper";
+
 
 const faqs = [
   {
@@ -92,13 +92,12 @@ const Faq = () => {
   };
 
   return (
-    <AOSWrapper>
+ 
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-10">
         {/* Heading */}
         <h2
           className="text-3xl  md:text-5xl font-bold md:my-12 mb-8"
-          data-aos="fade-up"
-          data-aos-duration="1000"
+       
         >
           Frequently Asked <span className="text-[#FAAC18]">Question's</span>
         </h2>
@@ -109,7 +108,7 @@ const Faq = () => {
             <div
               key={index}
               className="border-b border-gray-300 pb-4"
-              data-aos="fade-up"
+            
            
             >
               {/* Question */}
@@ -136,7 +135,7 @@ const Faq = () => {
           ))}
         </div>
       </section>
-    </AOSWrapper>
+
   );
 };
 
