@@ -17,34 +17,38 @@ import Productcategory from "@/components/landingpage/Productcategory";
 import Check from "@/components/landingpage/Check";
 import Popup from "@/components/Popup";
 import Footer from "@/components/landingpage/Footer";
-import Social from "@/components/landingpage/Social"
+import Social from "@/components/landingpage/Social";
+import Gallery from "@/components/landingpage/Gallery";
+import ScrollToTop from "@/components/ScrollToTop";
 export default function Home() {
   return (
     <>
+
+
       <Stickybutton></Stickybutton>
       <Social></Social>
-    
-        <Navbar />
-    <Popup></Popup>
+<ScrollToTop />
+      <Navbar />
+      <Popup></Popup>
       <AccordionHero></AccordionHero>
-  
-    
+
       <About></About>
-      <Bestseller></Bestseller>
- 
-   
-      <Cta></Cta>
-      <Whychoose></Whychoose>
       <Productcategory></Productcategory>
+      <Whychoose></Whychoose>
+      <Bestseller></Bestseller>
       <Process></Process>
-           <Check></Check>
+
+      <Gallery></Gallery>
+
+      <Cta></Cta>
+
+      <Check></Check>
       <Barbending></Barbending>
       <Youtube></Youtube>
       <Testimonials></Testimonials>
       <Faq></Faq>
       <Cta2></Cta2>
-           <Footer />
-    
+      <Footer />
     </>
   );
 }

@@ -41,12 +41,18 @@ export default function AboutSection() {
           <span className="text-[#FAAC18]">Bar Bending Machine Supplier</span>
         </h2>
 
-        <p className="mt-4 text-gray-600 text-md md:text-lg leading-relaxed max-w-lg">
-          Founded in 2013, <span className="bold">Shree Shakti Infratech</span>{" "}
-          is a trusted <span className="bold">Bar Bending Machine Supplier</span> and ISO
-          9001:2013 certified company. We deliver high-quality construction
-          machinery designed for durability, precision, and efficiency...
-        </p>
+ <p className="mt-4 text-gray-600 text-md md:text-lg max-w-xl">
+  Founded in 2013, <span className="bold">Shree Shakti Infratech</span>{" "}
+  is a trusted <span className="bold">Bar Bending Machine Supplier</span> and ISO
+  9001:2013 certified company. We deliver high-quality construction
+  machinery designed for durability, precision, and efficiency. With over 100 products, including 
+  <strong className="text-black"> Bar Cutting Machines</strong>, Concrete Mixers, Hoists, and Safety Equipment, we provide complete solutions backed by 24/7 service support. Committed to excellence, we help builders and contractors achieve success—one project at a time.
+</p>
+
+<p className="mt-2 text-gray-600 text-md md:text-lg max-w-xl">
+  More than just a <strong className="text-black">Bar Bending Machine Supplier</strong>, we provide complete solutions with 24/7 service support and expert technical assistance. Our commitment as a reliable bar bending machine supplier is to help clients achieve success with quality machines, timely service, and long-term reliability.
+</p>
+
 
         {/* Button + Image together on mobile */}
         <div

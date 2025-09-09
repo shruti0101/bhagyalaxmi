@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function ProductDetailClient({ product, relatedProducts = [] }) {
   const [activeImage, setActiveImage] = useState(product.image);
   const [showPopup, setShowPopup] = useState(false);
-
+  const [status, setStatus] = useState("");
   // zoom states
   const [isZoomed, setIsZoomed] = useState(false);
   const [origin, setOrigin] = useState("50% 50%");
@@ -20,17 +20,43 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
     setOrigin(`${x}% ${y}%`);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    const formData = new FormData(e.target);
+
+    try {
+      const res = await fetch(
+        "https://formsubmit.co/shreeshaktiinfratech@gmail.com",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      if (res.ok) {
+        setStatus("✅ Thank you! Your message has been sent.");
+        e.target.reset(); // clear form
+      } else {
+        setStatus("❌ Oops! Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setStatus("❌ Failed to send. Please check your connection.");
+    }
+  };
+
   return (
     <>
       {/* ✅ Hero Section */}
       <Navbar />
       <section className="relative w-full h-[280px] md:h-[550px] flex items-center justify-center overflow-hidden ">
         <div
-          className="absolute inset-0  bg-fixed bg-center bg-cover flex flex-col items-center justify-center text-center "
+          className="absolute inset-0  md:bg-fixed bg-center bg-cover flex flex-col items-center justify-center text-center "
           style={{ backgroundImage: "url('/home/banner.webp')" }}
         >
           <div className="absolute inset-0 bg-black/20"></div>
-          <h1 className="max-w-2xl text-white z-100 text-3xl md:text-6xl font-bold">
+          <h1 className="max-w-2xl mt-20 text-white z-100 text-3xl md:text-6xl font-bold">
             {product.name}
           </h1>
           <p className="text-base z-100 md:text-lg text-white mt-2">
@@ -44,8 +70,8 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 items-start">
           {/* Product Preview */}
 
-          <div className="sticky md:top-30 ">
-            <div className="w-full h-[300px] md:h-[400px] rounded-xl shadow-xl border bg-white overflow-hidden">
+          <div className="sticky md:top-30 md:px-10">
+            <div className="w-full  md:w-[500px] bg-yellow-50 h-[300px] md:h-[400px] rounded-xl shadow-xl border bg-white overflow-hidden">
               <div
                 className="relative w-full h-full overflow-hidden cursor-zoom-in"
                 onMouseEnter={() => setIsZoomed(true)}
@@ -76,7 +102,7 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
                     width={600}
                     height={400}
                     unoptimized
-                    className="object-contain w-full h-full transition-transform duration-100 ease-linear"
+                    className="object-cover w-full h-full transition-transform duration-100 ease-linear"
                     style={{
                       transformOrigin: origin,
                       transform: isZoomed ? "scale(2)" : "scale(1)",
@@ -109,49 +135,50 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
                 </button>
               ))}
 
-        {/* ✅ Video Thumbnail */}
-{product.videoUrl && (
-  <button
-    onClick={() => {
-      let videoSrc = product.videoUrl;
+              {/* ✅ Video Thumbnail */}
+              {product.videoUrl && (
+                <button
+                  onClick={() => {
+                    let videoSrc = product.videoUrl;
 
-      // Convert to embed format
-      if (videoSrc.includes("youtu.be/")) {
-        videoSrc = `https://www.youtube.com/embed/${
-          videoSrc.split("youtu.be/")[1].split("?")[0]
-        }`;
-      } else if (videoSrc.includes("watch?v=")) {
-        videoSrc = videoSrc.replace("watch?v=", "embed/").split("&")[0];
-      }
+                    // Convert to embed format
+                    if (videoSrc.includes("youtu.be/")) {
+                      videoSrc = `https://www.youtube.com/embed/${
+                        videoSrc.split("youtu.be/")[1].split("?")[0]
+                      }`;
+                    } else if (videoSrc.includes("watch?v=")) {
+                      videoSrc = videoSrc
+                        .replace("watch?v=", "embed/")
+                        .split("&")[0];
+                    }
 
-      setActiveImage({
-        src: videoSrc,
-        alt: `${product.name} Video`,
-        isVideo: true,
-      });
-    }}
-    className={`relative w-16 h-16 md:w-20 md:h-20 rounded-lg border shadow-sm overflow-hidden flex-shrink-0 ${
-      activeImage.isVideo ? "ring-2 ring-yellow-500" : ""
-    }`}
-  >
-    {/* ✅ Show YouTube thumbnail instead of black box */}
-    <Image
-      src={`https://img.youtube.com/vi/${
-        product.videoUrl.split("youtu.be/")[1]?.split("?")[0] ||
-        product.videoUrl.split("v=")[1]?.split("&")[0]
-      }/hqdefault.jpg`}
-      alt={`${product.name} Video Thumbnail`}
-      width={100}
-      height={100}
-      unoptimized
-      className="object-cover w-full h-full"
-    />
-    <span className="absolute inset-0 flex items-center justify-center text-white text-xl bg-black/40">
-      ▶
-    </span>
-  </button>
-)}
-
+                    setActiveImage({
+                      src: videoSrc,
+                      alt: `${product.name} Video`,
+                      isVideo: true,
+                    });
+                  }}
+                  className={`relative w-16 h-16 md:w-20 md:h-20 rounded-lg border shadow-sm overflow-hidden flex-shrink-0 ${
+                    activeImage.isVideo ? "ring-2 ring-yellow-500" : ""
+                  }`}
+                >
+                  {/* ✅ Show YouTube thumbnail instead of black box */}
+                  <Image
+                    src={`https://img.youtube.com/vi/${
+                      product.videoUrl.split("youtu.be/")[1]?.split("?")[0] ||
+                      product.videoUrl.split("v=")[1]?.split("&")[0]
+                    }/hqdefault.jpg`}
+                    alt={`${product.name} Video Thumbnail`}
+                    width={100}
+                    height={100}
+                    unoptimized
+                    className="object-cover w-full h-full"
+                  />
+                  <span className="absolute inset-0 flex items-center justify-center text-white text-xl bg-black/40">
+                    ▶
+                  </span>
+                </button>
+              )}
             </div>
           </div>
 
@@ -219,12 +246,12 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
             <h2 className="text-xl md:text-2xl font-bold mb-4 text-center">
               Enquiry Now
             </h2>
-            <form
-              action="https://formsubmit.co/shreeshaktiinfratech@gmail.com"
-              method="POST"
-              className="space-y-4"
-            >
-              <input type="hidden" name="_sponsor" value="false" />
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Honeypot for bots */}
+              <input type="text" name="_honey" style={{ display: "none" }} />
+              {/* Disable captcha */}
+              <input type="hidden" name="_captcha" value="false" />
+
               <input
                 type="text"
                 name="name"
@@ -242,6 +269,8 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
               <input
                 type="tel"
                 name="phone"
+                maxLength={10}
+                 pattern="[0-9]{10}"
                 placeholder="Your Phone"
                 required
                 className="w-full p-2 md:p-3 rounded-md border focus:ring-2 focus:ring-yellow-500 text-sm md:text-base"
@@ -252,12 +281,19 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
                 rows="4"
                 className="w-full p-2 md:p-3 rounded-md border focus:ring-2 focus:ring-yellow-500 text-sm md:text-base"
               />
+
               <button
                 type="submit"
                 className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 md:py-3 rounded-lg shadow-lg transition duration-200 text-sm md:text-base"
               >
                 Submit
               </button>
+
+              {status && (
+                <p className="text-center mt-3 text-sm md:text-base">
+                  {status}
+                </p>
+              )}
             </form>
           </div>
 
@@ -321,7 +357,7 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
                   <div className="w-full h-28 md:h-40 flex items-center justify-center overflow-hidden">
                     <Image
                       src={item.image.src}
-                      alt={item.image.alt}
+                      alt="Bar Bending Machine Supplier"
                       width={200}
                       height={150}
                       unoptimized

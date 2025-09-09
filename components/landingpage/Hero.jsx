@@ -9,7 +9,7 @@ const images = [
   {
     id: 1,
     src: "/home/hero1.webp",
-    title: "Bar Bending",
+    title: "Bar Bending Supplier",
     subtitle: "Machine Supplier",
     description:
       "Explore our wide selection of Bar Bending Machine Supplier, including automatic, hydraulic, and manual models for all your steel-bending needs.",
@@ -77,7 +77,7 @@ const AccordionHero = () => {
                 />
                 <div className="absolute  inset-0 bg-black/40" />
                 <div className="relative pt-20 z-10 flex flex-col justify-center items-start h-full px-6 text-white">
-                  <h2 className="text-4xl font-bold mb-2">{item.title}</h2>
+                  <h1 className="text-4xl font-bold mb-2">{item.title}</h1>
                   <p className="text-3xl text-[#FAAC18] font-semibold">
                     {item.subtitle}
                   </p>
@@ -136,12 +136,12 @@ const AccordionHero = () => {
               GST No. 07BPIPM2937L1ZG
             </p>
             <div className="ml-10 pt-20">
-              <h2 className="text-4xl md:text-7xl font-bold mb-3">
+              <h1 className="text-4xl md:text-7xl font-bold mb-3">
                 {active === item.id && item.id === 1 ? ( // only first image
                   <Typewriter
                     words={[
-                      "Bar Bending Machine",
-                      "Bar Cutting Machine",
+                      "Bar Bending Machine Supplier",
+                      "Bar Cutting Machine Supplier",
                       "Rebar Processing Solutions",
                     ]}
                     loop={0} // 0 = infinite loop
@@ -154,7 +154,7 @@ const AccordionHero = () => {
                 ) : (
                   item.title
                 )}
-              </h2>
+              </h1>
               <p className="text-3xl text-[#FAAC18] font-semibold">
                 {item.subtitle}
               </p>

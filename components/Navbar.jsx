@@ -67,13 +67,18 @@ const Navbar = () => {
           <div className="hidden md:flex">
             <button
               onClick={() => {
-                setIsOpen(false);
-                setShowPopup(true);
+                const phoneNumber = "918826544443"; // Your WhatsApp number with country code (without +)
+                const message = encodeURIComponent(
+                  "Hello! I want to request a quote."
+                ); // Optional pre-filled message
+                window.open(
+                  `https://wa.me/${phoneNumber}?text=${message}`,
+                  "_blank"
+                );
               }}
-              className="flex items-center gap-2 bg-[#FAAC18] font-bold text-lg cursor-pointer hover:bg-[#e99b10] text-white py-3 px-5 rounded transition duration-300"
+              className="w-full flex justify-center items-center gap-2 bg-[#FAAC18] font-bold text-lg cursor-pointer hover:bg-[#e99b10] text-white py-3 px-5 rounded transition duration-300"
             >
               Request a Quote
-            
             </button>
           </div>
 
@@ -102,8 +107,17 @@ const Navbar = () => {
         >
           {/* Mobile Logo with ® */}
           <div className="flex items-center justify-between p-5 border-b">
-            <Link href="/" className="relative flex items-center" onClick={() => setIsOpen(false)}>
-              <Image src="/logo.png" alt="Company Logo" width={120} height={80} />
+            <Link
+              href="/"
+              className="relative flex items-center"
+              onClick={() => setIsOpen(false)}
+            >
+              <Image
+                src="/logo.png"
+                alt="Company Logo"
+                width={120}
+                height={80}
+              />
               <span className="absolute top-0 right-0 text-xs font-bold text-[#FAAC18]">
                 ®
               </span>
@@ -135,13 +149,18 @@ const Navbar = () => {
             <li>
               <button
                 onClick={() => {
-                  setIsOpen(false);
-                  setShowPopup(true);
+                  const phoneNumber = "918826544443"; // Your WhatsApp number with country code (without +)
+                  const message = encodeURIComponent(
+                    "Hello! I want to request a quote."
+                  ); // Optional pre-filled message
+                  window.open(
+                    `https://wa.me/${phoneNumber}?text=${message}`,
+                    "_blank"
+                  );
                 }}
                 className="w-full flex justify-center items-center gap-2 bg-[#FAAC18] font-bold text-lg cursor-pointer hover:bg-[#e99b10] text-white py-3 px-5 rounded transition duration-300"
               >
                 Request a Quote
-              
               </button>
             </li>
           </ul>
@@ -149,8 +168,7 @@ const Navbar = () => {
       </nav>
 
       {/* Popup Component */}
-     <Enquiry isOpen={showPopup} onClose={() => setShowPopup(false)} />
-
+      <Enquiry isOpen={showPopup} onClose={() => setShowPopup(false)} />
     </>
   );
 };

@@ -6,62 +6,83 @@ import AOSWrapper from "../aos/AOSWrapper";
 
 const faqs = [
   {
-    question:
-      "What makes Shree Shakti Infratech the leading Bar Bending Machine Supplier in India?",
+    question: "What makes Shree Shakti Infratech the leading Bar Bending Machine Supplier in India?",
     answer:
-      "Shree Shakti Infratech has been serving the construction industry since 2013 with ISO 9001:2013 certified products. As a trusted Bar Bending Machine Supplier in India, we combine precision engineering, premium-grade materials, and dedicated 24/7 customer support to ensure our machines deliver consistent performance on every project.",
+      "Shree Shakti Infratech has been serving the construction industry since 2013 with ISO 9001:2013 certified products. As a trusted <strong>Bar Bending Machine Supplier in India</strong>, we combine precision engineering, premium-grade materials, and dedicated 24/7 customer support to ensure our machines deliver consistent performance on every project.",
   },
   {
     question: "What types of bar bending machines do you offer?",
     answer:
-      "We provide a wide range of bar bending machines designed to meet diverse construction needs, from compact models to heavy-duty industrial machines.",
+      "As a top <strong>Bar Bending Machine Supplier in India</strong>, we provide a complete range including manual, semi-automatic, and fully automatic models. These cater to small-scale contractors as well as large infrastructure companies, with bending capacities from 6mm to 42mm.",
   },
   {
-    question:
-      "Are your bar bending machines compliant with safety and quality standards?",
+    question: "Are your bar bending machines compliant with safety and quality standards?",
     answer:
-      "Yes, all our machines are ISO-certified and adhere to stringent safety and quality standards for reliable performance.",
+      "Yes, every machine from our range meets Indian and international safety standards. Being a responsible <strong>Bar Bending Machine Supplier in India</strong>, we conduct rigorous quality checks before dispatch to ensure maximum operator safety and long-term durability.",
   },
   {
     question: "Do you offer nationwide delivery?",
-    answer: "Yes, we deliver across India with efficient logistics support.",
+    answer:
+      "Absolutely. As a <strong>Bar Bending Machine Supplier in India</strong> with a wide service network, we deliver to all metro cities, tier-2 and tier-3 towns, and even remote project sites within the promised timeframe.",
   },
   {
     question: "What is the bending capacity of your machines?",
     answer:
-      "Our machines can handle various bar diameters, ensuring compatibility with small to large construction projects.",
+      "Our machines, supplied as part of our <strong>Bar Bending Machine Supplier in India</strong> portfolio, can bend TMT bars ranging from 6mm to 42mm in diameter. We also offer models for higher capacities upon request.",
   },
   {
     question: "Do you provide installation and operator training?",
     answer:
-      "Yes. Being a customer-focused supplier, we provide on-site installation and operator training so your team can use the machine safely and efficiently from day one.",
+      "Yes. Being a customer-focused <strong>Bar Bending Machine Supplier in India</strong>, we provide on-site installation and operator training so your team can use the machine safely and efficiently right from day one.",
   },
   {
     question: "What kind of warranty do your bar bending machines have?",
     answer:
-      "We provide a standard warranty with options to extend coverage based on customer requirements.",
+      "Our machines come with a standard manufacturer’s warranty that covers defects in materials and workmanship. As a reliable <strong>Bar Bending Machine Supplier in India</strong>, we also offer extended warranty options for added peace of mind.",
   },
   {
     question: "How can I choose the right bar bending machine for my project?",
     answer:
-      "Our experts help you select the right model depending on your project size, bar specifications, and workload requirements.",
+      "We guide customers based on bar size, bending frequency, workload, and budget. Our team, as an experienced <strong>Bar Bending Machine Supplier in India</strong>, ensures you get a model that matches your exact project requirements.",
   },
   {
     question: "Do you stock spare parts for quick replacement?",
     answer:
-      "Yes, we maintain a ready stock of essential spare parts for minimal downtime.",
+      "Yes. We maintain a full inventory of genuine spare parts, ensuring that clients across India get fast replacements — one of the reasons why contractors choose us as their <strong>Bar Bending Machine Supplier in India</strong>.",
   },
   {
     question: "Can you customize bar bending machines?",
     answer:
-      "Yes, we can customize machines based on your specific construction requirements.",
+      "Definitely. We understand that every project is unique, so as a flexible <strong>Bar Bending Machine Supplier in India</strong>, we offer customization options for bending speed, capacity, and operational features.",
   },
   {
     question: "How long is the delivery time?",
     answer:
-      "Most orders are fulfilled within a few days, depending on location and availability.",
+      "Our standard delivery time is 3–7 working days depending on the location. As a committed <strong>Bar Bending Machine Supplier in India</strong>, we always work to meet urgent deadlines without compromising on quality.",
+  },
+  {
+    question: "What payment options do you provide?",
+    answer:
+      "We accept bank transfers, UPI, cheques, and other convenient modes. Our transparent payment process is part of why we are regarded as a trustworthy <strong>Bar Bending Machine Supplier in India</strong>.",
+  },
+  {
+    question: "Do you supply other construction machinery as well?",
+    answer:
+      "Yes. Apart from bar bending machines, we also supply bar cutting machines, concrete mixers, builder hoists, hanging platforms, and safety gear, making us a one-stop <strong>Bar Bending Machine Supplier in India</strong> for complete construction solutions.",
+  },
+  {
+    question: "What kind of after-sales service do you provide?",
+    answer:
+      "We offer 24/7 after-sales support including maintenance, breakdown assistance, and technical guidance. This commitment sets us apart as a customer-first <strong>Bar Bending Machine Supplier in India</strong>.",
+  },
+  {
+    question: "How can I request a quote for a bar bending machine?",
+    answer:
+      "Simply fill out our online inquiry form, call our sales team, or email us. As a responsive <strong>Bar Bending Machine Supplier in India</strong>, we provide customized quotes promptly so you can start your project without delays.",
   },
 ];
+
+
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState(0);
@@ -107,12 +128,9 @@ const Faq = () => {
               {/* Answer */}
               {openIndex === index && (
                 <p
-                  className="mt-3 text-gray-700 text-base leading-relaxed"
-                  data-aos="fade-in"
-                  data-aos-duration="600"
-                >
-                  {faq.answer}
-                </p>
+      className="text-gray-600 leading-relaxed"
+      dangerouslySetInnerHTML={{ __html: faq.answer }}
+    />
               )}
             </div>
           ))}

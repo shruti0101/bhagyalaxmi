@@ -5,31 +5,35 @@ import Link from "next/link";
   const steps = [
     {
       title: "Understanding Your Requirements in Detail",
-      desc: "Our process begins with an in-depth consultation to fully understand your project scale, reinforcement bar specifications, site challenges, and operational needs. This helps us recommend the most suitable bar bending machine that matches your productivity goals and budget.",
+      desc: "Our process begins with an in-depth consultation to fully understand your project scale, reinforcement bar specifications, site challenges, and operational needs. This helps us recommend the most suitable <strong class='text-black'>Bar Bending Machine Machine</strong> that matches your productivity goals and budget.",
     },
     {
       title: "Expert Consultation & Personalized Product Selection",
-      desc: "With years of expertise as a Bar Bending Machine Supplier in India, our technical team guides you through various models and configurations. We focus on efficiency, safety features, bending precision, and durability to ensure your investment delivers maximum output.",
+      desc: "With years of expertise as a  <strong class='text-black'>Bar Bending Machine Supplier in India</strong>, our technical team guides you through various models and configurations. We focus on efficiency, safety features, bending precision, and durability to ensure your investment delivers maximum output.",
     },
     {
       title: "Precision Manufacturing & Strict Quality Testing",
-      desc: "We believe in long-term partnerships. That’s why we offer 24/7 technical support, promptspare parts availability, and regular maintenance services to keep your bar bending machine performing at its best for years to come.",
+      desc: "Every machine is manufactured using high-grade raw materials and advanced engineering techniques. Before leaving our facility, each <strong class='text-black'>Bar Bending Machine</strong> undergoes rigorous ISO 9001:2013 quality checks, ensuring top-notch performance and long service life.",
     },
 
-      {
-      title: "Continuous After-Sales Support & Maintenance",
-      desc: "Every machine is manufactured using high-grade raw materials and advanced engineering techniques. Before leaving our facility, each bar bending machine undergoes rigorous ISO 9001:2013 quality checks, ensuring top-notch performance and long service life.",
+        {
+      title: "Nationwide Quick & Secure Delivery",
+      desc: "As a leading <strong class='text-black'>Bar Bending Machine Supplier in India</strong>, we ensure safe, timely delivery to any location across the country — whether it’s a metro city or a remote construction site. Our reliable logistics network minimizes downtime so your project stays on schedule.",
     },
 
       {
       title: "Professional Installation & Operator Training",
-      desc: "Our service doesn’t end at delivery. We provide complete on-site installation, calibration, and hands-on training for your operators, ensuring they can run the bar bending machine efficiently and safely from day one.",
+      desc: "Our service doesn’t end at delivery. We provide complete on-site installation, calibration, and hands-on training for your operators, ensuring they can run the <strong class='text-black'>Bar Bending Machine</strong> efficiently and safely from day one.",
     },
 
       {
-      title: "Nationwide Quick & Secure Delivery",
-      desc: "As a leading Bar Bending Machine Supplier in India, we ensure safe, timely delivery to any location across the country — whether it’s a metro city or a remote construction site. Our reliable logistics network minimizes downtime so your project stays on schedule.",
+      title: "Continuous After-Sales Support & Maintenance",
+      desc: "Every machine is manufactured using high-grade raw materials and advanced engineering techniques. Before leaving our facility, each <strong class='text-black'>Bar Bending Machine</strong> undergoes rigorous ISO 9001:2013 quality checks, ensuring top-notch performance and long service life.",
     },
+
+    
+
+  
   ];
 
 export default function ProcessSection() {
@@ -64,7 +68,11 @@ export default function ProcessSection() {
             className="bg-[#FAAC18] text-black p-6 rounded-md shadow-md relative flex flex-col h-full"
           >
             <h3 className="font-bold mb-3">{step.title}</h3>
-            <p className="text-sm leading-relaxed flex-grow">{step.desc}</p>
+          
+              <p
+                className="text-black text-sm leading-relaxed group-hover:text-white/90"
+                dangerouslySetInnerHTML={{ __html: step.desc }}
+              />
 
             {/* Arrows */}
             {index < steps.length - 1 && (

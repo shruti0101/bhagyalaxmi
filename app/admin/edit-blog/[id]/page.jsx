@@ -2,6 +2,10 @@
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Adminpanel from "@/components/admin/Adminpanel";
+import dynamic from "next/dynamic";
+
+// Dynamically import JoditEditor (to avoid SSR issues in Next.js)
+const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
 export default function EditBlog() {
   const { id } = useParams();
@@ -9,6 +13,7 @@ export default function EditBlog() {
   const [blog, setBlog] = useState(null);
   const [saving, setSaving] = useState(false);
   const [preview, setPreview] = useState(null);
+  const [content, setContent] = useState(""); // 👈 JoditEditor state
 
   useEffect(() => {
     (async () => {
@@ -16,6 +21,7 @@ export default function EditBlog() {
       const d = await r.json();
       setBlog(d);
       setPreview(d.image || null);
+      setContent(d.content || ""); // 👈 prefill editor
     })();
   }, [id]);
 
@@ -24,6 +30,10 @@ export default function EditBlog() {
     setSaving(true);
 
     const fd = new FormData(e.currentTarget);
+
+    // append editor content manually (since it's not tied to <input>)
+    fd.append("content", content);
+
     const res = await fetch(`/api/blog/${id}`, { method: "PUT", body: fd });
     setSaving(false);
 
@@ -38,7 +48,7 @@ export default function EditBlog() {
     }
   };
 
-  if (!blog) return <p className="p-6  text-center text-gray-500 text-4xl">Loading…</p>;
+  if (!blog) return <p className="p-6 text-center text-gray-500 text-4xl">Loading…</p>;
 
   return (
     <div className="min-h-screen flex bg-gray-100">
@@ -100,15 +110,16 @@ export default function EditBlog() {
               />
             </div>
 
-            {/* Content */}
+            {/* Content with JoditEditor */}
             <div>
               <label className="block font-semibold mb-1">Content</label>
-              <textarea
-                name="content"
-                defaultValue={blog.content}
-                required
-                className="w-full border rounded p-2 h-48 focus:ring focus:ring-blue-200"
-              />
+              <div className="border rounded">
+                <JoditEditor
+                  value={content}
+                  tabIndex={1}
+                  onChange={(newContent) => setContent(newContent)}
+                />
+              </div>
             </div>
 
             {/* Image Upload with Preview */}

@@ -56,7 +56,7 @@ export default function PopupForm({ onClose }) {
         <h2 className="text-xl md:text-2xl font-bold mb-1 text-center">
           Get Your <span className="text-[#FAAC18]">Free Quote Today!</span>
         </h2>
-        <p className="text-sm text-gray-600 mb-4 text-center">
+        <p className="text-sm text-black mb-4 text-center">
           Looking for a reliable <b>Bar Bending Machine</b> or other
           construction equipment? Tell us your requirement and get the best
           price quote, fast and hassle-free.
@@ -79,7 +79,7 @@ export default function PopupForm({ onClose }) {
               value="Thank you for reaching out! We will get back to you shortly."
             />
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_cc" value="shrutiguptabhu@gmail.com" />
+            {/* <input type="hidden" name="_cc" value="shrutiguptabhu@gmail.com" /> */}
           {/* Name */}
           <input
             type="text"
@@ -132,7 +132,7 @@ export default function PopupForm({ onClose }) {
           {/* Hidden FormSubmit fields */}
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
-        
+     
 
           {/* Submit Button */}
           <button

@@ -106,7 +106,7 @@ const ProductCarousel = () => {
 
   return (
     <>
-      <h2 className="text-3xl md:mt-18 md:text-5xl font-bold text-center">
+      <h2 className="text-3xl md:mt-5 md:text-5xl font-bold text-center">
         Featured <span className="text-[#FAAC18]">Products</span>
       </h2>
       <div className=" max-w-sm text-sm md:text-xl  md:max-w-4xl leading-[1.5]  mx-auto mt-4 text-center text-gray-700">

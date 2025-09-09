@@ -5,7 +5,7 @@ export const categories = [
   { id: "lab-testing-equipment", name: "Lab Testing Equipment" },
   { id: "material-lifting-equipment", name: "Material Lifting Equipment" },
   { id: "safety-instrument", name: "Safety Instruments" },
-  { id: "ride-on-roller-plate-compactor", name: "RIDE ON ROLLER/ PLATE COMPACTOR" },
+  { id: "ride-on-roller-plate-compactor", name: "Ride On Roller/Plate Compactor" },
   { id: "surveying-instrument", name: "Surveying Instruments" },
   { id: "trolley-vibrator", name: "Trolley Vibrator" },
 
@@ -3229,7 +3229,7 @@ videoUrl:"https://youtu.be/q0sGML2HIrQ?si=hY0mwRtgh_bcBE3P",
 {
   id: 29,
   slug: "3-bin-mixer-lift-hydraulic-hopper",
-  name: "3 BIN MIXER LIFT WITH HYDRAULIC HOPPER",
+  name: "3 Bin Mixer Lift With Hydraulic Hopper",
   category: "concrete-mixers",
   model: "SSI-MX-10",
   image: {
@@ -3332,7 +3332,7 @@ videoUrl:"https://youtu.be/Vh8U5Yy_kXo?si=Njzl2YGb3XKEmIcb",
 {
   id: 30,
   slug: "180-230ltr-mini-concrete-mixer",
-  name: "180/230Ltr. MINI CONCRETE MIXER",
+  name: "Mini Concrete Mixer.180/230Ltr",
   category: "concrete-mixers",
   model: "SSI-MX-01-02",
   image: {
@@ -3432,7 +3432,7 @@ videoUrl:"https://youtu.be/Vh8U5Yy_kXo?si=Njzl2YGb3XKEmIcb",
 {
   id: 31,
   slug: "column-box-lift-machine",
-  name: "COLUMN BOX LIFT MACHINE",
+  name: "Column Box Lift Machine",
   category: "concrete-mixers",
   model: "SSI-CBL-01",
   image: {
@@ -3615,7 +3615,7 @@ videoUrl:"https://youtu.be/Vh8U5Yy_kXo?si=Njzl2YGb3XKEmIcb",
 {
   "id": 33,
   "slug": "concrete-mixer",
-  "name": "CONCRETE MIXER",
+  "name": "Concrete Mixer",
   "category": "concrete-mixers",
   "model": "SSI-MX-04",
   "image": {
@@ -3707,7 +3707,7 @@ videoUrl:"https://youtu.be/-bX9d6dGM8Y?si=E5-PkSXhI4NVckdK",
 {
   "id": 34,
   "slug": "concrete-mixer-hydraulic-hopper",
-  "name": "CONCRETE MIXER HYDRAULIC HOPPER",
+  "name": "Concrete Mixer Hydraulic Hopper",
   "category": "concrete-mixers",
   "model": "SSI-MX-06",
   "image": {
@@ -3791,7 +3791,7 @@ videoUrl:"https://youtu.be/-bX9d6dGM8Y?si=E5-PkSXhI4NVckdK",
 {
   "id": 35,
   "slug": "concrete-mixer-lift",
-  "name": "CONCRETE MIXER LIFT",
+  "name": "Concrete Mixer Lift",
   "category": "concrete-mixers",
   "model": "SSI-MX-07",
   "image": {
@@ -3970,7 +3970,7 @@ videoUrl:"https://youtu.be/H0OJRc7C_v8?si=4UGx3HeUDuZDKdaa",
 {
   "id": 37,
   "slug": "four-pole-mixer-lift",
-  "name": "FOUR POLE MIXER LIFT",
+  "name": "Four Pole Mixer Lift",
   "category": "concrete-mixers",
   "model": "SSI-MX-11",
   "image": {
@@ -4788,7 +4788,7 @@ videoUrl:"https://youtu.be/0E6iIfsDItk?si=K8G5oApRVzhwhjBO",
 {
   "id": 46,
   "slug": "200-ton-digital-compression-testing-machine",
-  "name": "200 Ton Digital Compression Testing Machine",
+  "name": "Digital Compression Testing Machine 200 Ton",
   "category": "lab-testing-equipment",
   "model": "SSI-CTM-200D",
   "image": {
@@ -5469,7 +5469,7 @@ videoUrl:"https://youtu.be/0E6iIfsDItk?si=K8G5oApRVzhwhjBO",
   "category": "lab-testing-equipment",
   "model": "SSI-SJ-01",
   "image": {
-    "src": "/products/lte/SILT JAR PLASTIC  GLASS 250, 500, 750, 1000ML/1.webp",
+    "src": "/products/lte/SILT/1.webp",
     "alt": "Silt Jar Plastic and Glass"
   },
  
@@ -5710,16 +5710,16 @@ videoUrl:"https://youtu.be/0E6iIfsDItk?si=K8G5oApRVzhwhjBO",
   "category": "safety-instrument",
   "model": "SSI-SB-01",
   "image": {
-    "src": "/products/si/safety belt/1.webp",
+    "src": "/products/si/Safety/1.webp",
     "alt": "Industrial Safety Belt"
   },
   "images": [
     {
-      "src": "/products/si/safety belt/2.webp",
+      "src": "/products/si/Safety/2.webp",
       "alt": "Full Body Safety Belt Harness"
     },
     {
-      "src": "/products/si/safety belt/3.webp",
+      "src": "/products/si/Safety/3.webp",
       "alt": "Construction Safety Belt"
     },
    
@@ -6485,12 +6485,12 @@ videoUrl:"https://youtu.be/0E6iIfsDItk?si=K8G5oApRVzhwhjBO",
   "category": "surveying-instrument",
   "model": "SSI-TP-01",
   "image": {
-    "src": "/products/survey/Tripod Stand & Staff/1.webp",
+    "src": "/products/survey/Tripod/1.webp",
     "alt": "Surveying Tripod Stand & Staff"
   },
   "images": [
     {
-      "src": "/products/survey/Tripod Stand & Staff/2.webp",
+      "src": "/products/survey/Tripod/2.webp",
       "alt": "Aluminium Tripod Stand for Surveying Instruments"
     },
    

@@ -55,7 +55,7 @@ const Productcategory = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto mb-15 px-6 md:px-12">
+    <div className="max-w-7xl mt-5 mx-auto mb-15 px-6 md:px-12">
       <h2 className="text-3xl md:text-5xl mb-8 md:mb-14 font-bold text-[#FAAC18] text-center ">
         Product Categories
       </h2>
