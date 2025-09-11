@@ -12,7 +12,7 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://barbendingmachinesupplier.com/"), 
+
   title: "Bar Bending Machine Supplier | Bar Bending Machine Price",
   description: "Shree Shakti Infratech Bar Bending Machine Supplier a specialized tools that take those tough steel bars and bend them precisely to the angles needed for construction.",
   icons: {

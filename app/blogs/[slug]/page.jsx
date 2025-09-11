@@ -5,14 +5,41 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
 
+// ✅ Blog-specific metadata (doesn't inherit from layout.js)
+export async function generateMetadata({ params }) {
+  await connect();
+  const blog = await Blog.findOne({ permalink: params.slug });
+
+  if (!blog) {
+    return {
+      title: "Blog Not Found",
+      description: "This blog does not exist.",
+    };
+  }
+
+  return {
+    title: blog.metaTitle || blog.title,
+    description: blog.metaDescription || "",
+    openGraph: {
+      title: blog.metaTitle || blog.title,
+      description: blog.metaDescription || "",
+      images: blog.image ? [{ url: blog.image }] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.metaTitle || blog.title,
+      description: blog.metaDescription || "",
+      images: blog.image ? [blog.image] : [],
+    },
+  };
+}
+
 export default async function BlogPage({ params }) {
   await connect();
 
-  // Fetch current blog
   const blog = await Blog.findOne({ permalink: params.slug });
   if (!blog) return notFound();
 
-  // Fetch related blogs
   let relatedBlogs = [];
   if (blog.category) {
     relatedBlogs = await Blog.find({
@@ -42,12 +69,9 @@ export default async function BlogPage({ params }) {
         </div>
       </section>
 
-      {/* ✅ Responsive Blog Layout */}
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 my-10 px-4 md:px-6">
-        {/* LEFT: Blog Content */}
         <main className="flex-1">
-          <h1 className="text-2xl md:text-4xl font-bold mb-3">{blog.title}</h1>
-          <p className="text-gray-600 mb-6">{blog.metaDescription}</p>
+      
 
           {blog.image && (
             <img
@@ -69,7 +93,6 @@ export default async function BlogPage({ params }) {
           />
         </main>
 
-        {/* RIGHT: Featured Blogs Sidebar */}
         {relatedBlogs.length > 0 && (
           <aside className="w-full lg:w-80 shrink-0 mt-10 lg:mt-0">
             <h2 className="text-xl md:text-2xl font-bold mb-6 text-gray-800">

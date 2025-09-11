@@ -81,9 +81,12 @@ export default function BlogsPage() {
                   <h2 className="text-lg md:text-2xl font-semibold mb-2 group-hover:text-blue-600 line-clamp-2">
                     {blog.title}
                   </h2>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-1">
-                    {blog.metaDescription || blog.content.slice(0, 120)}
-                  </p>
+               
+
+                     <article
+            className="prose prose-lg max-w-none"
+            dangerouslySetInnerHTML={{ __html: blog.content.slice(0, 120) }}
+          />
                   <span className="text-blue-600 font-medium group-hover:underline mt-auto">
                     Read More →
                   </span>
