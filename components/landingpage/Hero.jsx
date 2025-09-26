@@ -17,20 +17,23 @@ const images = [
   },
   {
     id: 2,
+    src: "/home/banner-1.webp",
+    title: "Anti Smog Gun",
+    subtitle: "Anti-Smog Gun – Advanced Air Pollution Control",
+    description:
+      "High-performance Anti Smog Gun designed for heavy-duty operations, ensuring long-lasting durability and superior efficiency in smoke and particulate removal.",
+  },
+  {
+    id: 3,
     src: "/home/hero2.webp",
     title: "Monkey Lifting Machines",
     subtitle: "Automatic & Manual",
     description:
       "High precision lifting machines available in automatic and manual versions for all industries.",
   },
-  {
-    id: 3,
-    src: "/home/banner-1.webp",
-    title: "Anti Smog Gun",
-    subtitle: "Heavy Duty",
-    description:
-      "High-performance Anti Smog Gun designed for heavy-duty operations, ensuring long-lasting durability and superior efficiency in smoke and particulate removal.",
-  },
+
+
+
   {
     id: 4,
     src: "/home/hero4.webp",
@@ -127,6 +130,7 @@ const AccordionHero = () => {
                     <Typewriter
                       words={[
                         "Bar Bending Machine Supplier",
+                        "Anti Smog Gun (Dust & Smog Eliminator)",
                         "Bar Cutting Machine Supplier",
                         "Rebar Processing Solutions",
                       ]}

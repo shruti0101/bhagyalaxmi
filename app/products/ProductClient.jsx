@@ -1,18 +1,13 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { categories, products } from "@/Data";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/landingpage/Footer";
 
-
-
-
-
 export default function ProductsPage() {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [visibleCount, setVisibleCount] = useState(12);
   const [loading, setLoading] = useState(false); // Loader state
 
   const tabs = [{ id: "all", name: "All Products" }, ...categories];
@@ -21,22 +16,22 @@ export default function ProductsPage() {
     activeCategory === "all"
       ? products
       : products.filter((p) => p.category === activeCategory);
+
   const handleCategoryChange = (categoryId) => {
     setLoading(true);
     setTimeout(() => {
       setActiveCategory(categoryId);
-      setVisibleCount(12);
       setLoading(false);
-    }, 1000); 
+
+      // ✅ Scroll to top when category changes
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 0);
   };
 
-
-  const handleViewMore = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setVisibleCount((prev) => prev + 12);
-      setLoading(false);
-    }, 1000);
+  const getCategoryName = () => {
+    if (activeCategory === "all") return "All Products";
+    const category = categories.find((c) => c.id === activeCategory);
+    return category ? category.name : "Products";
   };
 
   return (
@@ -49,23 +44,26 @@ export default function ProductsPage() {
           className="absolute inset-0 bg-center bg-cover flex items-center justify-center"
           style={{ backgroundImage: "url('/home/banner.webp')" }}
         >
-          <h1 className="text-7xl font-bold text-white z-10">Products</h1>
+          <div className="absolute inset-0 bg-black/20"></div>
+          <h1 className="text-7xl font-bold text-white z-10">
+            {getCategoryName()}
+          </h1>
         </div>
       </section>
 
-      <section className="px-6 py-10">
+      <section className="w-full px-5 py-6">
         {/* Tabs */}
-        <div className="sticky top-[100px] z-20 bg-white border-b">
-          <div className="flex overflow-x-auto scrollbar-hide md:justify-center">
+        <div className="sticky  top-[90px] z-20 bg-white border-b">
+          <div className="flex bg-[#FFFAF1] overflow-x-auto scrollbar-hide md:justify-center">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => handleCategoryChange(tab.id)}
-                className={`relative px-5 py-3 text-sm md:text-base font-bold cursor-pointer transition 
+                className={`relative px-2 py-6 text-sm md:text-base font-bold cursor-pointer transition 
                   ${
                     activeCategory === tab.id
                       ? "text-yellow-600"
-                      : "text-gray-700 hover:text-yellow-600"
+                      : "text-black hover:text-yellow-600"
                   }`}
               >
                 {tab.name}
@@ -91,7 +89,7 @@ export default function ProductsPage() {
           <>
             {/* Product Grid */}
             <div className="grid grid-cols-1 md:mt-20 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-8">
-              {filteredProducts.slice(0, visibleCount).map((product) => (
+              {filteredProducts.map((product) => (
                 <Link
                   key={product.id}
                   href={`/products/${product.slug}`}
@@ -122,18 +120,6 @@ export default function ProductsPage() {
                 </Link>
               ))}
             </div>
-
-            {/* View More Button */}
-            {visibleCount < filteredProducts.length && (
-              <div className="text-center mt-8">
-                <button
-                  onClick={handleViewMore}
-                  className="px-6 py-3 bg-yellow-500 text-white rounded-lg shadow hover:bg-yellow-600 transition"
-                >
-                  {loading ? "Loading..." : "View More"}
-                </button>
-              </div>
-            )}
           </>
         )}
       </section>

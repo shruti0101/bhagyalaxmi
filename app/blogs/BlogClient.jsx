@@ -83,10 +83,7 @@ export default function BlogsPage() {
                   </h2>
                
 
-                     <article
-            className="prose prose-lg max-w-none"
-            dangerouslySetInnerHTML={{ __html: blog.content.slice(0, 120) }}
-          />
+          
                   <span className="text-blue-600 font-medium group-hover:underline mt-auto">
                     Read More →
                   </span>

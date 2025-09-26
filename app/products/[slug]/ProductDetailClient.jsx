@@ -4,8 +4,11 @@ import Footer from "@/components/landingpage/Footer";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function ProductDetailClient({ product, relatedProducts = [] }) {
+
+    
   const [activeImage, setActiveImage] = useState(product.image);
   const [showPopup, setShowPopup] = useState(false);
   const [status, setStatus] = useState("");
@@ -98,7 +101,7 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
                 ) : (
                   <Image
                     src={activeImage.src}
-                    alt="Bar Bending Machine Supplier"
+                    alt="paper cup making machine"
                     width={600}
                     height={400}
                     unoptimized
@@ -270,7 +273,7 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
                 type="tel"
                 name="phone"
                 maxLength={10}
-                 pattern="[0-9]{10}"
+                pattern="[0-9]{10}"
                 placeholder="Your Phone"
                 required
                 className="w-full p-2 md:p-3 rounded-md border focus:ring-2 focus:ring-yellow-500 text-sm md:text-base"
@@ -372,9 +375,25 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
                   </p>
                 </a>
               ))}
+
+              
             </div>
           </div>
         )}
+<div className="flex justify-center items-center my-4">
+  <Link href="/products">
+    <button
+      className="px-8 py-3 cursor-pointer bg-gradient-to-r from-amber-500 to-red-500 
+      text-white text-lg font-medium rounded-full 
+      shadow-md hover:shadow-lg 
+      hover:brightness-110 transition-all duration-300"
+    >
+      Explore More
+    </button>
+  </Link>
+</div>
+
+
       </section>
 
       <Footer />

@@ -12,19 +12,17 @@ import Cta2 from "@/components/landingpage/Cta2";
 import Testimonials from "@/components/landingpage/Testimonials";
 import Youtube from "@/components/landingpage/Youtube";
 
-
 import Productcategory from "@/components/landingpage/Productcategory";
 import Check from "@/components/landingpage/Check";
 import Popup from "@/components/Popup";
 import Footer from "@/components/landingpage/Footer";
-
+import Social from "@/components/landingpage/Social";
 import Gallery from "@/components/landingpage/Gallery";
 
 export default function Home() {
   return (
     <>
-
-
+      <Social />
       <Navbar />
       <Popup></Popup>
       <AccordionHero></AccordionHero>
@@ -34,12 +32,12 @@ export default function Home() {
       <Whychoose></Whychoose>
       <Bestseller></Bestseller>
       <Process></Process>
+      <Check></Check>
 
       <Gallery></Gallery>
 
       <Cta></Cta>
 
-      <Check></Check>
       <Barbending></Barbending>
       <Youtube></Youtube>
       <Testimonials></Testimonials>

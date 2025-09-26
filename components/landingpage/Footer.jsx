@@ -24,11 +24,12 @@ const categories = [
   { id: "ride-on-roller-plate-compactor", name: "RIDE ON ROLLER/ PLATE COMPACTOR" },
   { id: "surveying-instrument", name: "Surveying Instruments" },
   { id: "trolley-vibrator", name: "Trolley Vibrator" },
+    { id: "air-quality-index", name: "Air Quality Index" },
 ];
 
 const Footer = () => {
   const [openSection, setOpenSection] = useState(null);
-
+const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleSection = (section) => {
     setOpenSection(openSection === section ? null : section);
   };
@@ -51,7 +52,7 @@ const Footer = () => {
                   height={50}
                   className="bg-white"
                 />
-                <span className="absolute -top-0 -right-0 text-xs font-bold text-[#FAAC18]">
+                <span className="absolute -top-0 -right-0 text-xs font-bold text-black">
                   ®
                 </span>
               </div>
@@ -64,7 +65,7 @@ const Footer = () => {
 
               {/* Address */}
               <div className="flex items-start gap-2 mt-4 text-sm">
-                <MapPin className="w-5 h-5 text-[#FAAC18]" />
+                <MapPin className="w-10 h-10 text-[#FAAC18]" />
                 <p>
                   4A, S-Block, Vishwas Park, Raja Puri Main Road,
                    Opp. Sec – 3, Dwarka, New Delhi – 110059
@@ -181,22 +182,51 @@ const Footer = () => {
 
             {/* Column 4: Trust Certificate */}
             <div>
-              <h3 className="text-[#FAAC18] font-semibold text-lg mb-4">Trust Elite Certificate</h3>
-              <Image
-                src="/home/trustseal.png"
-                alt="Trust Elite"
-                width={100}
-                height={100}
-                className="mb-4"
-              />
-              <p className="text-sm leading-relaxed">
-                We are proud to present the Trust Elite Certificate of
-                Excellence to Shree Shakti Infratech, recognizing their
-                commitment to exceptional customer service, outstanding
-                business practices, and a dedication to building trust with
-                their customers.
-              </p>
-            </div>
+      <h3 className="text-[#FAAC18] font-semibold text-lg mb-4">
+        Trust Elite Certificate
+      </h3>
+
+      {/* Thumbnail Image */}
+      <div className="cursor-pointer inline-block" onClick={() => setIsModalOpen(true)}>
+        <Image
+          src="/home/trustseal.png"
+          alt="Trust Elite"
+          width={100}
+          height={100}
+          className="mb-4 rounded-lg hover:scale-105 transition-transform"
+        />
+      </div>
+
+      <p className="text-sm leading-relaxed">
+        We are proud to present the Trust Elite Certificate of Excellence to Shree Shakti Infratech, recognizing their commitment to exceptional customer service, outstanding business practices, and a dedication to building trust with their customers.
+      </p>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black/60 bg-opacity-30 flex items-center justify-center z-6000">
+          <div className="relative">
+            {/* Close Button */}
+            <button
+              className="absolute top-2 right-2 text-white text-2xl font-bold"
+              onClick={() => setIsModalOpen(false)}
+            >
+              ✕
+            </button>
+
+            {/* Full Certificate */}
+            <Image
+              src="/cert.webp" // full-size certificate
+              alt="Trust Elite Full"
+              width={800} // adjust as needed
+              height={500} // adjust as needed
+              className="max-w-[90vw] max-h-[80vh]  rounded-lg shadow-lg  "
+            />
+          </div>
+        </div>
+      )}
+    </div>
+
+
           </div>
         </div>
       </div>

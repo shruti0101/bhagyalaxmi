@@ -1,11 +1,11 @@
 import Footer from "@/components/landingpage/Footer";
+import Navbar from "@/components/Navbar";
+import Link from "next/link";
 import { connect } from "@/Database/Db";
 import Blog from "@/models/blog";
 import { notFound } from "next/navigation";
-import Navbar from "@/components/Navbar";
-import Link from "next/link";
 
-// ✅ Blog-specific metadata (doesn't inherit from layout.js)
+// ✅ Dynamic metadata for SEO
 export async function generateMetadata({ params }) {
   await connect();
   const blog = await Blog.findOne({ permalink: params.slug });
@@ -40,27 +40,22 @@ export default async function BlogPage({ params }) {
   const blog = await Blog.findOne({ permalink: params.slug });
   if (!blog) return notFound();
 
-  let relatedBlogs = [];
-  if (blog.category) {
-    relatedBlogs = await Blog.find({
-      category: blog.category,
-      _id: { $ne: blog._id },
-    })
-      .limit(3)
-      .select("title image permalink metaDescription createdAt");
-  } else {
-    relatedBlogs = await Blog.find({ _id: { $ne: blog._id } })
-      .limit(3)
-      .select("title image permalink metaDescription createdAt");
-  }
+  // ✅ Related blogs (excluding current one)
+  let relatedBlogs = await Blog.find({
+    _id: { $ne: blog._id },
+    ...(blog.category ? { category: blog.category } : {}),
+  })
+    .limit(3)
+    .select("title image permalink metaDescription createdAt");
 
   return (
     <>
       <Navbar />
 
-      <section className="relative w-full h-[280px] md:h-[400px] flex items-center justify-center overflow-hidden ">
+      {/* ✅ Hero Section */}
+      <section className="relative w-full h-[280px] md:h-[400px] flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-fixed bg-center bg-cover flex flex-col items-center justify-center text-center "
+          className="absolute inset-0 bg-fixed bg-center bg-cover flex flex-col items-center justify-center text-center"
           style={{ backgroundImage: "url('/home/bg-footer.webp')" }}
         >
           <h1 className="text-white mt-10 text-3xl md:text-6xl font-bold">
@@ -69,10 +64,10 @@ export default async function BlogPage({ params }) {
         </div>
       </section>
 
+      {/* ✅ Blog Layout */}
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 my-10 px-4 md:px-6">
+        {/* Main Blog Content */}
         <main className="flex-1">
-      
-
           {blog.image && (
             <img
               src={blog.image}
@@ -87,12 +82,11 @@ export default async function BlogPage({ params }) {
 
           <div className="my-6 border-t border-gray-300" />
 
-          <article
-            className="prose prose-lg max-w-none"
-            dangerouslySetInnerHTML={{ __html: blog.content }}
-          />
+        <div className="blog-content" dangerouslySetInnerHTML={{ __html: blog.content }} />
+
         </main>
 
+        {/* Sidebar: Related Blogs */}
         {relatedBlogs.length > 0 && (
           <aside className="w-full lg:w-80 shrink-0 mt-10 lg:mt-0">
             <h2 className="text-xl md:text-2xl font-bold mb-6 text-gray-800">

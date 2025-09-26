@@ -32,7 +32,7 @@ const Navbar = () => {
                 height={120}
                 priority
               />
-              <span className="absolute top-0 right-0 text-sm font-bold text-[#FAAC18]">
+              <span className="absolute top-0 right-0 text-sm font-bold text-black">
                 ®
               </span>
             </Link>
@@ -118,7 +118,7 @@ const Navbar = () => {
                 width={120}
                 height={80}
               />
-              <span className="absolute top-0 right-0 text-xs font-bold text-[#FAAC18]">
+              <span className="absolute top-0 right-0 text-xs font-bold text-black">
                 ®
               </span>
             </Link>

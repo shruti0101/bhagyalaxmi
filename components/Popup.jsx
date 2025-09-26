@@ -70,11 +70,12 @@ export default function PopupForm({ onClose }) {
           <input type="hidden" name="_sponsor" value="false" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_subject" value="New Enquiry from Website" />
+           <input type="hidden" name="_nosponsor"  value="false"/>
           <input
             type="hidden"
             name="_autoresponse"
             value="Thank you for reaching out! We will get back to you shortly."
-          />
+          />  
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_cc" value="shrutiguptabhu@gmail.com" />
 

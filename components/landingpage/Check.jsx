@@ -17,7 +17,7 @@ const Check = () => {
         <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gray-200 clip-path-custom z-0"></div>
 
         {/* Content */}
-        <div className="relative z-20 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 items-center">
+        <div className="relative z-20 max-w-7xl mx-auto  grid grid-cols-1 md:grid-cols-3 items-center">
           
           {/* Left Machine */}
           <div
@@ -37,10 +37,10 @@ const Check = () => {
      
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white leading-snug">
-              Reliable Partnerships for Every Building Need
+            Bar Bending Machines & Anti Smog Guns You Can Trust
             </h2>
             <p className="text-lg md:text-2xl font-medium text-yellow-500">
-              Delivering quality, innovation, and trust in every project we undertake.
+            Engineered for precision steel bending and effective dust suppression
             </p>
 
 
