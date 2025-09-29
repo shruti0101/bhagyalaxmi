@@ -45,7 +45,7 @@ export default function ProductsPage() {
           style={{ backgroundImage: "url('/home/banner.webp')" }}
         >
           <div className="absolute inset-0 bg-black/20"></div>
-          <h1 className="text-7xl font-bold text-white z-10">
+          <h1 className="px-10   text-center text-3xl md:text-7xl font-bold text-white z-10">
             {getCategoryName()}
           </h1>
         </div>

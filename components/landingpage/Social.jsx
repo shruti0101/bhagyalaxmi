@@ -3,7 +3,7 @@ import { FaWhatsapp, FaInstagram, FaEnvelope, FaFacebookF } from 'react-icons/fa
 
 const SocialBar = () => {
   return (
-    <div className="hidden md:flex fixed top-1/3 right-0 z-50 flex-col items-center space-y-3">
+    <div className=" fixed top-1/3 right-0 z-50 flex-col items-center space-y-3">
       {/* WhatsApp */}
       <a
         href="https://wa.me/+918826544443"

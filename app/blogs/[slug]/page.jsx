@@ -58,7 +58,7 @@ export default async function BlogPage({ params }) {
           className="absolute inset-0 bg-fixed bg-center bg-cover flex flex-col items-center justify-center text-center"
           style={{ backgroundImage: "url('/home/bg-footer.webp')" }}
         >
-          <h1 className="text-white mt-10 text-3xl md:text-6xl font-bold">
+          <h1 className="text-white  mt-10 px-5 text-xl md:text-6xl font-bold">
             {blog.title}
           </h1>
         </div>
@@ -81,8 +81,20 @@ export default async function BlogPage({ params }) {
           </p>
 
           <div className="my-6 border-t border-gray-300" />
+<div
+  className="
+    blog-content 
+    prose max-w-none
+    prose-h1:text-xl prose-h1:font-bold prose-h1:leading-snug
+    prose-h2:text-lg prose-h2:font-semibold
+    prose-h3:text-base
+    prose-p:text-sm
+    md:prose-h1:text-3xl md:prose-h2:text-2xl md:prose-h3:text-xl
+  "
+  dangerouslySetInnerHTML={{ __html: blog.content }}
+/>
 
-        <div className="blog-content" dangerouslySetInnerHTML={{ __html: blog.content }} />
+
 
         </main>
 

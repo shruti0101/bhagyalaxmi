@@ -16,13 +16,13 @@ import Productcategory from "@/components/landingpage/Productcategory";
 import Check from "@/components/landingpage/Check";
 import Popup from "@/components/Popup";
 import Footer from "@/components/landingpage/Footer";
-import Social from "@/components/landingpage/Social";
+
 import Gallery from "@/components/landingpage/Gallery";
 
 export default function Home() {
   return (
     <>
-      <Social />
+   
       <Navbar />
       <Popup></Popup>
       <AccordionHero></AccordionHero>

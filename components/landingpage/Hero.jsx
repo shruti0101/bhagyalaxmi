@@ -19,7 +19,7 @@ const images = [
     id: 2,
     src: "/home/banner-1.webp",
     title: "Anti Smog Gun",
-    subtitle: "Anti-Smog Gun – Advanced Air Pollution Control",
+    subtitle: "Advanced Air Pollution Control",
     description:
       "High-performance Anti Smog Gun designed for heavy-duty operations, ensuring long-lasting durability and superior efficiency in smoke and particulate removal.",
   },

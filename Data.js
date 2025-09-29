@@ -9014,7 +9014,7 @@ export const products = [
     slug: "air-quality-index-monitor",
     name: "Air Quality Index Monitor",
     category: "air-quality-index",
-
+  model: "SSI-AQI",
     image: {
       src: "/products/aqi/1.webp",
       alt: "Air Quality Index Monitor for Indoor & Outdoor Use",
@@ -9114,7 +9114,7 @@ export const products = [
     slug: "air-quality-index-display",
     name: "Air Quality Display",
     category: "air-quality-index",
-
+  model: "SSI-AQI",
     image: {
       src: "/products/aqi/aqidisplay/1.webp",
       alt: "Air Quality Index display for Indoor & Outdoor Use",
@@ -9206,7 +9206,7 @@ export const products = [
     slug: "air-quality-sensor",
     name: "Air Quality Sensor",
     category: "air-quality-index",
-
+  model: "SSI-AQI",
     image: {
       src: "/products/aqi/3.webp",
       alt: "Air Quality Index display for Indoor & Outdoor Use",
@@ -9303,7 +9303,7 @@ export const products = [
     slug: "portable-air-quality-monitor",
     name: "Portable Air Quality Monitor",
     category: "air-quality-index",
-
+  model: "SSI-AQI",
     image: {
       src: "/products/aqi/3.webp",
       alt: "Air Quality Index display for Indoor & Outdoor Use",

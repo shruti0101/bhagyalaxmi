@@ -63,7 +63,7 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
             {product.name}
           </h1>
           <p className="text-base z-100 md:text-lg text-white mt-2">
-            Model No.: {product.model}
+          Brand: SSI
           </p>
         </div>
       </section>
