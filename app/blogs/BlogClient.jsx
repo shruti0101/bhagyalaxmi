@@ -42,11 +42,11 @@ export default function BlogsPage() {
           className="absolute inset-0 md:bg-fixed bg-center bg-cover bg-no-repeat flex items-center justify-center"
           style={{ backgroundImage: "url('/home/hero4.webp')" }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-white z-10">Blogs</h1>
+          <h2 className="text-5xl md:text-7xl font-bold text-white z-10">Blogs</h2>
         </div>
       </section>
       <div className="max-w-6xl mx-auto p-6 md:mt-10">
-        <h1 className="text-4xl font-bold mb-12 text-center">🔍 Explore Our Blogs</h1>
+        <h2 className="text-4xl font-bold mb-12 text-center">🔍 Explore Our Blogs</h2>
 
         {/* Loader */}
         {loading ? (
