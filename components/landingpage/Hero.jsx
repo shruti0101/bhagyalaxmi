@@ -71,7 +71,12 @@ const AccordionHero = () => {
                 />
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="relative pt-20 z-10 flex flex-col justify-center items-start h-full px-6 text-white">
-                  <h1 className="text-3xl font-bold mb-2">{item.title}</h1>
+                {item.id === 1 ? (
+  <h1 className="text-3xl font-bold mb-2">{item.title}</h1>
+) : (
+  <h2 className="text-3xl font-bold mb-2">{item.title}</h2>
+)}
+
                   <p className="text-2xl text-[#FAAC18] font-semibold">
                     {item.subtitle}
                   </p>

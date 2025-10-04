@@ -13,8 +13,8 @@ const roboto = Roboto({
 
 export const metadata = {
 
-  title: "Bar Bending Machine Supplier | Bar Bending Machine Price",
-  description: "Shree Shakti Infratech Bar Bending Machine Supplier a specialized tools that take those tough steel bars and bend them precisely to the angles needed for construction.",
+  title: "Bar Bending Machine Supplier in India",
+  description: "Bar Bending Machine Supplier-Shree Shakti Infratech are the most accurate machine that offer you efficient performance",
   icons: {
     icon: "/logo.png", 
   },
