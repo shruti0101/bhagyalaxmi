@@ -83,6 +83,7 @@ const Footer = () => {
     <Phone className="w-5 h-5 text-[#FAAC18] hover:scale-110 transition-transform duration-200" />
     <h5 className="text-[16px] font-semibold underline">+918826544443</h5>
   </a>
+  
 </div>
 
 

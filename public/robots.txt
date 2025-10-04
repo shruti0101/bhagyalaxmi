@@ -1,4 +1,6 @@
+# Allow all crawlers
 User-agent: *
-Allow: /
+Disallow:
 
-Sitemap: https://barbendingmachinesupplier.com/sitemap.xml
+# Sitemap location
+Sitemap: https://barbendingmachinesupplier.com/sitemap_updated.xml
