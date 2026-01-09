@@ -1,195 +1,181 @@
 "use client";
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import Link from "next/link";
-// Lazy load Image from next/image
+import { CheckCheck } from "lucide-react";
+
 const Image = lazy(() => import("next/image"));
 
 const products = [
-{
-  id: 1,
-  badge: "Best Seller",
-  name: "Automatic Bar Bending Machine 32-40 MM",
-  image: "/products/bpm/Automatic Bar Bender/1.webp",
-  details: {
-    "Bar Dimensions": "8mm to 32mm",
-    "Model Name/Number": "SSI GW 42",
-    "Max Bending Radius": "32MM",
-    "Power Source": "Electric",
-    "Max Bending Angle": "32",
-    "Motor Speed": "2800",
-    "Machine Weight": "270 KG",
-    "TMT Bar Steel Dia.": "5 hp",
-    "Gear Oil": "90 no.",
-    "Voltage": "440 volt",
+  {
+    id: 1,
+    badge: "Best Seller",
+    name: "Bulk Milk Cooler (BMC) – Direct Expansion",
+    image: "/prod/6.jpg",
+    details: {
+      "Capacity": "500 Litres",
+      "Cooling System": "Direct Expansion (DX)",
+      "Material": "SS 304 Food Grade",
+      "Compressor": "Hermetic",
+      "Application": "Village Dairy Collection",
+    },
   },
-},
-
-{
-  id: 5,
-  badge: "New Arrival",
-  name: "Anti-Fog Cannon Machine",
-  image: "/products/asg/Anti-Fog-Cannon-Machine/1.webp",
-  details: {
-    "Model": "RB-700",
-    "Throw Range": "25 metre",
-    "Automation Grade": "Semi Automatic",
-    "Material": "Mild Steel",
-    "Mounting": "Trolley",
-    "Water Pump Power": "2 HP",
-    "Rotation Angle": "90°",
-    "Elevation Angle": "60°",
-    "Dimension (L x W x H)": "8x5x6",
-    "Colour": "Yellow & Green"
-  }
-}
-,
-{
-  id: 16,
-  badge: "Best Seller",
-  name: "Concrete Mixer",
-  image: "/products/cm/CONCRETE MIXER/1.webp",
-  details: {
-    "Model": "SSI-MX-04",
-    "Capacity": "10/7 Cft. / One Bag",
-    "Motor": "5HP (Compton/Kirloskar)",
-    "Pneumatic Wheels": "4pcs",
-    "Engine": "6.5HP (Kirloskar)",
-    "Special Feature": "Heavy Duty Along with Wheel",
-    "Drum Size": "10mm-8mm-4mm",
-    "Drum Capacity": "560 Ltr (Approx)"
-  }
-},
-{
-  id: 52,
-  badge: "Hot Selling",
-  name: "Ride On Roller",
-  image: "/products/ror/RIDE ON ROLLER/1.webp",
-  details: {
-    "Model": "SSI-SMT-700",
-    "Walking/Driving Speed": "0-4 Km/H",
-    "Centrifugal Force": "25 KN",
-    "Driving Motor": "Hydraulic",
-    "Vibration Frequency": "70 HZ",
-    "Water Tank Capacity": "15 L",
-    "Weight": "700 Kg Approx",
-    "Power Source": "Diesel Engine / Petrol Engine (Optional)",
-    "Automation Grade": "Ride On Hydraulic Control",
-    "Brand": "SSI"
-  }
-}
-
-
-
-
-
+  {
+    id: 2,
+    badge: "New",
+    name: "Milk Storage Tank – Vertical",
+    image: "/prod/3.jpg",
+    details: {
+      "Capacity": "1000 Litres",
+      "Material": "Stainless Steel 304",
+      "Insulation": "PUF Layer",
+      "Finish": "Mirror Polish Inside",
+      "Usage": "Bulk Milk Holding",
+    },
+  },
+  {
+    id: 3,
+    badge: "Hot",
+    name: "Milk Chilling Plant",
+    image: "/prod/2.jpg",
+    details: {
+      "Model": "MCP-2000",
+      "Capacity": "2000 Litres/Hour",
+      "Cooling Type": "Rapid Cooling",
+      "Refrigerant": "Eco-Friendly Gas",
+      "Power Consumption": "Low Energy",
+    },
+  },
+  {
+    id: 4,
+    badge: "Top Rated",
+    name: "Milk Pasteurizer Machine",
+    image: "/prod/1.jpg",
+    details: {
+      "Capacity": "300 Litres",
+      "Heating Method": "Electric / Steam",
+      "Temperature Range": "Up to 95°C",
+      "Material": "SS 304/316",
+      "Application": "Milk, Curd, Ghee",
+    },
+  },
  
 ];
 
-const ProductCarousel = () => {
-  const [current, setCurrent] = useState(0);
 
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % products.length);
-  };
+export default function ProductSectionPremium() {
+  const [active, setActive] = useState(0);
 
-  const prevSlide = () => {
-    setCurrent((prev) => (prev === 0 ? products.length - 1 : prev - 1));
-  };
-
-  // Auto slide every 5 seconds
+  /* 🔁 AUTO SLIDE */
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % products.length);
+    }, 5000); // change slide every 5 sec
+
     return () => clearInterval(interval);
   }, []);
 
-  const product = products[current];
+  const product = products[active];
 
   return (
-    <>
-      <h2 className="text-3xl md:mt-5 md:text-5xl font-bold text-center">
-        Featured <span className="text-[#FAAC18]">Products</span>
-      </h2>
-      <div className=" max-w-sm text-sm md:text-xl  md:max-w-4xl leading-[1.5]  mx-auto mt-4 text-center text-gray-700">
-        <p className="text-center  p-2 md:p-0">
-          At <strong>Shree Shakti Infratech,</strong> we take pride in offering
-          top-quality construction machinery that delivers durability,
-          precision, and value for money.  As a trusted
-          <strong> Bar Bending Machine Supplier,</strong> our featured range is
-          carefully selected to meet the demanding needs of modern construction
-          projects.
+    <section className="w-full mx-auto px-10 mt-10">
+      {/* Heading */}
+      <div className="text-center mb-7">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight capilalize">
+          Our <span className="text-blue-700">Bestsellers</span>
+        </h2>
+        <p className="mt-5 text-black max-w-2xl mx-auto text-lg">
+          Engineered construction machinery delivering unmatched durability,
+          productivity, and performance on-site.
         </p>
       </div>
-      <section className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center p-6 md:p-12 relative">
-        {/* Left - Product Image */}
 
-        <div className="relative flex justify-center">
-          {/* Badge */}
-          <span className="absolute top-4 left-4 bg-[#FAAC18] text-white text-sm font-semibold px-3 py-1 rounded">
-            {product.badge}
-          </span>
+      <div className="grid md:grid-cols-[340px_1fr] gap-12">
+        {/* LEFT SELECTOR */}
+        <div className="space-y-5 ">
+          {products.map((item, index) => (
+            <button
+              key={item.id}
+              onClick={() => setActive(index)}
+              className={`relative w-full text-left rounded-2xl p-5 transition-all duration-300 
+                ${
+                  active === index
+                    ? "bg-gradient-to-r from-blue-500/20 to-transparent shadow-lg border border-blue-500"
+                    : "bg-white border border-gray-200 hover:shadow-md"
+                }`}
+            >
+              {active === index && (
+                <span className="absolute left-0 top-4 h-[70%] w-[4px] bg-blue-500 rounded-full" />
+              )}
 
-          <Suspense
-            fallback={
-              <div className="w-[400px] h-[400px] bg-gray-200 animate-pulse" />
-            }
-          >
-            <Image
-              src={product.image}
-              alt={product.name}
-              width={400}
-              height={400}
-              priority={current === 0} // prioritize first image for better LCP
-              className="object-contain "
-            />
-          </Suspense>
-
-          {/* Left Arrow */}
-          <button
-            onClick={prevSlide}
-            aria-label="Previous Slide"
-            className="absolute cursor-pointer left-0 top-1/2 -translate-y-1/2 bg-[#FAAC18] text-white w-8 h-8 flex items-center justify-center rounded-full shadow-md hover:bg-[#e99b10] transition"
-          >
-            &#10094;
-          </button>
-
-          {/* Right Arrow */}
-          <button
-            onClick={nextSlide}
-            aria-label="Next Slide"
-            className="absolute cursor-pointer right-0 top-1/2 -translate-y-1/2 bg-[#FAAC18] text-white w-8 h-8 flex items-center justify-center rounded-full shadow-md hover:bg-[#e99b10] transition"
-          >
-            &#10095;
-          </button>
+              <p className="text-xs uppercase tracking-wide text-gray-500">
+                {item.badge}
+              </p>
+              <h4 className="mt-1 font-semibold text-lg leading-snug">
+                {item.name}
+              </h4>
+            </button>
+          ))}
         </div>
 
-        {/* Right - Product Details */}
-        <div className="bg-black text-white p-4 md:p-6 rounded border-2 border-purple-600">
-          <h2 className="text-2xl md:text-3xl font-bold mb-5 text-center">
-            {product.name}
-          </h2>
+        {/* RIGHT PANEL */}
+        <div className="relative rounded-3xl  bg-white/80 backdrop-blur-xl shadow-2xl border border-blue-200 p-8 md:p-10 ">
+          <div className="grid md:grid-cols-2 gap-10 items-center ">
+            {/* IMAGE */}
+            <div className="relative flex justify-center">
+              <div className="absolute -bottom-6 w-[70%] h-6 bg-black/10 blur-xl rounded-full" />
 
-          <div className="grid grid-cols-2 gap-y-2 text-md">
-            {Object.entries(product.details).map(([key, value]) => (
-              <React.Fragment key={key}>
-                <p>{key}</p>
-                <p className="text-gray-300">{value}</p>
-              </React.Fragment>
-            ))}
-          </div>
+              <Suspense
+                fallback={
+                  <div className="w-[320px] h-[320px] bg-gray-200 animate-pulse rounded-2xl" />
+                }
+              >
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={420}
+                  height={420}
+                  className="object-contain relative z-10"
+                />
+              </Suspense>
 
-          {/* Buttons */}
-          <div className="flex gap-4 mt-8 justify-center">
-         <Link href="/contact-us">
-                   <button className="bg-[#FAAC18] cursor-pointer text-white font-semibold px-6 py-3 rounded hover:bg-[#e99b10] transition">
+              <span className="absolute top-4 left-4 bg-[#FAAC18] text-white text-xs px-4 py-1 rounded-full z-10">
+                {product.badge}
+              </span>
+            </div>
+
+            {/* DETAILS */}
+            <div>
+              <h3 className="text-3xl font-bold mb-6">
+                {product.name}
+              </h3>
+
+              <div className="space-y-4 text-sm">
+                {Object.entries(product.details).map(([key, val]) => (
+                  <div
+                    key={key}
+                    className="flex items-center justify-between gap-4"
+                  >
+                    <span className="text-black flex items-center gap-2">
+                      < CheckCheck className="text-blue-600" />
+                      {key}
+                    </span>
+                    <span className="font-medium text-black">
+                      {val}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <Link href="/contact-us">
+                <button className="mt-8 inline-flex items-center gap-2 bg-blue-500 text-white px-8 py-4 cursor-pointer rounded-xl font-semibold hover:shadow-lg hover:bg-blue-600 transition">
                   Inquire Now
+                  <span className="text-xl">→</span>
                 </button>
-                </Link>
-          
+              </Link>
+            </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
-};
-
-export default ProductCarousel;
+}

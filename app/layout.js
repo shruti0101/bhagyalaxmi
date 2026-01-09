@@ -5,20 +5,22 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Social from "@/components/landingpage/Social";
 import Stickybutton from "@/components/landingpage/Stickybutton";
 import Whatsapp from "@/components/Whatsapp";
-const roboto = Roboto({
+import { Inter } from "next/font/google";
+
+export const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-roboto",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-export const metadata = {
 
-  title: "Bar Bending Machine Supplier in India",
-  description: "Bar Bending Machine Supplier-Shree Shakti Infratech are the most accurate machine that offer you efficient performance",
-  icons: {
-    icon: "/logo.png", 
-  },
-};
+// export const metadata = {
+
+//   title: "bhagya laxmi Machine Supplier in India",
+//   description: "bhagya laxmi Machine Supplier",
+//   icons: {
+//     icon: "/logo.jpeg", 
+//   },
+// };
 
 export default function RootLayout({ children }) {
   return (
@@ -30,7 +32,7 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${roboto.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
 
    <Social />
         <Stickybutton />

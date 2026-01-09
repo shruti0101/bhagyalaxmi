@@ -1,69 +1,70 @@
 'use client'
 import Link from 'next/link'
 import React from 'react'
-
+import Image from 'next/image'
 
 const Check = () => {
   return (
 
-      <section className="hidden md:block relative w-full h-auto flex items-center justify-center overflow-hidden">
+      <section className="hidden md:flex relative w-full h-[95vh]  items-center justify-center overflow-hidden ">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/home/hero4.webp')" }}
+          style={{ backgroundImage: "url('/ctabg.png')" }}
         ></div>
 
+<div className='absolute inset-0 bg-black/20 '></div>
         {/* Overlay Shape (angled yellow) */}
-        <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gray-200 clip-path-custom z-0"></div>
 
         {/* Content */}
-        <div className="relative z-20 max-w-7xl mx-auto  grid grid-cols-1 md:grid-cols-3 items-center">
+        <div className="relative  z-20 w-full mx-auto  grid grid-cols-1 md:grid-cols-3 items-center">
           
           {/* Left Machine */}
           <div
-            className="flex justify-center md:justify-end"
+            className="flex mt-10"
         
           >
-            <img
-              src="/feature2.webp"
+            <Image
+               width={800}
+            height={800}
+              src="/prod/major1.png"
               alt="Machine Left"
-              className="w-[300px] md:w-[400px] drop-shadow-2xl relative z-20"
+              className="w-full h-full object-cover drop-shadow-2xl relative z-20"
             />
           </div>
 
           {/* Center Text */}
           <div
-            className="text-center md:text-left col-span-1 md:col-span-1 space-y-4 relative z-20"
+            className="text-center md:text-left col-span-1 md:col-span-1 space-y-4 relative z-20 mt-10" 
      
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white leading-snug">
-            Bar Bending Machines & Anti Smog Guns You Can Trust
-            </h2>
-            <p className="text-lg md:text-2xl font-medium text-yellow-500">
-            Engineered for precision steel bending and effective dust suppression
-            </p>
+         <h2 className="text-3xl  font-bold text-white leading-snug">
+  Bulk Milk Cooler Machines You Can Rely On
+</h2>
+          
+<p className="text-base  font-medium text-white">
+Looking for a trusted <strong>bulk milk cooler manufacturer</strong>  and reliable <strong>dairy equipment?</strong>  Bhagyalaxmi Industries is here to provide expert guidance and customized solutions for your dairy operations. Whether you need <strong>Bulk Milk Coolers, Milk Pasteurizers, Milk Storage Tanks, Milk Cooling Tank, Milk ATM or complete Mini Dairy Plants,</strong>  High Pressure Milk Homogenizer we have the right solution for you.
+</p>
 
 
-            <Link href="/products">
-                <button
-              className="px-6 py-3 cursor-pointer bg-black text-white font-semibold rounded-2xl shadow-lg hover:bg-gray-900 transition"
-         
-            >
-              Learn More
-            </button>
-            </Link>
+          <button className="px-6 py-4 cursor-pointer bg-white text-black font-semibold rounded-2xl shadow-lg hover:bg-gray-100 transition">
+  View Milk Cooler Machines
+</button>
+
         
           </div>
 
           {/* Right Machine */}
           <div
-            className="flex justify-center md:justify-start"
+            className="flex justify-center    mt-30 "
     
           >
-            <img
-              src="/home/smog-gun.webp"
+            <Image
+            width={1000}
+            height={1000}
+              src="/prod/major2.png"
               alt="Machine Right"
-              className="w-[300px] md:w-[400px] drop-shadow-2xl relative z-20"
+              className="w-full h-full object-cover  drop-shadow-2xl  z-20"
             />
           </div>
         </div>
@@ -71,7 +72,7 @@ const Check = () => {
         {/* Custom Clip Path */}
         <style jsx>{`
           .clip-path-custom {
-            clip-path: polygon(0 40%, 120% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 70%, 100% 0, 100% 100%, 0% 100%);
           }
         `}</style>
       </section>

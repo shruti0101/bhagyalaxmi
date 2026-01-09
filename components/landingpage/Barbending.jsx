@@ -1,75 +1,105 @@
+"use client";
 import React from "react";
+import { CheckCircle, Factory } from "lucide-react";
 import Image from "next/image";
-const Barbending = () => {
+export default function BulkMilkCoolerBlueSection() {
   return (
-    <div>
-      <section className="bg-[#FFFAF1]   relative  h-full">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
-          {/* Background Rectangle */}
-          <Image
-            src="/home/about-rect.webp"
-            width={600}
-            height={200}
-            alt="Background rectangle"
-            className="w-30 z-10 md:w-120 h-auto absolute right-0 top-0"
-          />
-          <h3 className="max-w-2xl leading-[1.3] font-bold mb-3 text-3xl md:text-5xl">
-            Bar Bending Machine{" "}
-            <span className="text-[#FAAC18] ">Supplier in India</span>{" "}
-          </h3>
+    <section className="relative py-20 overflow-hidden bg-gradient-to-br from-[#f4f9ff] via-white to-[#eef6ff]">
+      {/* Soft accents */}
+      <div className="absolute -top-24 -left-24 w-[260px] h-[260px] bg-blue-300/20 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-[-100px] right-[-100px] w-[260px] h-[260px] bg-cyan-300/20 blur-[120px] rounded-full"></div>
 
-          <div className="text-gray-700 text-xl max-w-3xl">
-            <p className="mb-5">
-              As a leading{" "}
-              <strong>
-                {" "}
-                Bar Bending Machine Supplier in India, Shree Shakti Infratech
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* LEFT CONTENT */}
+          <div>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-3">
+              <Factory size={16} />
+              Trusted Dairy Equipment Manufacturer
+            </div>
+
+            {/* H1 */}
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
+              Leading{" "}
+              <span className="text-blue-700 animate-pulse">Bulk Milk Cooler</span>{" "}
+              Manufacturer
+            </h1>
+
+            {/* Description */}
+            <p className="mt-4 text-black text-lg leading-relaxed max-w-2xl">
+              <strong className="text-black">
+                Bhagyalaxmi Industries
               </strong>{" "}
-              provides robust, precision-engineered machines designed to meet
-              the demands of modern construction projects. Our bar bending
-              machines deliver accurate bends, faster operations, and reduced
-              manual effort, making them the preferred choice for contractors
-              across the country.
+              is a trusted <strong>bulk milk cooler manufacturer,</strong>  delivering <strong>efficient,
+              hygienic, and durable milk cooling solutions for modern dairy
+              operations.</strong>  Our <strong>bulk milk coolers</strong>  are designed to rapidly reduce
+              milk temperature, preserving freshness and preventing bacterial
+              growth. Built using food-grade stainless steel and advanced refrigeration
+              technology, our systems ensure consistent performance, easy
+              maintenance, and long service life across <strong> dairy farms, milk
+              collection centers, and processing plants.</strong>
             </p>
 
-            <p className="mb-5">
-              At <strong>Shree Shakti Infratech,</strong> we take pride in being
-              a <strong>Bar Bending Machine Supplier in India</strong> that
-              offers products manufactured from premium-grade materials and
-              tested under strict ISO 9001:2013 quality standards. Each machine
-              is built for long-term durability, minimal maintenance, and
-              reliable performance on residential, commercial, and
-              infrastructure sites.
+         
+
+            {/* WHY CHOOSE US */}
+            <div className="mt-2 space-y-4">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="text-blue-600 mt-1" />
+                <p className="text-black">
+                  Rapid and uniform cooling to maintain milk quality
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle className="text-blue-600 mt-1" />
+                <p className="text-black">
+                  Hygienic, corrosion-resistant & easy-to-clean design
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <CheckCircle className="text-blue-600 mt-1" />
+                <p className="text-black">
+                  Energy-efficient operation for long-term cost savings
+                </p>
+              </div>
+            </div>
+
+            {/* PRODUCT RANGE */}
+            <p className="mt-5 text-black text-base max-w-2xl">
+              In addition to <strong>Bulk Milk Coolers,</strong>  we also manufacture and supply
+            <strong>Milk Pasteurizers, Milk Storage Tanks, Stainless Steel Liquid
+              Mixing Tanks, Steam Boilers, Semi-Automatic Mini Dairy Plants,
+              Milk ATMs, Milk Chilling Equipment, Milk Cooling Tanks,</strong>   and other
+              dairy processing solutions.
             </p>
 
-            <p className="mb-5">
-              When you choose us as your{" "}
-              <strong>Bar Bending Machine Supplier in India,</strong>
-              you get more than just equipment — you get nationwide delivery,
-              24/7 customer support, and expert technical assistance. We are
-              committed to delivering complete bending solutions that help you
-              work faster, safer, and more efficiently.
-            </p>
+            {/* CTA */}
+            <div className="mt-5">
+              <button className="bg-blue-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-blue-700 transition shadow-md">
+                Get Quote for Bulk Milk Cooler →
+              </button>
+            </div>
           </div>
 
-          <h3 className="text-xl md:text-3xl max-w-4xl"> <span className="text-[#FAAC18]">Shree Shakti Infratech</span>  – The Name You Can Trust as Your <span className="text-[#FAAC18]"> Bar Bending Machine Supplier in
-India.</span></h3>
+          {/* RIGHT IMAGE */}
+          <div
+            className="relative w-full h-[420px] md:h-[520px] rounded-xl overflow-hidden shadow-xl"
+            style={{
+              backgroundImage: "url(/home/abouthome1.avif)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+         
+          </div>
 
- 
-     {/* Left Side - Image */}
-           <div className="hidden md:block absolute bottom-6 right-8">
-             <Image
-               src="/home/ctaimg1.webp"
-               alt="Construction Equipment"
-               width={400}
-               height={400}
-               className="object-contain"
-             />
-           </div>
+          <Image className="hidden md:block absolute object-contain right-97 bottom-10 rounded-xl" width={250} height={200} alt="lead"src="/leadbottom.jpg"></Image>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
-};
-
-export default Barbending;
+}

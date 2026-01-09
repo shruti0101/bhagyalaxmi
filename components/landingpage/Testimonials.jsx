@@ -1,123 +1,115 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
+
+import { motion, AnimatePresence } from "framer-motion";
+import { Quote } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const testimonials = [
   {
-    name: "Rajesh Sharma",
-    text: "We have been sourcing our bar bending machines from Shree Shakti Infratech for the past 5 years. As a <strong class='text-black'>Bar Bending Machine Supplier in India</strong> Bar Bending Machine Supplier in India, they stand out for their product quality, on-time delivery, and responsive service team. Their machines have never let us down on site.",
-    // img: "/client1.jpg",
-    icon: "💬",
+    name: "Shivam Dairy Farms",
+    role: "Owner",
+    company: "Shivam Dairy Farms",
+    quote:
+      "Bhagyalaxmi Industries’ bulk milk cooler has improved milk quality and efficiency at our dairy farm. Excellent support and durable equipment!",
   },
   {
-    name: "Ananya Verma",
-    text: "Shree Shakti Infratech is more than just a supplier — they are a reliable partner. The  bar bending machine we purchased works flawlessly even under heavy usage, and their after-sales support is excellent. Truly the best <strong class='text-black'>Bar Bending Machine Supplier in India</strong> we have worked with.",
-    // img: "/client2.jpg",
-    icon: "👏",
+    name: "Greenfield Cooperatives",
+    role: "Operations Team",
+    company: "Greenfield Cooperatives",
+    quote:
+      "The Milk Chilling Equipment and Milk Storage Tanks provided by Bhagyalaxmi Industries are reliable and easy to maintain. Our operations have never been smoother.",
   },
   {
-    name: "Imran Khan",
-    text: "From the first inquiry to installation, the process was smooth and professional. The quality of their bar bending machines is unmatched, and the training provided to our team was a big plus. Highly recommend them as a trustworthy <strong class='text-black'>Bar Bending Machine Supplier in India</strong>.",
-    // img: "/client3.jpg",
-    icon: "💬",
+    name: "Annapurna Dairy Solutions",
+    role: "Director",
+    company: "Annapurna Dairy Solutions",
+    quote:
+      "We installed a Semi-Automatic Mini Dairy Plant from Bhagyalaxmi Industries, and it has significantly increased our productivity. Highly recommended for small and medium dairy units.",
   },
-
-   {
-    name: "Pooja Mehta",
-    text: "From consultation to installation, the process was seamless. As a <strong class='text-black'>Bar Bending Machine Supplier in India</strong>, they set a high benchmark for quality and service",
-    // img: "/client3.jpg",
-    icon: "💬",
+  {
+    name: "Krishna Dairy Pvt. Ltd.",
+    role: "Management Team",
+    company: "Krishna Dairy Pvt. Ltd.",
+    quote:
+      "The Stainless-Steel BMC and Milk Cooling Tanks we purchased are extremely durable and energy-efficient. The team’s support was excellent throughout the process.",
   },
-
-   {
-    name: "Arvind Yadav ",
-    text: "I recommend Shree Shakti Infratech to anyone looking for a trustworthy <strong class='text-black'>Bar Bending Machine Supplier in India</strong>. Their products have made our work faster and more efficient",
-    // img: "/client3.jpg",
-    icon: "💬",
+  {
+    name: "Shree Milk Producers Cooperative",
+    role: "Chairman",
+    company: "Shree Milk Producers Cooperative",
+    quote:
+      "Bhagyalaxmi Industries provides top-notch dairy equipment, from Milk Pasteurizers to Cooling Tanks. Their guidance and after-sales service are unmatched.",
   },
 ];
 
-const ClientsSpeak = () => {
+const VISIBLE_COUNT = 3;
+
+export default function Testimonials() {
+  const [startIndex, setStartIndex] = useState(0);
+
+  // Auto slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStartIndex((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const visibleTestimonials = Array.from({ length: VISIBLE_COUNT }).map(
+    (_, i) => testimonials[(startIndex + i) % testimonials.length]
+  );
+
   return (
-    <section className="max-w-full bg-[#FFFAF1] mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      {/* Left Section */}
-      <div>
-        <p className="text-black">Testimonials</p>
-        <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
-          Our Clients <span className="text-[#FAAC18]">Speak</span>
-        </h2>
-        <p className="mt-6 text-lg text-black leading-relaxed">
-          Discover how our bar bending machines have helped businesses achieve
-          precision, efficiency, and lasting results — straight from the people
-          who use them every day.
-        </p>
-     
-      </div>
+    <section
+      style={{ backgroundImage: "url(/bg.jpg)" }}
+      className="relative overflow-hidden bg-center bg-cover py-28"
+    >
+      <div className="relative mx-auto w-full px-8 md:px-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-8 text-center"
+        >
+          <h2 className="text-3xl md:text-4xl font-extrabold text-black">
+            What Our Clients Say
+          </h2>
+          <div className="mx-auto mt-3 h-[3px] w-12 rounded-full bg-blue-500" />
+        </motion.div>
 
-      {/* Right Section (Infinite Auto Scroll Testimonials) */}
-    {/* Right Section (Infinite Auto Scroll Testimonials) */}
-<div className="hidden md:block relative h-[400px] overflow-hidden">
-  <motion.div
-    className="flex flex-col gap-6"
-    animate={{ y: ["0%", "-50%"] }}
-    transition={{
-      repeat: Infinity,
-      duration: 20,
-      ease: "linear",
-    }}
-  >
-    {[...testimonials, ...testimonials].map((t, i) => (
-      <div
-        key={i}
-        className="flex items-start gap-4 bg-gray-100 transition-all duration-300 p-4 border-l-5 border-yellow-300 hover:bg-[#FFFAF1] rounded-sm"
-      >
-        <div>
-          <h4 className="font-semibold text-lg">{t.name}</h4>
-          <p
-            className="text-sm text-gray-600"
-            dangerouslySetInnerHTML={{ __html: t.text }}
-          />
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <AnimatePresence mode="popLayout">
+            {visibleTestimonials.map((item, index) => (
+              <motion.div
+                key={`${item.name}-${startIndex}-${index}`}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -40 }}
+                transition={{ duration: 0.6 }}
+                className="relative bg-white/70 backdrop-blur-xl p-5 shadow-xl"
+              >
+                <Quote className="mb-5 h-8 w-8 text-blue-700 opacity-80" />
+                <p className="text-base leading-relaxed text-black">
+                  “{item.quote}”
+                </p>
+
+                <div className="mt-6">
+                  <h4 className="text-sm font-semibold text-black">
+                    {item.name}
+                  </h4>
+                  <p className="text-xs text-blue-500">
+                    {item.role} ·{" "}
+                    <span className="text-blue-500">{item.company}</span>
+                  </p>
+                </div>
+
+                <span className="absolute inset-x-0 bottom-0 h-[3px] bg-blue-600" />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
-        <span className="ml-auto text-2xl">{t.icon}</span>
       </div>
-    ))}
-  </motion.div>
-</div>
-
-
-
-<div className="block md:hidden relative h-auto w-full px-4  overflow-hidden">
-  <motion.div
-    className="flex flex-row gap-4"
-    animate={{ x: ["0%", "-100%"] }} 
-    transition={{
-      repeat: Infinity,
-      duration: 25, // smoother, slower scroll
-      ease: "linear",
-    }}
-  >
-    {[...testimonials, ...testimonials].map((t, i) => (
-      <div
-        key={i}
-        className="flex flex-col justify-between min-w-[220px] max-w-[240px] bg-white shadow-md transition-all duration-300 p-3 border-l-4 border-yellow-400 hover:bg-[#FFFAF1] rounded-lg"
-      >
-        <div>
-          <h4 className="font-semibold text-base">{t.name}</h4>
-            <p
-                className="text-black text-sm leading-relaxed group-hover:text-white/90"
-                dangerouslySetInnerHTML={{ __html: t.text }}
-              />
-        </div>
-        <span className="ml-auto text-xl text-yellow-500">{t.icon}</span>
-      </div>
-    ))}
-  </motion.div>
-</div>
-
     </section>
   );
-};
-
-export default ClientsSpeak;
+}

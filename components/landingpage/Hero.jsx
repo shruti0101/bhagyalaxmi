@@ -1,174 +1,89 @@
 "use client";
-import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import "swiper/css";
-import { Typewriter } from "react-simple-typewriter";
-import Link from "next/link";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+// import Heroform from "@/components/Landingpage/Heroform";
 
-const images = [
-  {
-    id: 1,
-    src: "/home/hero1.webp",
-    title: "Bar Bending Supplier",
-    subtitle: "Machine Supplier",
-    description:
-      "Explore our wide selection of Bar Bending Machine Supplier, including automatic, hydraulic, and manual models for all your steel-bending needs.",
-  },
-  {
-    id: 2,
-    src: "/home/banner-1.webp",
-    title: "Anti Smog Gun",
-    subtitle: "Advanced Air Pollution Control",
-    description:
-      "High-performance Anti Smog Gun designed for heavy-duty operations, ensuring long-lasting durability and superior efficiency in smoke and particulate removal.",
-  },
-  {
-    id: 3,
-    src: "/home/hero2.webp",
-    title: "Monkey Lifting Machines",
-    subtitle: "Automatic & Manual",
-    description:
-      "High precision lifting machines available in automatic and manual versions for all industries.",
-  },
+// ✅ Separate images
+const desktopImages = ["/hero1.png",  ];
+const mobileImages = ["/mobile3.webp","/mobile2.webp","/mobile1.webp","/mobile4.webp"];
 
+const Hero = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
 
+  // Auto-slide every 5s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      slideNext();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
-  {
-    id: 4,
-    src: "/home/hero4.webp",
-    title: "Construction Tools",
-    subtitle: "Best in Market",
-    description:
-      "Quality construction tools designed for professional use in modern projects.",
-  },
-];
+  const slideNext = () => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % desktopImages.length);
+  };
 
-const AccordionHero = () => {
-  const [active, setActive] = useState(1);
+  const slidePrev = () => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 1 + desktopImages.length) % desktopImages.length);
+  };
 
   return (
     <>
-      {/* ✅ Mobile view (hidden on md and up) */}
-      <div className="block md:hidden h-[60vh] w-full">
-        <Swiper
-          spaceBetween={10}
-          slidesPerView={1}
-          loop={true}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          modules={[Autoplay]}
-        >
-          {images.map((item) => (
-            <SwiperSlide key={item.id}>
-              <div className="relative h-[60vh] w-full">
-                <img
-                  src={item.src}
-                  alt={item.title}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/40" />
-                <div className="relative pt-20 z-10 flex flex-col justify-center items-start h-full px-6 text-white">
-                {item.id === 1 ? (
-  <h1 className="text-3xl font-bold mb-2">{item.title}</h1>
-) : (
-  <h2 className="text-3xl font-bold mb-2">{item.title}</h2>
-)}
-
-                  <p className="text-2xl text-[#FAAC18] font-semibold">
-                    {item.subtitle}
-                  </p>
-                  <p className="mt-4 max-w-md text-base">{item.description}</p>
-                  <div className="mt-6 flex gap-4">
-                    <Link
-                      href="/contact-us"
-                      className="bg-white px-4 py-3 rounded-lg text-black font-semibold hover:text-[#FAAC18] transition text-base cursor-pointer inline-block"
-                    >
-                      Request a Quote →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
-      {/* ✅ Desktop view (hidden below md) */}
-      <div className="hidden md:flex h-[100vh] w-full overflow-hidden">
-        {images.map((item) => (
-          <div
-            key={item.id}
-            onClick={() => setActive(item.id)}
-            className={`relative cursor-pointer transition-[flex] duration-700 ease-in-out ${
-              active === item.id ? "flex-[4]" : "flex-[0.8]"
-            }`}
+      {/* ✅ Desktop Hero */}
+      <section className="relative hidden md:flex justify-end w-full h-[90vh] overflow-hidden">
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.div
+            key={`desktop-${currentIndex}`}
+            className="absolute inset-0 w-full h-full"
+            custom={direction}
+            initial={{ x: direction > 0 ? "100%" : "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: direction > 0 ? "-100%" : "100%" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
           >
-            <img
-              src={item.src}
-              alt={item.title}
-              className="absolute inset-0 h-full w-full object-cover"
+            <Image
+              src={desktopImages[currentIndex]}
+              alt={`Desktop banner ${currentIndex + 1}`}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
             />
-            <div
-              className={`absolute inset-0 transition-colors duration-500 ${
-                active === item.id ? "bg-black/10" : "bg-black/30"
-              }`}
+          </motion.div>
+        </AnimatePresence>
+
+       
+      </section>
+
+      {/* ✅ Mobile Hero */}
+      <section className="relative block md:hidden w-full mt-24 h-[50vh]  overflow-hidden">
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.div
+            key={`mobile-${currentIndex}`}
+            className="absolute inset-0 w-full h-full"
+            custom={direction}
+            initial={{ x: direction > 0 ? "100%" : "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: direction > 0 ? "-100%" : "100%" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+          >
+            <Image
+              src={mobileImages[currentIndex]}
+              alt={`Mobile banner ${currentIndex + 1}`}
+              width={600}
+              height={1200}
+              priority
+              // sizes="100vw"
+              className="object-cover "
             />
-            <div className="absolute top-6 left-6 z-20 text-white/70 text-5xl font-bold">
-              {String(item.id).padStart(2, "0")}
-            </div>
-            <div
-              className={`absolute inset-0 z-10 flex flex-col justify-center items-start px-10 text-white transition-all duration-700 ${
-                active === item.id
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 translate-x-5 pointer-events-none"
-              }`}
-            >
-              <p className="absolute text-lg text-[#FAAC18] -left-20 -rotate-90">
-                GST No. 07BPIPM2937L1ZG
-              </p>
-              <div className="ml-10 pt-20">
-                <h1 className="text-4xl md:text-7xl font-bold mb-3">
-                  {active === item.id && item.id === 1 ? (
-                    <Typewriter
-                      words={[
-                        "Bar Bending Machine Supplier",
-                        "Anti Smog Gun (Dust & Smog Eliminator)",
-                        "Bar Cutting Machine Supplier",
-                        "Rebar Processing Solutions",
-                      ]}
-                      loop={0}
-                      cursor
-                      cursorStyle="|"
-                      typeSpeed={70}
-                      deleteSpeed={50}
-                      delaySpeed={1500}
-                    />
-                  ) : (
-                    item.title
-                  )}
-                </h1>
-                <p className="text-3xl text-[#FAAC18] font-semibold">
-                  {item.subtitle}
-                </p>
-                <p className="mt-6 max-w-lg text-lg">{item.description}</p>
-                <div className="mt-8 flex gap-4">
-                  <Link
-                    href="/contact-us"
-                    className="bg-white px-4 py-3 rounded-lg text-black font-semibold hover:text-[#FAAC18] transition text-lg cursor-pointer inline-block"
-                  >
-                    Request a Quote →
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+          </motion.div>
+        </AnimatePresence>
+      </section>
     </>
   );
 };
 
-export default AccordionHero;
+export default Hero;

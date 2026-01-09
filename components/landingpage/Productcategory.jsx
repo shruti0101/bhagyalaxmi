@@ -1,115 +1,131 @@
 "use client";
-import React, { useState } from "react";
+
 import Image from "next/image";
-import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
-const Productcategory = () => {
-  const categories = [
-    {
-      name: "Bar Bending Machines",
-      products: 30,
-      img: "/home/productdesc/productdesc1.webp",
-      hoverImg: "/steel.webp",
-      link: "/products",
-    },
-    {
-      name: "Concrete Mixers",
-      products: 24,
-      img: "/home/productdesc/productdesc2.webp",
-      hoverImg: "/home/productdesc/actual/concrete.webp",
-      link: "/products",
-    },
-    {
-      name: "Trolly Vibrator",
-      products: 21,
-      img: "/home/productdesc/productdesc3.webp",
-      hoverImg: "/home/productdesc/actual/trollyvibrator.webp",
-      link: "/products",
-    },
-    {
-      name: "Ride on Roller/ Plate Compactor",
-      products: 26,
-      img: "/home/productdesc/productdesc4.webp",
-      hoverImg: "/home/productdesc/actual/rideoncollar.webp",
-      link: "/products",
-    },
-    {
-      name: "Material Lifting",
-      products: 37,
-      img: "/home/productdesc/productdesc5.webp",
-      hoverImg: "/home/productdesc/actual/materiallifting.webp",
-      link: "/products",
-    },
-    {
-      name: "Lab Testing Equipments",
-      products: 17,
-      img: "/home/productdesc/productdesc6.webp",
-      hoverImg: "/home/productdesc/actual/labtesting.webp",
-      link: "/products",
-    },
-    {
-      name: "Safety Instruments",
-      products: 18,
-      img: "/home/productdesc/productdesc7.webp",
-      hoverImg: "/home/productdesc/actual/safetyinstrument.webp",
-      link: "/products",
-    },
-    {
-      name: "Surveying Instruments",
-      products: 18,
-      img: "/home/productdesc/productdesc8.webp",
-      hoverImg: "/home/productdesc/actual/surveyinginstrument.webp",
-      link: "/products",
-    },
-  ];
+import "swiper/css";
+import "swiper/css/navigation";
 
-  const [activeIndex, setActiveIndex] = useState(null);
+const categories = [
+  {
+    title: "Bulk Milk Coolers",
+    desc: "Efficient cooling systems to preserve milk quality at collection centers.",
+    image: "/prod/7.jpg",
+    icon: "/icons/milk.svg",
+  },
+  {
+    title: "Milk Storage Tanks",
+    desc: "Food-grade stainless steel tanks for hygienic milk storage.",
+    image: "/prod/1.jpg",
+    icon: "/icons/tank.svg",
+  },
+  {
+    title: "Milk Pasteurizer",
+    desc: "Advanced pasteurization equipment ensuring food safety standards.",
+    image: "/prod/2.jpg",
+    icon: "/icons/heat.svg",
+  },
+  {
+    title: "Mini Dairy Plant",
+    desc: "Compact dairy processing solutions for all scales of operation.",
+    image: "/prod/3.jpg",
+    icon: "/icons/factory.svg",
+  },
+    {
+    title: "Bulk Milk Coolers",
+    desc: "Efficient cooling systems to preserve milk quality at collection centers.",
+    image: "/prod/4.jpg",
+    icon: "/icons/milk.svg",
+  },
+];
 
+export default function ProductCategorySlider() {
   return (
-    <div className="max-w-7xl mt-5 mx-auto mb-15 px-6 md:px-12">
-      <h2 className="text-3xl md:text-5xl mb-8 md:mb-14 font-bold text-[#FAAC18] text-center ">
-        Product Categories
+    <section style={{backgroundImage:"url(/bgwave.svg)"}} className="relative py-20 overflow-hidden bg-cover bg-center">
+
+      {/* SECTION TITLE */}
+      <h2 className="text-center text-[44px] font-semibold text-white my-8">
+      Our Category Range
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-        {categories.map((cat, i) => (
-          <Link
-            key={i}
-            href={cat.link}
-            onClick={() => setActiveIndex(i)} // tap-to-toggle for mobile
-            className="bg-[#EFEFEF] border-2 border-gray-800 hover:border-[#FAAC18] hover:scale-105 flex flex-col items-center justify-center p-2 text-center shadow-sm hover:shadow-md transition group"
-          >
-            {/* Image container */}
-            <div className="w-32 h-32 flex items-center justify-center mb-3 relative">
-              {/* Default Image */}
-              <Image
-                src={cat.img}
-                alt={cat.name}
-                width={200}
-                height={100}
-                className={`object-contain w-full h-full transition-opacity duration-300 ${
-                  activeIndex === i ? "opacity-0" : "opacity-100 group-hover:opacity-0"
-                }`}
-              />
-              {/* Hover Image */}
-              <Image
-                src={cat.hoverImg}
-                alt={cat.name}
-                width={400}
-                height={200}
-                className={`object-cover w-full h-full absolute top-0 left-0 transition-opacity duration-300 ${
-                  activeIndex === i ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                }`}
-              />
-            </div>
+      <div className="max-w-[1320px] mx-auto px-[15px]">
+        <Swiper
+          modules={[Navigation]}
+          navigation
+          spaceBetween={30}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 4 },
+          }}
+        >
+          {categories.map((item, i) => (
+            <SwiperSlide key={i}>
+              {/* CARD */}
+              <div
+                className="relative bg-[#f4f6f1] rounded-[28px] overflow-visible shadow-xl
+                transition-all duration-300 ease-out
+                hover:-translate-y-[10px]
+                hover:shadow-[0_25px_60px_rgba(0,0,0,0.25)]
+                group"
+              >
+                {/* IMAGE */}
+                <div className="relative h-[300px] overflow-hidden rounded-t-[28px]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                  />
 
-            <p className="font-medium">{cat.name}</p>
-            <p className="text-[#FAAC18] text-sm">{cat.products} Products</p>
-          </Link>
-        ))}
+                
+                </div>
+
+                {/* CONTENT */}
+                <div className="relative pt-5 px-[28px] pb-[56px] rounded-l-[28px] text-center bg-[#f4f6f1] rounded-b-[28px]">
+                  <h3 className="text-[20px] font-semibold text-[#1c103b] mb-[10px]">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-[14px] leading-[24px] text-black">
+                    {item.desc}
+                  </p>
+
+                  {/* CURVED EXTENSION */}
+                  <div className="absolute left-0 right-0 bottom-[-30px]
+                    h-[64px] bg-[#f4f6f1] rounded-b-[28px]" />
+
+                  {/* GRADIENT SHADOW */}
+                  <div className="absolute left-[20px] right-[20px] bottom-[-42px]
+                    h-[42px] bg-gradient-to-b from-black/30 to-transparent
+                    blur-[18px] opacity-60 pointer-events-none" />
+                </div>
+
+                {/* ARROW BUTTON */}
+                <div
+                  className="absolute right-[26px] bottom-[18px]
+                  w-[46px] h-[46px] rounded-full bg-blue-500
+                  flex items-center justify-center shadow-lg z-20
+                  transition-all duration-300 ease-out
+                  group-hover:rotate-45 group-hover:scale-110"
+                >
+                  <ArrowUpRight size={18} className="text-[#1c103b]" />
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+<div className="flex justify-center items-center">
+
+              <button className="mt-[20px] bg-white hover:bg-blue-500 text-black font-semibold px-[36px] py-[16px]  rounded-full transition">
+            Explore more
+          </button>
+</div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Productcategory;
+}

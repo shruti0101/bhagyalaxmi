@@ -16,28 +16,16 @@ import {
 import { FaPhone } from "react-icons/fa";
 
 const categories = [
-  {
-    id: "bar-processing-machines",
-    name: "Bar Processing Machines",
-    image: "/products/automaticbarmachine.png",
-  },
-  { id: "concrete-mixers", name: "Concrete Mixers" },
-  {
-    id: "anti-fog-cannon-machine",
-    name: "Anti-Fog Cannon Machine",
-    image: "/products/asg2.webp",
-  },
-  { id: "lab-testing-equipment", name: "Lab Testing Equipment" },
-  { id: "material-lifting-equipment", name: "Material Lifting Equipment" },
-  { id: "safety-instrument", name: "Safety Instruments" },
-  {
-    id: "ride-on-roller-plate-compactor",
-    name: "RIDE ON ROLLER/ PLATE COMPACTOR",
-  },
-  { id: "surveying-instrument", name: "Surveying Instruments" },
-  { id: "trolley-vibrator", name: "Trolley Vibrator" },
-  { id: "air-quality-index", name: "Air Quality Index" },
+  { id: "bulk-milk-coolers", name: "Bulk Milk Coolers (BMC)" },
+  { id: "milk-chilling-equipment", name: "Milk Chilling Equipment" },
+  { id: "milk-storage-tanks", name: "Milk Storage Tanks" },
+  { id: "milk-pasteurizers", name: "Milk Pasteurizers" },
+
+  { id: "milk-atm-vending-machines", name: "Milk ATM Vending Machines" },
+  { id: "mini-dairy-plant", name: "Mini Dairy Processing Plant" },
+
 ];
+
 
 const Footer = () => {
   const [openSection, setOpenSection] = useState(null);
@@ -48,17 +36,19 @@ const Footer = () => {
 
   return (
     <footer
-      style={{ backgroundImage: "url('/home/bg-footer.webp')" }}
+      style={{ backgroundImage: "url('/formbg1.jpg')" }}
       className="relative bg-cover bg-center text-gray-300 pt-12 pb-6"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-13">
+
+      <div className="absolute inset-0 bg-black/70 "></div>
+      <div className="max-w-7xl relative z-20 mx-auto px-6 md:px-13">
         <div className="mb-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             {/* Column 1: Logo + About + Address + Social */}
             <div>
               <div className="relative inline-block mb-4">
                 <Image
-                  src="/logo.png"
+                  src="/logo.jpeg"
                   alt="Logo"
                   width={180}
                   height={50}
@@ -69,11 +59,12 @@ const Footer = () => {
                 </span>
               </div>
 
-              <p className="text-sm leading-relaxed">
-                Welcome to Shree Shakti Infratech, a trusted name in the realm
-                of construction machines since 2013. As an ISO 9001:2013
-                certified company, our dedication to excellence is unparalleled.
-              </p>
+         <p className="text-sm leading-relaxed">
+  Our Bulk Milk Coolers ensure rapid cooling, hygienic storage, and long-lasting
+  stainless steel durability. Designed for efficiency and reliability, they maintain
+  milk freshness at farm and dairy levels with industry-approved safety standards.
+</p>
+
 
              <div className="flex items-start gap-4 mt-2 flex-1">
   <a
@@ -81,7 +72,7 @@ const Footer = () => {
     className="flex items-center gap-2"
   >
     <Phone className="w-5 h-5 text-[#FAAC18] hover:scale-110 transition-transform duration-200" />
-    <h5 className="text-[16px] font-semibold underline">+918826544443</h5>
+    <h5 className="text-[16px] font-semibold underline">+9175646555</h5>
   </a>
   
 </div>
@@ -91,8 +82,7 @@ const Footer = () => {
               <div className="flex items-start gap-2 mt-4 text-sm">
                 <MapPin className="w-10 h-10 text-[#FAAC18]" />
                 <p>
-                  4A, S-Block, Vishwas Park, Raja Puri Main Road, Opp. Sec – 3,
-                  Dwarka, New Delhi – 110059
+                 delhi india
                 </p>
               </div>
 
@@ -298,7 +288,7 @@ const Footer = () => {
 
               <p className="text-sm leading-relaxed">
                 We are proud to present the Trust Elite Certificate of
-                Excellence to Shree Shakti Infratech, recognizing their
+                Excellence to BhagyaLaxmi Industries, recognizing their
                 commitment to exceptional customer service, outstanding business
                 practices, and a dedication to building trust with their
                 customers.
@@ -333,8 +323,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-700 mt-10 pt-4 text-center text-sm text-gray-400">
-        © 2025 Shree Shakti Infratech, All Rights Reserved. Managed and
+      <div className=" relative z-20 border-t border-gray-700 mt-10 pt-4 text-center text-sm text-white">
+        © 2025 BhagyaLaxmi Industries, All Rights Reserved. Managed and
         Developed By{" "}
         <a
           href="https://promozionebranding.com/"

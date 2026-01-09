@@ -1,168 +1,67 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-
-const Cta = () => {
-  const categories = [
-    {
-      id: "bar-processing-machines",
-      name: "Bar Processing Machines",
-      image: "/products/automaticbarmachine.png",
-    },
-    { id: "concrete-mixers", name: "Concrete Mixers" },
-    {
-      id: "anti-fog-cannon-machine",
-      name: "Anti-Fog Cannon Machine",
-      image: "/products/asg2.webp",
-    },
-    { id: "lab-testing-equipment", name: "Lab Testing Equipment" },
-    { id: "material-lifting-equipment", name: "Material Lifting Equipment" },
-    { id: "safety-instrument", name: "Safety Instruments" },
-    {
-      id: "ride-on-roller-plate-compactor",
-      name: "RIDE ON ROLLER / PLATE COMPACTOR",
-    },
-    { id: "surveying-instrument", name: "Surveying Instruments" },
-    { id: "trolley-vibrator", name: "Trolley Vibrator" },
-  ];
-
+const CTASection = () => {
   return (
-    <>
-      <section className="relative bg-white py-3 md:py-10 px-4 md:px-12">
-        <Image
-          src="/home/ctagif.gif"
-          alt="CTA Animation"
-          width={300}
-          height={200}
-          className="hidden md:block absolute -left-20 top-0"
-          unoptimized
-        />
+    <section style={{backgroundImage:"url(/formbg.webp)"}} className="w-full relative bg-center bg-cover py-9 px-4 md:px-10 ">
 
-        {/* Heading */}
-        <div className="flex items-center justify-center text-center mb-8">
-          <p className="max-w-4xl font-semibold text-lg md:text-3xl leading-snug">
-            Apne Construction Projects ko Upgrade karein – High-Quality Bar
-            Bending Machine aur Construction Equipment ke saath!
-            <br />
-            <span className="text-[#FAAC18]">
-              Aaj hi Contact karein aur Best Deals paayein
-            </span>
-          </p>
+      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="max-w-7xl mx-auto relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center z-10">
+
+        {/* Left Side Image */}
+        <div className="w-full h-full">
+          <img
+            src="/ctaimg.png"
+            alt="Contact Us"
+            className="w-full h-[350px] md:h-[480px] object-cover  "
+          />
         </div>
 
-        {/* Grid Layout */}
-        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          {/* Left Side - Image */}
-          <div className="absolute -bottom-23 -left-5 w-45 md:w-auto  md:relative md:bottom-auto md:left-auto">
-            <Image
-              src="/home/ctaimg1.webp"
-              alt="Construction Equipment"
-              width={500}
-              height={400}
-              className="hidden md:block object-contain"
-            />
-          </div>
+        {/* Right Side Form */}
+        <div className="bg-white p-5 rounded-xl shadow-lg border border-blue-200">
+       
+          <p className="text-black  mb-2">
+            Fill out the form and our team will contact you soon.
+          </p>
 
-          {/* Right Side - Form */}
-          <div className="bg-white shadow-md border border-gray-200 rounded-lg p-3 md:p-6">
-            <form
-              action="https://formsubmit.co/shrutiguptacu@gmail.com"
-              method="POST"
-              className="space-y-2 md:space-y-4"
-            >
-              {/* Hidden fields for formsubmit */}
-              <input type="hidden" name="_sponsor" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <input
-                type="hidden"
-                name="_subject"
-                value="New Enquiry from Website"
-              />
+          <form className="space-y-3">
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  required
-                  className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                />
-                <input
-                  type="tel"
-                  maxLength={10}
-                  name="phone"
-                  placeholder="Phone No."
-                  required
-                  className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="city"
-                  placeholder="City / Location"
-                  required
-                  className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                />
-                <select
-                  name="requirement"
-                  required
-                  className="w-full bg-[#FAAC18] border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 hover:bg-yellow-500"
-                >
-                  <option value="">Select Product</option>
-                  {categories.map((cat) => (
-                    <option key={cat.id} value={cat.name}>
-                      {cat.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                required
-                className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              />
-
-              <textarea
-                rows={4}
-                name="message"
-                placeholder="Message for us.."
-                className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              ></textarea>
-
-              {/* Honeypot field */}
+            <div>
+              <label className="block font-semibold text-black mb-1">Name</label>
               <input
                 type="text"
-                name="_honey"
-                style={{ display: "none" }}
-                tabIndex="-1"
-                autoComplete="off"
+                className="w-full p-3 border-2 border-black rounded-lg focus:ring focus:ring-orange-300"
+                placeholder="Enter your name"
               />
+            </div>
 
-              {/* ✅ Google reCAPTCHA */}
-              <div className="flex justify-center my-4">
-                <div
-                  className="g-recaptcha"
-                  data-sitekey="6Ldd-8IrAAAAAATn7snM0ouTdo2jPW8yIFxiGeDj"
-                ></div>
-              </div>
+            <div>
+              <label className="block font-semibold text-black mb-1">Phone</label>
+              <input
+                type="text"
+                className="w-full p-3 border-2 border-black rounded-lg focus:ring focus:ring-orange-300"
+                placeholder="Enter your phone number"
+              />
+            </div>
 
-              <button
-                type="submit"
-                className="w-full bg-[#FAAC18] text-white font-semibold py-3 rounded-md hover:bg-yellow-500 transition duration-300"
-              >
-                Get Free Consultation Today!
-              </button>
-            </form>
-          </div>
+            <div>
+              <label className="block font-semibold text-black mb-1">Message</label>
+              <textarea
+                className="w-full p-3 border-2 border-black rounded-lg focus:ring focus:ring-orange-300"
+                placeholder="Write your message..."
+                rows={4}
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-[#1447E6] text-white cursor-pointer py-3 rounded-lg font-semibold text-lg  transition"
+            >
+              Submit Details
+            </button>
+
+          </form>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
-export default Cta;
+export default CTASection;
