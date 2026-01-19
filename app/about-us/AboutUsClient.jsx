@@ -35,7 +35,7 @@ const Page = () => {
       title: "VISION",
       content: (
         <div className="space-y-4 text-left">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-[#F7C600]">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-blue-600">
             Driving Excellence in Dairy Equipment Manufacturing
           </h2>
           <p className="text-sm sm:text-base">
@@ -68,7 +68,7 @@ const Page = () => {
       title: "MISSION",
       content: (
         <div className="space-y-4 text-left">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-[#F7C600]">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-blue-600">
             Engineering Quality. Delivering Reliability.
           </h2>
           <p className="text-sm sm:text-base">
@@ -211,13 +211,13 @@ const Page = () => {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex flex-col items-center cursor-pointer transition-all duration-300 ${
-                    activeTab === tab.id ? "text-[#F7C600] scale-110" : "text-gray-700"
+                    activeTab === tab.id ? "text-blue-500 scale-110" : "text-gray-700"
                   }`}
                 >
                   <div className="mb-2">{tab.icon}</div>
                   <h3 className="text-base sm:text-lg font-semibold">{tab.title}</h3>
                   {activeTab === tab.id && (
-                    <div className="h-[3px] w-12 bg-[#F7C600] mt-2 rounded-full"></div>
+                    <div className="h-[3px] w-12 bg-blue-600 mt-2 rounded-full"></div>
                   )}
                 </div>
               ))}
@@ -313,7 +313,7 @@ const Page = () => {
                   className="flex gap-4 rounded-2xl bg-white/80 border border-white shadow-sm hover:shadow-md transition p-4 sm:p-5"
                 >
                   <div className="mt-1 w-10 h-10 rounded-xl flex items-center justify-center shrink-0">
-                    <div className="w-3 h-3 rounded-full bg-[#F7A400]" />
+                    <div className="w-3 h-3 rounded-full bg-blue-600" />
                   </div>
 
                   <div>

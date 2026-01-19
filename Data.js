@@ -4,7 +4,7 @@ export const categories = [
     name: "Bulk Milk Cooler",
   },
 
-  { id: "milk-vending-machine", name: "Milk Vending Machine" },
+  { id: "milk-vending-machine", name: "Milk Atm Machine" },
 
  
   { id: "curd-making-machine", name: "Curd Making Machine" },
@@ -21,6 +21,8 @@ export const categories = [
   { id: "milk-processing-plant", name: "Milk Processing Plant" },
 
   { id: "milk-pasteurizer", name: "Milk Pasteurizer" },
+
+    { id: "other", name: "Other Products" },
 ];
 
 export const products = [
@@ -945,68 +947,7 @@ export const products = [
 },
 
 
- {
-  "id": 13,
-  "slug": "wood-fired-steam-boilers-150kg",
-  "name": "Wood Fired Steam Boilers",
-  "category": "steam-boiler",
-  "model": "WFSB-150KG",
 
-  "image": {
-    "src": "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768389100/Wood_Fired_Steam_Boilers_vild0s.webp",
-    "alt": "Wood Fired Steam Boiler 150 Kg"
-  },
-
-  "images": [
-    {
-      "src": "/products/steam-boiler/150kg/2.webp",
-      "alt": "Bhagyalaxmi Wood Fired Steam Boiler"
-    },
-    {
-      "src": "/products/steam-boiler/150kg/3.webp",
-      "alt": "150 Kg Non IBR Wood Fired Steam Boiler"
-    }
-  ],
-
-  "videoUrl": "",
-
-  "description": [
-    {
-      "type": "h2",
-      "text": "Overview of Wood Fired Steam Boilers 150 Kg"
-    },
-    {
-      "type": "p",
-      "text": "The Wood Fired Steam Boiler with 150 Kg capacity is designed for efficient steam generation using wood as fuel. Manufactured by Bhagyalaxmi Industries, this boiler is suitable for small-scale industrial applications and food processing units."
-    },
-    {
-      "type": "h2",
-      "text": "Key Features"
-    },
-    {
-      "type": "ul",
-      "items": [
-        "Non IBR certified wood-fired boiler for safe and reliable operation.",
-        "Designed for low running cost using wood fuel.",
-        "Compact structure suitable for small-scale industries.",
-        "Durable construction with efficient heat transfer design.",
-        "Ideal for food processing, restaurants, and small production units."
-      ]
-    }
-  ],
-
-  "specs": [
-    { "label": "Product Name", "value": "Wood Fired Steam Boilers" },
-    { "label": "Minimum Order Quantity", "value": "1 Piece" },
-    { "label": "Certification", "value": "Non IBR" },
-    { "label": "Brand", "value": "Bhagyalaxmi Industries" },
-    { "label": "Capacity", "value": "150 kg" }
-  ],
-
-  "metaTitle": "Wood Fired Steam Boiler 150 Kg – Non IBR by Bhagyalaxmi Industries",
-  "metaDescription": "150 Kg Wood Fired Steam Boiler with Non-IBR certification, manufactured by Bhagyalaxmi Industries. Ideal for small-scale food processing and industrial applications."
-}
-,
 
 {
   "id": 14,
@@ -1180,175 +1121,9 @@ export const products = [
   "metaDescription": "High Pressure Milk Homogenizer with 100 bar pressure, 1000 L/hr capacity, stainless steel body, automatic operation, single-phase 240V. Ideal for dairy and chemical applications."
 },
 
-{
-  "id": 16,
-  "slug": "stainless-steel-liquid-mixing-tank",
-  "name": "Stainless Steel Liquid Mixing Tank",
-  "category": "milk-homogenizer-mixer",
-  "model": "SS-LMT-350",
 
-  "image": {
-    "src": "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768389099/Stainless_Steel_Liquid_Mixing_Tank_peijuz.webp",
-    "alt": "Stainless Steel Liquid Mixing Tank"
-  },
 
-  "images": [
-    {
-      "src": "/products/mixing-tank/2.webp",
-      "alt": "Automatic Stainless Steel Mixing Tank"
-    },
-    {
-      "src": "/products/mixing-tank/3.webp",
-      "alt": "Industrial Liquid Mixing Tank"
-    }
-  ],
 
-  "videoUrl": "",
-
-  "description": [
-    {
-      "type": "h2",
-      "text": "Overview of Stainless Steel Liquid Mixing Tank"
-    },
-    {
-      "type": "p",
-      "text": "The Stainless Steel Liquid Mixing Tank is designed for efficient mixing of chemicals, oils, and liquids in industrial applications. Built with durable stainless steel and equipped with automatic controls, it ensures uniform mixing and consistent output."
-    },
-    {
-      "type": "h2",
-      "text": "Key Features"
-    },
-    {
-      "type": "ul",
-      "items": [
-        "Automatic operation for precise and consistent mixing.",
-        "Constructed with high-quality stainless steel for hygiene and long service life.",
-        "Suitable for mixing chemicals, oils, and other liquid products.",
-        "Single-phase 240V operation with 60Hz frequency for stable performance.",
-        "Compact and easy-to-operate design for industrial use.",
-        "Capacity of 350 L per batch for medium-scale production.",
-        "Reliable, energy-efficient, and low-maintenance."
-      ]
-    },
-    {
-      "type": "h2",
-      "text": "Applications"
-    },
-    {
-      "type": "ul",
-      "items": [
-        "Chemical industry for mixing liquid formulations.",
-        "Food and beverage industry for liquid products.",
-        "Cosmetic and pharmaceutical industries requiring uniform mixtures.",
-        "Industrial plants needing high-quality liquid processing."
-      ]
-    }
-  ],
-
-  "specs": [
-    { "label": "Product Name", "value": "Stainless Steel Liquid Mixing Tank" },
-    { "label": "Minimum Order Quantity", "value": "2 Unit" },
-    { "label": "Material", "value": "SS" },
-    { "label": "Brand", "value": "Bhagyalaxmi" },
-    { "label": "Storage Material", "value": "Chemicals/Oils" },
-    { "label": "Frequency", "value": "60 Hz" },
-    { "label": "Phase", "value": "Single Phase" },
-    { "label": "Voltage", "value": "240 V" },
-    { "label": "Country of Origin", "value": "Made in India" },
-    { "label": "Usage/Application", "value": "Industrial" },
-    { "label": "Automation Grade", "value": "Automatic" },
-    { "label": "Product Capacity", "value": "350 L" }
-  ],
-
-  "metaTitle": "Stainless Steel Liquid Mixing Tank – 350L Automatic Industrial Tank",
-  "metaDescription": "Stainless Steel Liquid Mixing Tank with 350L capacity, automatic operation, single-phase 240V, 60Hz, suitable for chemicals, oils, and industrial applications. Durable SS construction by Bhagyalaxmi."
-},
-
-{
-  "id": 17,
-  "slug": "stainless-steel-liquid-mixing-tank",
-  "name": "Stainless Steel Liquid Mixing Tank",
-  "category": "milk-homogenizer-mixer",
-  "model": "SS-LMT-500",
-
-  "image": {
-    "src": "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768389100/Stainless_Steel_Round_Mixer_Machine_mqzx1a.webp",
-    "alt": "Stainless Steel Liquid Mixing Tank 500L"
-  },
-
-  "images": [
-    {
-      "src": "/products/mixing-tank/500l/2.webp",
-      "alt": "Automatic Stainless Steel Liquid Mixing Tank 500L"
-    },
-    {
-      "src": "/products/mixing-tank/500l/3.webp",
-      "alt": "Industrial Stainless Steel Mixing Tank 500L"
-    }
-  ],
-
-  "videoUrl": "",
-
-  "description": [
-    {
-      "type": "h2",
-      "text": "Overview of Stainless Steel Liquid Mixing Tank 500L"
-    },
-    {
-      "type": "p",
-      "text": "The 500L Stainless Steel Liquid Mixing Tank is designed for efficient mixing of chemicals, oils, and other industrial liquids. With an automatic system and durable SS construction, it ensures uniform mixing, high productivity, and long-term reliability."
-    },
-    {
-      "type": "h2",
-      "text": "Key Features"
-    },
-    {
-      "type": "ul",
-      "items": [
-        "Automatic operation for consistent and efficient mixing.",
-        "High-quality stainless steel construction for durability and hygiene.",
-        "Cylindrical shape for uniform liquid circulation.",
-        "Single-phase 280V operation with 50Hz frequency for stable performance.",
-        "Capacity of 500 L per batch, ideal for industrial applications.",
-        "Suitable for mixing chemicals, oils, and other liquids.",
-        "5-year warranty for peace of mind and reliable operation."
-      ]
-    },
-    {
-      "type": "h2",
-      "text": "Applications"
-    },
-    {
-      "type": "ul",
-      "items": [
-        "Chemical industry for liquid formulations and solutions.",
-        "Food and beverage industry requiring consistent mixing.",
-        "Cosmetic and pharmaceutical industries for uniform liquid processing.",
-        "Industrial plants and workshops requiring durable mixing tanks."
-      ]
-    }
-  ],
-
-  "specs": [
-    { "label": "Product Name", "value": "Stainless Steel Liquid Mixing Tank" },
-    { "label": "Automation Grade", "value": "Automatic" },
-    { "label": "Warranty", "value": "5 years" },
-    { "label": "Capacity", "value": "500 L" },
-    { "label": "Material", "value": "SS" },
-    { "label": "Usage/Application", "value": "Industrial" },
-    { "label": "Brand", "value": "Bhagyalaxmi" },
-    { "label": "Storage Material", "value": "Chemicals/Oils" },
-    { "label": "Frequency", "value": "50 Hz" },
-    { "label": "Phase", "value": "Single Phase" },
-    { "label": "Power Source", "value": "Electric" },
-    { "label": "Shape", "value": "Cylindrical" },
-    { "label": "Voltage", "value": "280 V" },
-    { "label": "Country of Origin", "value": "Made in India" }
-  ],
-
-  "metaTitle": "Stainless Steel Liquid Mixing Tank 500L – Automatic Industrial Tank",
-  "metaDescription": "500L Stainless Steel Liquid Mixing Tank with automatic operation, cylindrical shape, single-phase 280V, 50Hz, suitable for chemicals, oils, and industrial applications by Bhagyalaxmi."
-},
 
 
 
@@ -1624,8 +1399,8 @@ export const products = [
 
 {
   "id": 21,
-  "slug": "stainless-steel-milk-pasteurizer-plate",
-  "name": "Stainless Steel Milk Pasteurizer Plate",
+  "slug": "stainless-steel-milk-pasteurizer-plant",
+  "name": "Stainless Steel Milk Pasteurizer plant",
   "category": "milk-pasteurizer",
   "model": "SS-MPP-500",
 
@@ -1792,11 +1567,182 @@ export const products = [
 },
 
 
+
+
+
+// other
+
+{
+  "id": 13,
+  "slug": "khoya-kadai-lpg-diesel",
+  "name": "Khoya Kadai LPG / Diesel",
+  "category": "other",
+
+  "image": {
+    "src": "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768389100/Wood_Fired_Steam_Boilers_vild0s.webp",
+    "alt": "Khoya Kadai LPG Diesel"
+  },
+
+  "images": [
+    {
+      "src": "/products/khoya-kadai/1.webp",
+      "alt": "Bhagyalaxmi Khoya Making Machine"
+    },
+    {
+      "src": "/products/khoya-kadai/2.webp",
+      "alt": "LPG Diesel Khoya Kadai Manufacturer"
+    }
+  ],
+
+  "videoUrl": "",
+
+  "description": [
+    {
+      "type": "h2",
+      "text": "Overview of Khoya Kadai (LPG / Diesel)"
+    },
+    {
+      "type": "p",
+      "text": "The Khoya Kadai LPG / Diesel by Bhagyalaxmi Industries is a high-performance milk heating and reduction system designed for commercial dairy, sweet production, and food processing applications. It ensures uniform heating, faster evaporation, and consistent khoya production with minimum fuel consumption. This kadai is available in both LPG and diesel-fired models, making it suitable for areas with varying fuel availability."
+    },
+
+    {
+      "type": "h2",
+      "text": "Key Features"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "High-grade stainless steel kadai for hygienic food processing.",
+        "Compatible with LPG and diesel fuel options.",
+        "Uniform heat distribution for faster and consistent khoya making.",
+        "Energy-efficient burner system reduces operating cost.",
+        "Robust construction suitable for continuous commercial use.",
+        "Ideal for sweets manufacturers, dairy plants, and halwai kitchens."
+      ]
+    },
+
+    {
+      "type": "h2",
+      "text": "Applications"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Khoya / Mawa preparation",
+        "Milk boiling and evaporation",
+        "Rabri and Basundi preparation",
+        "Ghee melting and heating",
+        "Sweet manufacturing units (Peda, Barfi, Kalakand, etc.)"
+      ]
+    }
+  ],
+
+  "specs": [
+    { "label": "Product Name", "value": "Khoya Kadai LPG / Diesel" },
+    { "label": "Minimum Order Quantity", "value": "1 Unit" },
+    { "label": "Brand", "value": "Bhagyalaxmi Industries" },
+    { "label": "Fuel Type", "value": "LPG / Diesel" },
+    { "label": "Material", "value": "Stainless Steel" }
+  ],
+
+  "metaTitle": "Khoya Kadai LPG / Diesel – Bhagyalaxmi Industries",
+  "metaDescription": "High-efficiency Khoya Kadai (LPG / Diesel) for commercial dairy and sweet production. Stainless steel kadai with uniform heating and low fuel consumption."
+},
+
+
+{
+  "id": 16,
+  "slug": "stainless-steel-chemical-liquid-mixing-tank",
+  "name": "Stainless Steel Chemical Liquid Mixing Tank",
+  "category": "other",
+  "model": "SS-LMT-350",
+
+  "image": {
+    "src": "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768389099/Stainless_Steel_Liquid_Mixing_Tank_peijuz.webp",
+    "alt": "Stainless Steel Chemical Liquid Mixing Tank"
+  },
+
+  "images": [
+    {
+      "src": "/products/mixing-tank/2.webp",
+      "alt": "Automatic Stainless Steel Chemical Mixing Tank"
+    },
+    {
+      "src": "/products/mixing-tank/3.webp",
+      "alt": "Industrial Chemical Mixing Tank 350L"
+    }
+  ],
+
+  "videoUrl": "",
+
+  "description": [
+    {
+      "type": "h2",
+      "text": "Overview of Stainless Steel Chemical Liquid Mixing Tank"
+    },
+    {
+      "type": "p",
+      "text": "The Stainless Steel Chemical Liquid Mixing Tank is engineered for precise and efficient mixing of various chemical solutions and industrial liquids. Manufactured with high-grade stainless steel, it provides excellent corrosion resistance, hygiene, and long-term durability. The 350L capacity and automatic control system make it suitable for medium-scale chemical manufacturing units and processing plants."
+    },
+
+    {
+      "type": "h2",
+      "text": "Key Features"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Heavy-duty stainless steel construction for chemical resistance and durability.",
+        "Automatic operation to ensure uniform and consistent mixing.",
+        "High-efficiency stirrer mechanism for optimal blending of liquids.",
+        "Compatible with solvents, emulsions, chemical formulations, and oils.",
+        "Stable performance with 240V single-phase power supply.",
+        "Medium-scale 350 L capacity ideal for industrial production.",
+        "Low maintenance design with easy cleaning and operator-friendly controls."
+      ]
+    },
+
+    {
+      "type": "h2",
+      "text": "Applications"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Chemical industry for mixing liquid chemicals and additives.",
+        "Paint, coating, and dye manufacturing units.",
+        "Cosmetic and personal-care formulation blending.",
+        "Pharmaceutical industry for liquid preparations.",
+        "Industrial plants requiring stable and accurate chemical processing."
+      ]
+    }
+  ],
+
+  "specs": [
+    { "label": "Product Name", "value": "Stainless Steel Chemical Liquid Mixing Tank" },
+    { "label": "Minimum Order Quantity", "value": "2 Units" },
+    { "label": "Material", "value": "SS (Stainless Steel)" },
+    { "label": "Brand", "value": "Bhagyalaxmi" },
+    { "label": "Storage Material", "value": "Chemicals / Oils / Formulations" },
+    { "label": "Frequency", "value": "60 Hz" },
+    { "label": "Phase", "value": "Single Phase" },
+    { "label": "Voltage", "value": "240 V" },
+    { "label": "Country of Origin", "value": "Made in India" },
+    { "label": "Usage/Application", "value": "Chemical / Industrial Liquid Mixing" },
+    { "label": "Automation Grade", "value": "Automatic" },
+    { "label": "Product Capacity", "value": "350 L" }
+  ],
+
+  "metaTitle": "Stainless Steel Chemical Liquid Mixing Tank – 350L Automatic Mixing System",
+  "metaDescription": "350L Stainless Steel Chemical Liquid Mixing Tank with automatic operation, corrosion-resistant SS construction, ideal for chemical, pharmaceutical, and industrial applications."
+},
+
 {
   "id": 23,
   "slug": "milk-storage-tank",
   "name": "Milk Storage Tank",
-  "category": "milk-processing-plant",
+  "category": "other",
   "model": "MST-2000L",
 
   "image": {
@@ -1881,6 +1827,92 @@ export const products = [
 
   "metaTitle": "Milk Storage Tank – Insulated SS304/SS316 Dairy Milk Holding Tank",
   "metaDescription": "Milk Storage Tank with double-walled insulation, SS304/SS316 construction, temperature control, and CIP cleaning system. Ideal for dairy farms and milk processing plants."
+},
+
+{
+  "id": 17,
+  "slug": "Butter-Churner-Machine",
+  "name": "Butter Churner Machine",
+  "category": "other",
+
+  "image": {
+    "src": "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768389100/Stainless_Steel_Round_Mixer_Machine_mqzx1a.webp",
+    "alt": "Stainless Steel Butter Churner Machine"
+  },
+
+  "images": [
+    {
+      "src": "/products/butter-churner/1.webp",
+      "alt": "Bhagyalaxmi Butter Churner Machine"
+    },
+    {
+      "src": "/products/butter-churner/2.webp",
+      "alt": "Commercial Butter Churning Machine"
+    }
+  ],
+
+  "videoUrl": "",
+
+  "description": [
+    {
+      "type": "h2",
+      "text": "Overview of Butter Churner Machine"
+    },
+    {
+      "type": "p",
+      "text": "The Butter Churner Machine by Bhagyalaxmi Industries is specially designed for efficient butter extraction from curd or cream. Built with high-grade stainless steel, it ensures hygienic processing, smooth operation, and consistent butter separation. This churner is ideal for dairy farms, milk cooperatives, sweet shops, and commercial dairy processing units."
+    },
+
+    {
+      "type": "h2",
+      "text": "Key Features"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "High-quality stainless steel body for hygiene and durability.",
+        "Smooth and efficient churning to extract butter from curd/cream.",
+        "Low power consumption with high-performance motor.",
+        "Easy-to-operate design with stable and vibration-free operation.",
+        "Available in electric, belt-driven, and gear-driven models.",
+        "Easy cleaning and maintenance for daily dairy operations.",
+        "Suitable for commercial dairy and small processing units."
+      ]
+    },
+
+    {
+      "type": "h2",
+      "text": "Applications"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Butter extraction from curd or cream",
+        "Ghee processing units",
+        "Dairy farms and milk collection centers",
+        "Sweet shops and halwai kitchens",
+        "Small and medium dairy industries"
+      ]
+    }
+  ],
+
+  "specs": [
+    { "label": "Product Name", "value": "Butter Churner Machine" },
+    { "label": "Automation Grade", "value": "Automatic / Semi-Automatic" },
+    { "label": "Warranty", "value": "1 Year" },
+    { "label": "Capacity", "value": "50 L – 500 L (varies by model)" },
+    { "label": "Material", "value": "Stainless Steel (SS 304)" },
+    { "label": "Usage/Application", "value": "Dairy / Butter Making" },
+    { "label": "Brand", "value": "Bhagyalaxmi Industries" },
+    { "label": "Power Source", "value": "Electric" },
+    { "label": "Phase", "value": "Single Phase / Three Phase (as required)" },
+    { "label": "Motor Power", "value": "1 HP – 5 HP (based on capacity)" },
+    { "label": "Design Type", "value": "Cylindrical Drum with Churning Blades" },
+    { "label": "Country of Origin", "value": "Made in India" }
+  ],
+
+  "metaTitle": "Butter Churner Machine – Commercial Dairy Butter Maker | Bhagyalaxmi Industries",
+  "metaDescription": "High-efficiency stainless steel butter churner machine for commercial dairy, farms, and sweet shops. Durable, hygienic, low power consumption, and ideal for butter extraction from curd or cream."
 },
 
 

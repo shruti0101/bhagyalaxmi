@@ -5,7 +5,7 @@ import Image from "next/image";
 // import Heroform from "@/components/Landingpage/Heroform";
 
 // ✅ Separate images
-const desktopImages = ["/hero1.png","/hero2.jpeg"  ];
+const desktopImages = ["/hero1.png","/hero2.png"  ];
 const mobileImages = ["/mobile1.png","/mobile2.png",];
 
 const Hero = () => {
@@ -33,7 +33,7 @@ const Hero = () => {
   return (
     <>
       {/* ✅ Desktop Hero */}
-      <section className="relative hidden md:flex justify-end w-full  md:h-[90vh] overflow-hidden">
+      <section className="relative hidden md:flex justify-end w-full  md:h-[100vh] overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={`desktop-${currentIndex}`}
