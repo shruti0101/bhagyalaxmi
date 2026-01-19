@@ -40,7 +40,7 @@ export default function BlogsPage() {
 
         <div
           className="absolute inset-0 md:bg-fixed bg-center bg-cover bg-no-repeat flex items-center justify-center"
-          style={{ backgroundImage: "url('/home/hero4.webp')" }}
+          style={{ backgroundImage: "url('/milkflow4.jpg')" }}
         >
           <h2 className="text-5xl md:text-7xl font-bold text-white z-10">Blogs</h2>
         </div>

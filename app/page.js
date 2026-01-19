@@ -8,7 +8,7 @@ import Whychoose from "@/components/landingpage/Whychoose";
 import Barbending from "@/components/landingpage/Barbending";
 import Industry from "@/components/landingpage/Industry";
 import Faq from "@/components/landingpage/Faq";
-import Cta2 from "@/components/landingpage/Cta2";
+
 import Testimonials from "@/components/landingpage/Testimonials";
 import Youtube from "@/components/landingpage/Youtube";
 

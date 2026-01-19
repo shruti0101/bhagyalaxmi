@@ -13,7 +13,7 @@ const Stickybutton = () => {
   {/* Inquiry Button */}
   <button
     onClick={() => setIsFormOpen(true)}
-    className="bg-[#FAAC18] text-white cursor-pointer font-semibold px-4 py-2 text-lg shadow-lg rounded-tl-md rounded-bl-md -rotate-90 origin-bottom-right hover:scale-105 transition mr-[-1px]"
+    className="bg-blue-500 text-white cursor-pointer font-semibold px-4 py-2 text-lg shadow-lg rounded-tl-md rounded-bl-md -rotate-90 origin-bottom-right hover:scale-105 transition mr-[-1px]"
   >
     Inquiry
   </button>

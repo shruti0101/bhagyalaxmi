@@ -2,40 +2,77 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Search, Menu, X } from "lucide-react";
+import { Search, Menu, X, LucideBluetoothSearching } from "lucide-react";
 import Link from "next/link";
-export default function Header() {
+import { useRouter } from "next/navigation";
+import Dealer from "./landingpage/Dealer";
+
+// ✅ import products data
+import { products } from "@/Data"; // change path based on your project
+
+export default function Header({onClose}) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClose = () => {
+    setIsOpen(false);
+    if (onClose) onClose();
+  };
+
+
+  // ✅ search states
+  const [query, setQuery] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const router = useRouter();
+
+  // ✅ filter products from data.js
+  const filteredProducts =
+    query.trim().length > 0
+      ? products.filter((item) =>
+          item.name.toLowerCase().includes(query.toLowerCase())
+        )
+      : [];
+
+  // ✅ when enter pressed
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+
+    if (!query.trim()) return;
+
+    router.push(`/products?search=${encodeURIComponent(query)}`);
+    setShowDropdown(false);
+  };
+
+  // ✅ when user clicks product from dropdown
+  const handleProductClick = (slug) => {
+    router.push(`/products/${slug}`); // ✅ change route if your detail page is different
+    setQuery("");
+    setShowDropdown(false);
+  };
 
   return (
     <header className="w-full">
       {/* ================= TOP BAR ================= */}
-      <div className="bg-white  border-b">
+      <div className="bg-white border-b">
         <div className="max-w-[1320px] mx-auto flex items-center justify-between py-2 px-4">
-
-          <Link  href="/">
-          
-          <Image src="/logo.jpeg" alt="Milky Logo" width={160} height={80} />
+          <Link href="/">
+            <Image src="/logonew.png" alt="Milky Logo" width={160} height={80} />
           </Link>
 
           <div className="hidden lg:flex items-center gap-4">
-            <div className="text-sm text-blue-700 leading-tight">
-              <p>info@maheshengworks.com</p>
-              <p>sales@maheshengworks.com</p>
-            </div>
-
+          
             <a
-              href="tel:7622020359"
+              href="tel:+919560156328"
               className="bg-lime-500 text-white font-semibold px-4 py-2 rounded-lg"
             >
-              CALL US 7622020359
+              CALL US +919560156328
             </a>
 
-            <a
-              href="#"
+             <a
+              href="https://wa.me/+919560156328"
               className="bg-lime-500 text-white font-semibold px-4 py-2 rounded-lg"
             >
-              GET QUOTE
+             WHATSAPP US
             </a>
 
             <div className="flex items-center gap-1 border-l pl-3">
@@ -57,53 +94,78 @@ export default function Header() {
       {/* ================= MAIN NAV ================= */}
       <div className="bg-blue-700 relative">
         <div className="max-w-[1320px] mx-auto flex items-center h-[60px] px-4 gap-6">
-
-          {/* ===== CATEGORY DROPDOWN (HOVER) ===== */}
+          {/* CATEGORY BUTTON */}
           <div className="relative group hidden lg:block">
-            <button className="flex items-center gap-3 bg-blue-800 text-white font-semibold px-5 py-3 rounded-md">
+            <Link
+              href="/products"
+              className="flex uppercase cursor-pointer hover:scale-105 transition items-center gap-3 bg-blue-800 text-white font-semibold px-5 py-3 rounded-md"
+            >
               <span className="text-xl">☰</span>
-              PRODUCT CATEGORIES
-            </button>
-
-            {/* Dropdown */}
-            <div className="absolute  top-full left-0 w-120 bg-white shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <ul className="py-3 text-gray-700 text-sm">
-                {[
-                  "Face Tissue",
-                  "Paper Napkin",
-                  "Kitchen Towel",
-                  "Toilet Roll",
-                  "Butter Paper Roll",
-                  "Cake Box",
-                ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="px-5 py-2 hover:bg-blue-50 hover:text-blue-700 cursor-pointer"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+              Milk Cooling Solutions
+            </Link>
           </div>
 
-          {/* ===== DESKTOP MENU ===== */}
-          <nav className="hidden lg:flex items-center gap-8 text-white font-semibold ">
-            <a href="#" className="hover:text-lime-300">HOME</a>
-            <a href="#" className="hover:text-lime-300">ABOUT US</a>
-            <a href="#" className="hover:text-lime-300">BLOG</a>
-            <a href="#" className="hover:text-lime-300">DEALER ENQUIRY</a>
-            <a href="#" className="hover:text-lime-300">CONTACT US</a>
+          {/* MENU */}
+          <nav className="hidden lg:flex items-center gap-8 text-white font-semibold">
+            <Link href="/" className="hover:text-lime-300">
+              HOME
+            </Link>
+            <Link href="/about-us" className="hover:text-lime-300 uppercase">
+              About Us
+            </Link>
+            <Link href="/blogs" className="hover:text-lime-300 uppercase">
+              Blogs
+            </Link>
+            <button onClick={() => setIsOpen(true)} className="hover:text-lime-300 uppercase">
+              DEALER INQUIRY
+            </button>
+            <Link href="/contact-us" className="hover:text-lime-300 uppercase">
+              CONTACT Us
+            </Link>
           </nav>
 
-          {/* Search */}
-          <div className="ml-auto hidden lg:flex items-center bg-blue-800 px-4 py-2 rounded-md">
-            <input
-              type="text"
-              placeholder="Search ..."
-              className="bg-transparent outline-none text-white placeholder:text-white/70 text-sm w-40"
-            />
-            <Search className="text-white ml-2 w-5 h-5" />
+          {/* ✅ SEARCH BAR WITH DROPDOWN */}
+          <div className="ml-auto hidden lg:block relative">
+            <form
+              onSubmit={handleSearchSubmit}
+              className="flex items-center bg-blue-800 px-4 py-2 rounded-md"
+            >
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={query}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  setShowDropdown(true);
+                }}
+                onFocus={() => setShowDropdown(true)}
+                className="bg-transparent outline-none text-white placeholder:text-white/70 text-sm w-52"
+              />
+              <button type="submit">
+                <Search className="text-white ml-2 w-5 h-5" />
+              </button>
+            </form>
+
+            {/* ✅ Dropdown Results */}
+            {showDropdown && query.trim() !== "" && (
+              <div className="absolute left-0 top-[50px] w-full bg-white text-black rounded-md shadow-lg z-50">
+                {filteredProducts.length > 0 ? (
+                  filteredProducts.slice(0, 6).map((item) => (
+                    <button
+                      key={item.slug}
+                      onClick={() => handleProductClick(item.slug)}
+                      className="w-full text-left px-4 py-2 hover:bg-gray-100 text-sm"
+                    >
+                      {item.name}
+                    </button>
+                  ))
+                ) : (
+                  <p className="px-4 py-2 text-sm text-gray-500">
+                    No products found
+                  </p>
+                )}
+              </div>
+            )}
           </div>
         </div>
 
@@ -132,6 +194,8 @@ export default function Header() {
           </div>
         )}
       </div>
+
+      <Dealer isOpen={isOpen} onClose={handleClose}></Dealer>
     </header>
   );
 }

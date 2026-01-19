@@ -8,10 +8,12 @@ export default function YoutubeSection() {
 
   // 👉 Just paste YouTube video links here
   const videos = [
-    { id: "1", title: "Bar Bending Machine", link: "https://youtu.be/Oh8Y-LRhUr4?si=kHQ2RDRmzPkHwD52" },
-    { id: "2", title: "Anti Smog Gun", link: "https://youtu.be/BV_WKSBmzVM?si=vMlzbkv3_IHGExUA" },
-    { id: "3", title: "Mixer Lift & Bar Cutting Machine", link: "https://youtu.be/pPYL4xDxVR0?si=4SRwRZTJP6JNVE4L" },
-    { id: "4", title: "Monkey Hoist Lift", link: "https://youtu.be/WutWHT9HkrI?si=6oErMZFJ6I8WpxRr" },
+    { id: "1", title: "Bulk Milk Cooler Machine", link: "https://youtu.be/1Ur4WSoTiyA?si=mzQsJet6PIr414Cq" },
+    { id: "2", title: "Cow Buffalo Milk ATM Machine", link: "https://youtu.be/QIBMTLDq6AM?si=llBxjt2AZ-H_8mcC" },
+    { id: "3", title: "Milk Vending Machine with Cooler", link: "https://youtu.be/ZHHwbzyYKZQ?si=omSmAAKT8Y97FusX" },
+    { id: "4", title: "500 Litre Bulk Milk Chiller Machine", link: "https://youtu.be/Hoist Lift", link: "https://youtu.be/5P4r7HOAI0M?si=_vzLkckwb2vZI6YX" },
+
+        // { id: "5", title: "Milk Analyzer Machine", link: "https://youtu.be/9omQFV8Gmgk?si=5smrUV_wqNpRo8V6",  },
   ];
 
   // 🔑 Extract ID from normal or short YouTube link
@@ -41,13 +43,13 @@ export default function YoutubeSection() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto py-12 px-5">
+    <section className="max-w-7xl mx-auto py-12">
       <h2 className="text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
         <FaYoutube className="text-red-600 text-4xl" /> Our YouTube Videos
       </h2>
 
       {/* Video Cards */}
-      <div className="grid md:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-4 gap-5">
         {videos.map((video) => {
           const id = getYoutubeId(video.link);
           return (

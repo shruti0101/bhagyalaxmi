@@ -5,7 +5,7 @@ import { connect } from "@/Database/Db";
 import Blog from "@/models/blog";
 import { notFound } from "next/navigation";
 
-// ✅ Dynamic metadata for SEO
+//  metadata for SEO
 export async function generateMetadata({ params }) {
   await connect();
   const blog = await Blog.findOne({ permalink: params.slug });
@@ -40,7 +40,7 @@ export default async function BlogPage({ params }) {
   const blog = await Blog.findOne({ permalink: params.slug });
   if (!blog) return notFound();
 
-  // ✅ Related blogs (excluding current one)
+  // related blogs (excluding current one)
   let relatedBlogs = await Blog.find({
     _id: { $ne: blog._id },
     ...(blog.category ? { category: blog.category } : {}),
@@ -56,7 +56,7 @@ export default async function BlogPage({ params }) {
       <section className="relative w-full h-[280px] md:h-[400px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-fixed bg-center bg-cover flex flex-col items-center justify-center text-center"
-          style={{ backgroundImage: "url('/home/bg-footer.webp')" }}
+          style={{ backgroundImage: "url('/milkflow4.jpg')" }}
         >
           <h1 className="text-white  mt-10 px-5 text-xl md:text-6xl font-bold">
             {blog.title}

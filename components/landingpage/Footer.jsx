@@ -15,16 +15,34 @@ import {
 } from "lucide-react";
 import { FaPhone } from "react-icons/fa";
 
-const categories = [
-  { id: "bulk-milk-coolers", name: "Bulk Milk Coolers (BMC)" },
-  { id: "milk-chilling-equipment", name: "Milk Chilling Equipment" },
-  { id: "milk-storage-tanks", name: "Milk Storage Tanks" },
-  { id: "milk-pasteurizers", name: "Milk Pasteurizers" },
 
-  { id: "milk-atm-vending-machines", name: "Milk ATM Vending Machines" },
-  { id: "mini-dairy-plant", name: "Mini Dairy Processing Plant" },
 
+export const categories = [
+  {
+    id: "bulk-milk-cooler",
+    name: "Bulk Milk Cooler",
+  },
+
+  { id: "milk-vending-machine", name: "Milk Vending Machine" },
+
+ 
+  { id: "curd-making-machine", name: "Curd Making Machine" },
+
+  {
+    id: "steam-boiler",
+    name: "Steam Boiler",
+  },
+
+  { id: "milk-homogenizer-mixer", name: "Milk Homogenizer Mixer" },
+
+  { id: "milk-chiling-plant", name: "Milk Chiling Plant" },
+
+  { id: "milk-processing-plant", name: "Milk Processing Plant" },
+
+  { id: "milk-pasteurizer", name: "Milk Pasteurizer" },
 ];
+
+
 
 
 const Footer = () => {
@@ -36,11 +54,11 @@ const Footer = () => {
 
   return (
     <footer
-      style={{ backgroundImage: "url('/formbg1.jpg')" }}
+      style={{ backgroundImage: "url('/test1.jpeg')" }}
       className="relative bg-cover bg-center text-gray-300 pt-12 pb-6"
     >
 
-      <div className="absolute inset-0 bg-black/70 "></div>
+      <div className="absolute inset-0 bg-black/60 "></div>
       <div className="max-w-7xl relative z-20 mx-auto px-6 md:px-13">
         <div className="mb-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
@@ -48,18 +66,18 @@ const Footer = () => {
             <div>
               <div className="relative inline-block mb-4">
                 <Image
-                  src="/logo.jpeg"
+                  src="/logonew.png"
                   alt="Logo"
-                  width={180}
+                  width={200}
                   height={50}
-                  className="bg-white"
+                  className="bg-white p-3"
                 />
-                <span className="absolute -top-0 -right-0 text-xs font-bold text-black">
+                {/* <span className="absolute -top-0 -right-0 text-xs font-bold text-black">
                   ®
-                </span>
+                </span> */}
               </div>
 
-         <p className="text-sm leading-relaxed">
+         <p className="text-xs leading-relaxed text-white">
   Our Bulk Milk Coolers ensure rapid cooling, hygienic storage, and long-lasting
   stainless steel durability. Designed for efficiency and reliability, they maintain
   milk freshness at farm and dairy levels with industry-approved safety standards.
@@ -71,8 +89,8 @@ const Footer = () => {
     href="tel:+918826544443"
     className="flex items-center gap-2"
   >
-    <Phone className="w-5 h-5 text-[#FAAC18] hover:scale-110 transition-transform duration-200" />
-    <h5 className="text-[16px] font-semibold underline">+9175646555</h5>
+    <Phone className="w-5 h-5 text-blue-500 hover:scale-110 transition-transform duration-200" />
+    <h5 className="text-[16px] font-semibold underline">+919560156328</h5>
   </a>
   
 </div>
@@ -80,47 +98,49 @@ const Footer = () => {
 
               {/* Address */}
               <div className="flex items-start gap-2 mt-4 text-sm">
-                <MapPin className="w-10 h-10 text-[#FAAC18]" />
-                <p>
-                 delhi india
+                <MapPin className="w-10 h-10 text-blue-500" />
+                <p className="txt-white">
+             KH No 14/15, 14/2/1,Built, Up Area 485 SQ, YDS Appx Nangli, Sakrawati Indl.Area,Najafgarh
+New Delhi - 110043, Delhi, India
+
                 </p>
               </div>
 
               {/* Contact + Social */}
               <div className="flex gap-4 mt-4">
-                <a href="mailto:shreeshaktiinfratech@gmail.com">
-                  <Mail className="w-5 h-5 text-[#FAAC18] hover:scale-110 transition-transform duration-200" />
+                <a href="mailto:bhagyalaxmigroup12@gmail.com">
+                  <Mail className="w-5 h-5 text-blue-500 hover:scale-110 transition-transform duration-200" />
                 </a>
-                <a href="tel:+911140050667">
-                  <Phone className="w-5 h-5 text-[#FAAC18] hover:scale-110 transition-transform duration-200" />
+                <a href="tel:+91+919560156328">
+                  <Phone className="w-5 h-5 text-blue-500 hover:scale-110 transition-transform duration-200" />
                 </a>
                 <a
-                  href="https://www.facebook.com/ShreeShaktiInfratech"
+                  href="https://www.facebook.com/Bhagyalaxmi.industries/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Facebook className="w-5 h-5 hover:text-[#FAAC18] cursor-pointer hover:scale-110 transition-transform duration-200" />
+                  <Facebook className="w-5 h-5 hover:text-blue-500 cursor-pointer hover:scale-110 transition-transform duration-200" />
                 </a>
                 <a
-                  href="https://www.instagram.com/shree_shakti_infratech/"
+                  href="https://www.instagram.com/bhagyalaxmiindustriesindia/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Instagram className="w-5 h-5 hover:text-[#FAAC18] cursor-pointer hover:scale-110 transition-transform duration-200" />
+                  <Instagram className="w-5 h-5 hover:text-blue-500 cursor-pointer hover:scale-110 transition-transform duration-200" />
                 </a>
                 <a
-                  href="https://www.youtube.com/@ShreeShaktiInfratech"
+                  href="www.youtube.com/@BhagyalaxmiIndustriesin"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Youtube className="w-5 h-5 hover:text-[#FAAC18] cursor-pointer hover:scale-110 transition-transform duration-200" />
+                  <Youtube className="w-5 h-5 hover:text-blue-500 cursor-pointer hover:scale-110 transition-transform duration-200" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/shree-shakti-infratech-248068265/"
+                  href="linkedin.com/cws/share?url=https://www.bhagyalaxmiindustries.co.in/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Linkedin className="w-5 h-5 hover:text-[#FAAC18] cursor-pointer hover:scale-110 transition-transform duration-200" />
+                  <Linkedin className="w-5 h-5 hover:text-blue-500 cursor-pointer hover:scale-110 transition-transform duration-200" />
                 </a>
               </div>
             </div>
@@ -130,27 +150,27 @@ const Footer = () => {
               <h3 className="text-white font-semibold text-lg mb-4">About</h3>
               <ul className="space-y-2 text-sm text-white">
                 <li>
-                  <Link href="/" className="hover:text-[#FAAC18]">
+                  <Link href="/" className="hover:text-blue-500">
                     HOME
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about-us" className="hover:text-[#FAAC18]">
+                  <Link href="/about-us" className="hover:text-blue-500">
                     ABOUT US
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blogs" className="hover:text-[#FAAC18]">
+                  <Link href="/blogs" className="hover:text-blue-500">
                     BLOGS
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products" className="hover:text-[#FAAC18]">
+                  <Link href="/products" className="hover:text-blue-500">
                     PRODUCTS
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact-us" className="hover:text-[#FAAC18]">
+                  <Link href="/contact-us" className="hover:text-blue-500">
                     CONTACT US
                   </Link>
                 </li>
@@ -165,7 +185,7 @@ const Footer = () => {
               <ul className="space-y-2 text-sm text-white uppercase">
                 {categories.map((cat) => (
                   <li key={cat.id}>
-                    <Link href={`/products`} className="hover:text-[#FAAC18]">
+                    <Link href={`/products`} className="hover:text-blue-500">
                       {cat.name}
                     </Link>
                   </li>
@@ -268,7 +288,7 @@ const Footer = () => {
 
             {/* Column 4: Trust Certificate */}
             <div>
-              <h3 className="text-[#FAAC18] font-semibold text-lg mb-4">
+              <h3 className="text-blue-600 font-semibold text-lg mb-4">
                 Trust Elite Certificate
               </h3>
 
@@ -286,7 +306,7 @@ const Footer = () => {
                 />
               </div>
 
-              <p className="text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed text-white">
                 We are proud to present the Trust Elite Certificate of
                 Excellence to BhagyaLaxmi Industries, recognizing their
                 commitment to exceptional customer service, outstanding business
@@ -322,17 +342,28 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className=" relative z-20 border-t border-gray-700 mt-10 pt-4 text-center text-sm text-white">
-        © 2025 BhagyaLaxmi Industries, All Rights Reserved. Managed and
-        Developed By{" "}
-        <a
-          href="https://promozionebranding.com/"
-          className="text-[#FAAC18] hover:underline"
-        >
-          Promozione Branding Pvt Ltd.
-        </a>
-      </div>
+
+{/* Bottom Bar */}
+<div className="relative z-20 border-t border-gray-700 mt-10 pt-4 px-4 text-center text-sm text-white">
+  <div className="flex flex-col md:flex-row justify-between gap-1">
+    <span>© 2025 BhagyaLaxmi Industries, All Rights Reserved.</span>
+
+    <span>
+      Website Designed By Promozione Branding Pvt. Ltd.
+      <a
+        href="https://promozionebranding.com/"
+        className="text-blue-500 font-bold hover:underline ml-1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Website Designing Company.
+      </a>
+    </span>
+  </div>
+</div>
+
+
+
     </footer>
   );
 };

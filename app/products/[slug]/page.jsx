@@ -1,7 +1,7 @@
 import { products } from "@/Data";
 import ProductDetailClient from "./ProductDetailClient";
 
-// ✅ Dynamic SEO metadata
+
 export async function generateMetadata({ params }) {
   const { slug } = params;
   const product = products.find((p) => p.slug === slug);

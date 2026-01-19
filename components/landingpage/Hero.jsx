@@ -5,8 +5,8 @@ import Image from "next/image";
 // import Heroform from "@/components/Landingpage/Heroform";
 
 // ✅ Separate images
-const desktopImages = ["/hero1.png",  ];
-const mobileImages = ["/mobile3.webp","/mobile2.webp","/mobile1.webp","/mobile4.webp"];
+const desktopImages = ["/hero1.png","/hero2.jpeg"  ];
+const mobileImages = ["/mobile1.png","/mobile2.png",];
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,7 +33,7 @@ const Hero = () => {
   return (
     <>
       {/* ✅ Desktop Hero */}
-      <section className="relative hidden md:flex justify-end w-full h-[90vh] overflow-hidden">
+      <section className="relative hidden md:flex justify-end w-full  md:h-[90vh] overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={`desktop-${currentIndex}`}
@@ -59,7 +59,7 @@ const Hero = () => {
       </section>
 
       {/* ✅ Mobile Hero */}
-      <section className="relative block md:hidden w-full mt-24 h-[50vh]  overflow-hidden">
+      <section className="relative block md:hidden w-full  h-[55vh]  overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={`mobile-${currentIndex}`}

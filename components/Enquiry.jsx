@@ -8,20 +8,9 @@ import {
   FaRegCommentDots,
 } from "react-icons/fa";
 
-const categories = [
-  { id: "bar-processing-machines", name: "Bar Processing Machines" },
-  { id: "concrete-mixers", name: "Concrete Mixers" },
-  { id: "anti-fog-cannon-machine", name: "Anti-Fog Cannon Machine" },
-  { id: "lab-testing-equipment", name: "Lab Testing Equipment" },
-  { id: "material-lifting-equipment", name: "Material Lifting Equipment" },
-  { id: "safety-instrument", name: "Safety Instruments" },
-  {
-    id: "ride-on-roller-plate-compactor",
-    name: "RIDE ON ROLLER / PLATE COMPACTOR",
-  },
-  { id: "surveying-instrument", name: "Surveying Instruments" },
-  { id: "trolley-vibrator", name: "Trolley Vibrator" },
-];
+import { products } from "@/Data";
+
+const allproduct = products;
 
 const Enquiry = ({ isOpen, onClose }) => {
   const [status, setStatus] = useState(null);
@@ -33,10 +22,13 @@ const Enquiry = ({ isOpen, onClose }) => {
     const formData = new FormData(e.target);
 
     try {
-      const res = await fetch("https://formsubmit.co/ajax/shreeshaktiinfratech@gmail.com", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        "https://formsubmit.co/ajax/shreeshaktiinfratech@gmail.com",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (res.ok) {
         setStatus("success");
@@ -52,10 +44,10 @@ const Enquiry = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-[3000]">
+    <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-[3000] px-4">
       <div className="bg-white rounded-2xl shadow-2xl w-[90%] max-w-xl relative overflow-hidden border border-gray-200">
         {/* Header */}
-        <div className="bg-[#FFAC18] h-13 w-full flex items-center justify-between px-6">
+        <div className="bg-[#0B4FA8] h-13 w-full flex items-center justify-between px-6 py-4">
           <h2 className="text-2xl font-bold text-white tracking-wide">
             📩 Enquiry Form
           </h2>
@@ -68,7 +60,7 @@ const Enquiry = ({ isOpen, onClose }) => {
         </div>
 
         {/* Content */}
-        <div className="p-4 bg-gradient-to-br from-gray-50 to-white">
+        <div className="p-4 bg-gradient-to-br from-blue-50 to-white">
           <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
             {/* Hidden fields */}
             <input type="hidden" name="_captcha" value="false" />
@@ -85,8 +77,8 @@ const Enquiry = ({ isOpen, onClose }) => {
             />
 
             {/* Name */}
-            <div className="flex items-center border rounded-lg px-4 py-3 bg-white shadow-sm focus-within:ring-2 focus-within:ring-yellow-500">
-              <FaUser className="text-gray-500 mr-3" />
+            <div className="flex items-center border rounded-lg px-4 py-3 bg-white shadow-sm focus-within:ring-2 focus-within:ring-blue-500">
+              <FaUser className="text-blue-600 mr-3" />
               <input
                 type="text"
                 name="name"
@@ -97,8 +89,8 @@ const Enquiry = ({ isOpen, onClose }) => {
             </div>
 
             {/* Email */}
-            <div className="flex items-center border rounded-lg px-4 py-3 bg-white shadow-sm focus-within:ring-2 focus-within:ring-yellow-500">
-              <FaEnvelope className="text-gray-500 mr-3" />
+            <div className="flex items-center border rounded-lg px-4 py-3 bg-white shadow-sm focus-within:ring-2 focus-within:ring-blue-500">
+              <FaEnvelope className="text-blue-600 mr-3" />
               <input
                 type="email"
                 name="email"
@@ -109,8 +101,8 @@ const Enquiry = ({ isOpen, onClose }) => {
             </div>
 
             {/* Phone */}
-            <div className="flex items-center border rounded-lg px-4 py-3 bg-white shadow-sm focus-within:ring-2 focus-within:ring-yellow-500">
-              <FaPhone className="text-gray-500 mr-3" />
+            <div className="flex items-center border rounded-lg px-4 py-3 bg-white shadow-sm focus-within:ring-2 focus-within:ring-blue-500">
+              <FaPhone className="text-blue-600 mr-3" />
               <input
                 type="tel"
                 name="phone"
@@ -122,15 +114,15 @@ const Enquiry = ({ isOpen, onClose }) => {
             </div>
 
             {/* Product Dropdown */}
-            <div className="flex items-center border rounded-lg px-4 py-3 bg-white shadow-sm focus-within:ring-2 focus-within:ring-yellow-500">
-              <FaIndustry className="text-gray-500 mr-3" />
+            <div className="flex items-center border rounded-lg px-4 py-3 bg-white shadow-sm focus-within:ring-2 focus-within:ring-blue-500">
+              <FaIndustry className="text-blue-600 mr-3" />
               <select
                 name="product"
                 required
                 className="w-full bg-transparent focus:outline-none text-gray-700"
               >
                 <option value="">Select Product *</option>
-                {categories.map((cat) => (
+                {allproduct.map((cat) => (
                   <option key={cat.id} value={cat.name}>
                     {cat.name}
                   </option>
@@ -139,8 +131,8 @@ const Enquiry = ({ isOpen, onClose }) => {
             </div>
 
             {/* Message */}
-            <div className="flex items-start border rounded-lg px-4 py-3 bg-white shadow-sm focus-within:ring-2 focus-within:ring-yellow-500">
-              <FaRegCommentDots className="text-gray-500 mt-1 mr-3" />
+            <div className="flex items-start border rounded-lg px-4 py-3 bg-white shadow-sm focus-within:ring-2 focus-within:ring-blue-500">
+              <FaRegCommentDots className="text-blue-600 mt-1 mr-3" />
               <textarea
                 name="message"
                 placeholder="Your Message *"
@@ -153,7 +145,7 @@ const Enquiry = ({ isOpen, onClose }) => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-lg font-semibold py-3 rounded-lg shadow-md hover:from-yellow-600 hover:to-orange-600 hover:scale-[1.02] transition"
+              className="bg-gradient-to-r from-blue-600 to-blue-800 text-white text-lg font-semibold py-3 rounded-lg shadow-md hover:from-blue-700 hover:to-blue-900 hover:scale-[1.02] transition"
             >
               🚀 Submit Enquiry
             </button>
