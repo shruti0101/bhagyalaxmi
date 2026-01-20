@@ -259,7 +259,7 @@ export default function Header({ onClose }) {
                 href="https://wa.me/919560156328"
                 className="flex-1 text-center bg-lime-500 py-2 rounded-lg font-semibold flex items-center justify-center gap-2"
               >
-                <MessageCircle size={18} />
+                <FaWhatsapp size={18} />
                 WhatsApp
               </a>
             </div>

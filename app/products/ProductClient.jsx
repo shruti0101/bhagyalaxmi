@@ -108,7 +108,7 @@ export default function ProductsPage() {
                     src={product.image.src}
                     alt={product.name}
                     fill
-                    className="object-cover border-1 group-hover:scale-110 transition duration-500"
+                    className="object-contain border-1 group-hover:scale-110 transition duration-500"
                   />
 
                   {/* Hover Overlay */}
