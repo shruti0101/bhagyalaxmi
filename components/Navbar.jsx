@@ -2,7 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Search, Menu, X } from "lucide-react";
+import {
+  Search,
+  Menu,
+  X,
+  PhoneCall,
+  MessageCircle,
+  ChevronDown,
+} from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Dealer from "./landingpage/Dealer";
@@ -17,12 +24,14 @@ export default function Header({ onClose }) {
 
   const [isSticky, setIsSticky] = useState(false);
 
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+
   const router = useRouter();
 
   // ✅ Detect scroll and make top bar sticky only after scrolling
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 20); // you can change 20 to 50 etc.
+      setIsSticky(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -44,6 +53,7 @@ export default function Header({ onClose }) {
     router.push(`/products?search=${encodeURIComponent(query)}`);
     setShowDropdown(false);
     setMenuOpen(false);
+    setMobileProductsOpen(false);
   };
 
   const handleProductClick = (slug) => {
@@ -51,11 +61,11 @@ export default function Header({ onClose }) {
     setQuery("");
     setShowDropdown(false);
     setMenuOpen(false);
+    setMobileProductsOpen(false);
   };
 
   return (
     <>
-      {/* ✅ Header Wrapper */}
       <header className="bg-white shadow-md">
         {/* ================= TOP BAR (Sticky only after scroll) ================= */}
         <div
@@ -72,14 +82,17 @@ export default function Header({ onClose }) {
             <div className="hidden lg:flex items-center gap-3">
               <a
                 href="tel:+919560156328"
-                className="bg-lime-500 text-white px-4 py-2 rounded-lg font-semibold"
+                className="bg-lime-500 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2"
               >
+                <PhoneCall size={18} />
                 CALL US
               </a>
+
               <a
                 href="https://wa.me/919560156328"
-                className="bg-lime-500 text-white px-4 py-2 rounded-lg font-semibold"
+                className="bg-lime-500 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2"
               >
+                <MessageCircle size={18} />
                 WHATSAPP
               </a>
             </div>
@@ -94,7 +107,7 @@ export default function Header({ onClose }) {
           </div>
         </div>
 
-        {/* ✅ Spacer only when sticky (so content won't jump / overlap) */}
+        {/* ✅ Spacer only when sticky */}
         {isSticky && <div className="h-[72px]" />}
 
         {/* ================= DESKTOP NAV (NOT STICKY) ================= */}
@@ -203,32 +216,47 @@ export default function Header({ onClose }) {
               </div>
             )}
 
+            {/* Normal Links */}
             <nav className="flex flex-col gap-4 font-semibold uppercase">
               <Link href="/" onClick={() => setMenuOpen(false)}>
                 Home
               </Link>
+
               <Link href="/about-us" onClick={() => setMenuOpen(false)}>
                 About Us
               </Link>
+
+              
+              <Link href="/products" onClick={() => setMenuOpen(false)}>
+              All Products
+              </Link>
+
               <Link href="/blogs" onClick={() => setMenuOpen(false)}>
                 Blogs
               </Link>
+
               <Link href="/contact-us" onClick={() => setMenuOpen(false)}>
                 Contact
               </Link>
             </nav>
 
+         
+
+            {/* Mobile Actions with Icons */}
             <div className="flex gap-3">
               <a
                 href="tel:+919560156328"
-                className="flex-1 text-center bg-lime-500 py-2 rounded-lg font-semibold"
+                className="flex-1 text-center bg-lime-500 py-2 rounded-lg font-semibold flex items-center justify-center gap-2"
               >
+                <PhoneCall size={18} />
                 Call
               </a>
+
               <a
                 href="https://wa.me/919560156328"
-                className="flex-1 text-center bg-lime-500 py-2 rounded-lg font-semibold"
+                className="flex-1 text-center bg-lime-500 py-2 rounded-lg font-semibold flex items-center justify-center gap-2"
               >
+                <MessageCircle size={18} />
                 WhatsApp
               </a>
             </div>

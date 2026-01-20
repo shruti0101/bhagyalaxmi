@@ -31,7 +31,7 @@ export default function AboutSection() {
                 Milk Cooler{"  "}
                 <span className="absolute left-0 -bottom-[6px] w-full h-[6px] bg-green-500"></span>
               </span>
-              Manufacturer
+             {"  "} Manufacturer
             </h1>
 
             <p className="text-black text-[15px] sm:text-[16px] leading-[26px] sm:leading-[30px] mb-7 mt-[10px]">

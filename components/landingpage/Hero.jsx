@@ -60,7 +60,7 @@ export default function HeroSlider() {
 /* ================= SLIDE 1 (YOUR FIRST HERO DESIGN) ================= */
 function HeroSlide1() {
   return (
-    <section className="relative w-full h-[60vh] md:h-[100vh] overflow-hidden bg-white">
+    <section className="relative w-full h-[50vh] sm:h-[80vh] lg:h-[100vh] overflow-hidden bg-white">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -77,7 +77,7 @@ function HeroSlide1() {
       </div>
 
       {/* Content Wrapper */}
-      <div className="relative z-10 mx-auto flex w-full  max-w-7xl items-center px-4 py-8 md:min-h-[80vh] md:px-8 lg:min-h-[90vh] lg:px-12">
+      <div className="relative z-10 mx-auto flex w-full mt-10  max-w-7xl items-center px-4 py-8 md:min-h-[80vh] md:px-8 lg:min-h-[90vh] lg:px-12">
         <div className="grid w-full grid-cols-1 gap-10 lg:grid-cols-12">
           {/* LEFT FEATURES */}
           <div className="order-2 flex flex-col justify-center gap-5 lg:order-1 lg:col-span-4">
@@ -129,9 +129,9 @@ function HeroSlide2() {
   return (
     <section
       style={{ backgroundImage: "url(/secondcheck1.png)" }}
-      className="relative w-full h-[60vh] md:h-[100vh] bg-cover bg-center bg-[#f4f5f7] overflow-hidden"
+      className="relative w-full h-[60vh] sm:h-[80vh] lg:h-[100vh] bg-cover bg-center bg-[#f4f5f7] overflow-hidden"
     >
-      <div className="relative z-10 mx-auto  grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-10 lg:grid-cols-2 lg:px-10">
+      <div className="relative z-10 mx-auto mt-8 grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-10 lg:grid-cols-2 lg:px-10">
         {/* LEFT */}
         <div className="relative order-2 lg:order-1">
           <div className="absolute top-0 left-0 z-20 w-[160px]">
