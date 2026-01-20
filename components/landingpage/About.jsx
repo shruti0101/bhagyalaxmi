@@ -8,7 +8,7 @@ export default function AboutSection() {
     <>
       <section className="relative bg-[#F5F7F9] py-13 overflow-hidden">
         {/* Background tech pattern */}
-        <div className="absolute right-0 bottom-0 pointer-events-none">
+        <div className="hidden md:block  absolute right-0 bottom-0 pointer-events-none">
           <Image
             src="/pattern.png"
             alt=""

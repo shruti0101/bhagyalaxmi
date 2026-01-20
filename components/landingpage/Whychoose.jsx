@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-[#f6fbfc] py-8 md:py-20 relative overflow-hidden">
+    <section className="bg-[#f6fbfc] px-8 py-8 md:py-20 relative overflow-hidden">
       {/* faint tech background */}
       <div className="absolute inset-0 opacity-[0.06] bg-[url('/patterns/circuit.svg')] bg-repeat" />
 
@@ -20,7 +20,7 @@ export default function WhyChooseUs() {
           <div className="w-[48px] h-[3px] bg-green-600 mt-[16px] mb-[28px]" />
 
           {/* Intro Content */}
-          <p className="text-black text-[15px] leading-[28px] max-w-[520px] mt-[28px]">
+          <p className="text-black  text-[15px] leading-[28px] max-w-[520px] mt-[28px]">
             Bhagyalaxmi Industries is a trusted{" "}
             <strong>bulk milk cooler manufacturer</strong> and provider of premium{" "}
             <strong>dairy equipment</strong> Our products are designed for efficiency,
