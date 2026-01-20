@@ -51,7 +51,7 @@ const allproducts = products
 
   <section
         style={{ backgroundImage: "url(/milkflow4.jpg)" }}
-        className="relative h-[70vh] bg-cover bg-center flex items-center justify-center"
+        className="relative h-[90vh] bg-cover bg-center flex items-center justify-center"
       >
         <div className="absolute inset-0 bg-black/20"></div>
 

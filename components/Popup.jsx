@@ -7,13 +7,9 @@ export default function PopupForm({ onClose }) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 4000);
+    const timer = setTimeout(() => setIsOpen(true), 4000);
     return () => clearTimeout(timer);
   }, []);
-
-  const productList = products;
 
   if (!isOpen) return null;
 
@@ -23,150 +19,125 @@ export default function PopupForm({ onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-[3000] flex items-center justify-center bg-black/60 px-4">
-      {/* Popup Card */}
-      <div className="relative w-full max-w-[900px] overflow-hidden rounded-2xl bg-white shadow-2xl animate-[popup_0.25s_ease-out]">
-        {/* Close Button */}
+    <div className="fixed inset-0 z-[3000] flex items-center justify-center bg-black/60 px-3 sm:px-4">
+      {/* CARD */}
+      <div className="relative w-full max-w-[900px] bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] animate-[popup_0.25s_ease-out]">
+        
+        {/* CLOSE */}
         <button
           onClick={handleClose}
-          className="absolute right-4 top-4 z-50 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-gray-700 shadow hover:bg-gray-100 hover:text-black transition"
-          aria-label="Close popup"
+          className="absolute right-3 top-3 z-50 h-9 w-9 rounded-full bg-white shadow grid place-items-center text-gray-600 hover:text-black"
         >
           ✕
         </button>
 
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          {/* LEFT IMAGE SECTION */}
+        <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+          {/* LEFT IMAGE (HIDDEN ON MOBILE) */}
           <div className="relative hidden md:block">
             <Image
               src="/home/abouthome1.avif"
-              alt="Enquiry Form"
+              alt="Enquiry"
               fill
-              className="object-cover"
               priority
+              className="object-cover"
             />
-            {/* Overlay content */}
-            <div className="absolute inset-0   p-6 flex flex-col justify-end">
-              <h3 className="text-white text-2xl font-bold">
+
+            <div className="absolute inset-0 bg-black/40 p-6 flex flex-col justify-end">
+              <h3 className="text-white text-xl lg:text-2xl font-bold">
                 Get a Free Quote in Minutes
               </h3>
-              <p className="text-white text-md mt-2 leading-relaxed">
-                Share your requirement and our team will contact you with best
-                pricing and complete details.
+              <p className="text-white/90 text-sm mt-2">
+                Share your requirement and get best pricing & details.
               </p>
 
-              <div className="mt-5 flex gap-2 flex-wrap">
-                <span className="rounded-full bg-white/15 px-3 py-1 text-xs text-white">
-                  Fast Response
-                </span>
-                <span className="rounded-full bg-white/15 px-3 py-1 text-xs text-white">
-                  Best Price
-                </span>
-                <span className="rounded-full bg-white/15 px-3 py-1 text-xs text-white">
-                  Genuine Products
-                </span>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {["Fast Response", "Best Price", "Genuine Products"].map(
+                  (item) => (
+                    <span
+                      key={item}
+                      className="text-xs bg-white/20 text-white px-3 py-1 rounded-full"
+                    >
+                      {item}
+                    </span>
+                  )
+                )}
               </div>
             </div>
           </div>
 
-          {/* RIGHT FORM SECTION */}
-          <div className="p-6 sm:p-8 md:p-10">
-            {/* Heading */}
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center">
-              Get Your{" "}
-              <span className="text-blue-700">Free Quote</span> Today
+          {/* RIGHT FORM */}
+          <div className="p-4 sm:p-6 md:p-8 overflow-y-auto">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-center">
+              Get Your <span className="text-blue-700">Free Quote</span>
             </h2>
 
-            <p className="text-center text-gray-600 text-sm mt-2 mb-6">
-              Fill in your details and choose the product you need. We’ll call
-              you shortly with pricing & availability.
+            <p className="text-center text-gray-600 text-xs sm:text-sm mt-2 mb-5">
+              Fill your details & select product. Our team will contact you.
             </p>
 
-            {/* Form */}
             <form
               action="https://formsubmit.co/shreeshaktiinfratech@gmail.com"
               method="POST"
               className="space-y-3"
             >
-              {/* Hidden Inputs */}
-              <input type="hidden" name="_sponsor" value="false" />
+              {/* Hidden fields */}
               <input type="hidden" name="_captcha" value="false" />
-              <input
-                type="hidden"
-                name="_subject"
-                value="New Enquiry from Website"
-              />
-              <input type="hidden" name="_nosponsor" value="false" />
+              <input type="hidden" name="_template" value="table" />
               <input
                 type="hidden"
                 name="_autoresponse"
-                value="Thank you for reaching out! We will get back to you shortly."
+                value="Thank you for reaching out! We will contact you shortly."
               />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_cc" value="shrutiguptabhu@gmail.com" />
 
-              {/* Inputs grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {/* Name */}
                 <input
                   type="text"
                   name="name"
-                  placeholder="Full Name*"
                   required
-                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none focus:border-blue-600 focus:bg-white transition"
+                  placeholder="Full Name*"
+                  className="input"
                 />
-
-                {/* Mobile */}
                 <input
                   type="tel"
                   name="mobile"
-                  placeholder="Mobile Number*"
                   required
-                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none focus:border-blue-600 focus:bg-white transition"
+                  placeholder="Mobile Number*"
+                  className="input"
                 />
               </div>
 
-              {/* Email */}
               <input
                 type="email"
                 name="email"
-                placeholder="Email Address*"
                 required
-                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none focus:border-blue-600 focus:bg-white transition"
+                placeholder="Email Address*"
+                className="input"
               />
 
-              {/* Product Select */}
-              <select
-                name="machine"
-                required
-                className="w-full cursor-pointer rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none focus:border-blue-600 focus:bg-white transition"
-              >
+              <select name="machine" required className="input">
                 <option value="">Select Product*</option>
-                {productList.map((product) => (
-                  <option key={product.id} value={product.name}>
-                    {product.name}
+                {products.map((p) => (
+                  <option key={p.id} value={p.name}>
+                    {p.name}
                   </option>
                 ))}
               </select>
 
-              {/* Message */}
               <textarea
                 name="message"
-                placeholder="Message "
-                rows="3"
-                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none focus:border-blue-600 focus:bg-white transition resize-none"
-              ></textarea>
+                rows={3}
+                placeholder="Message"
+                className="input resize-none"
+              />
 
-              {/* Submit */}
               <button
                 type="submit"
-                className="w-full cursor-pointer rounded-xl bg-blue-700 py-3 text-white font-semibold hover:bg-blue-800 transition"
+                className="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 rounded-xl font-semibold transition"
               >
                 Send My Enquiry →
               </button>
 
-              {/* Small note */}
-              <p className="text-xs text-gray-500 text-center mt-2">
+              <p className="text-[11px] text-gray-500 text-center">
                 We respect your privacy. No spam calls.
               </p>
             </form>
@@ -174,17 +145,30 @@ export default function PopupForm({ onClose }) {
         </div>
       </div>
 
-      {/* animation */}
+      {/* ANIMATION */}
       <style jsx>{`
         @keyframes popup {
           from {
             opacity: 0;
-            transform: translateY(15px) scale(0.98);
+            transform: translateY(20px) scale(0.97);
           }
           to {
             opacity: 1;
             transform: translateY(0) scale(1);
           }
+        }
+        .input {
+          width: 100%;
+          padding: 0.75rem 1rem;
+          font-size: 0.875rem;
+          border-radius: 0.75rem;
+          border: 1px solid #e5e7eb;
+          background: #f9fafb;
+          outline: none;
+        }
+        .input:focus {
+          border-color: #2563eb;
+          background: #fff;
         }
       `}</style>
     </div>

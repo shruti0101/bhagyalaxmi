@@ -63,7 +63,7 @@ export default function AboutSection() {
               >
                 Discover more
               </Link>
-            </div>
+            </div> 
           </div>
 
           {/* ================= LEFT IMAGE STACK ================= */}

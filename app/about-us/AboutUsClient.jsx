@@ -107,7 +107,7 @@ const Page = () => {
       {/* HERO SECTION */}
       <section
         style={{ backgroundImage: "url(/milkflow4.jpg)" }}
-        className="relative h-[55vh] sm:h-[80vh] md:h-[90vh] bg-cover bg-center flex items-center justify-center"
+        className="relative h-[55vh] sm:h-[80vh] md:h-[100vh] bg-cover bg-center flex items-center justify-center"
       >
         <div className="absolute inset-0 bg-black/20 "></div>
 
@@ -127,10 +127,7 @@ const Page = () => {
         <div className="max-w-7xl px-4 sm:px-6 lg:px-3 mx-auto grid md:grid-cols-2 items-center gap-10">
           {/* IMAGE SLIDER */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+          
             className="relative h-[300px] sm:h-[380px] md:h-[420px] lg:h-[580px] overflow-hidden"
           >
             <Swiper
@@ -155,10 +152,7 @@ const Page = () => {
 
           {/* TEXT */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+           
             className="px-1"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-gray-800 leading-tight">

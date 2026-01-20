@@ -2,30 +2,21 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Search, Menu, X, LucideBluetoothSearching } from "lucide-react";
+import { Search, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Dealer from "./landingpage/Dealer";
+import { products } from "@/Data";
 
-// ✅ import products data
-import { products } from "@/Data"; // change path based on your project
+export default function Header({ onClose }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [dealerOpen, setDealerOpen] = useState(false);
 
-export default function Header({onClose}) {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const handleClose = () => {
-    setIsOpen(false);
-    if (onClose) onClose();
-  };
-
-
-  // ✅ search states
   const [query, setQuery] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
 
   const router = useRouter();
 
-  // ✅ filter products from data.js
   const filteredProducts =
     query.trim().length > 0
       ? products.filter((item) =>
@@ -33,128 +24,113 @@ export default function Header({onClose}) {
         )
       : [];
 
-  // ✅ when enter pressed
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-
     if (!query.trim()) return;
-
     router.push(`/products?search=${encodeURIComponent(query)}`);
     setShowDropdown(false);
+    setMenuOpen(false);
   };
 
-  // ✅ when user clicks product from dropdown
   const handleProductClick = (slug) => {
-    router.push(`/products/${slug}`); // ✅ change route if your detail page is different
+    router.push(`/products/${slug}`);
     setQuery("");
     setShowDropdown(false);
+    setMenuOpen(false);
   };
 
   return (
-    <header className="w-full">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       {/* ================= TOP BAR ================= */}
-      <div className="bg-white border-b">
-        <div className="max-w-[1320px] mx-auto flex items-center justify-between py-2 px-4">
+      <div className="border-b">
+        <div className="max-w-[1320px] mx-auto flex items-center justify-between px-4 py-3">
           <Link href="/">
-            <Image src="/logonew.png" alt="Milky Logo" width={160} height={80} />
+            <Image src="/logonew.png" alt="Logo" width={150} height={60} />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-4">
-          
+          {/* Desktop Actions */}
+          <div className="hidden lg:flex items-center gap-3">
             <a
               href="tel:+919560156328"
-              className="bg-lime-500 text-white font-semibold px-4 py-2 rounded-lg"
+              className="bg-lime-500 text-white px-4 py-2 rounded-lg font-semibold"
             >
-              CALL US +919560156328
+              CALL US
             </a>
-
-             <a
-              href="https://wa.me/+919560156328"
-              className="bg-lime-500 text-white font-semibold px-4 py-2 rounded-lg"
+            <a
+              href="https://wa.me/919560156328"
+              className="bg-lime-500 text-white px-4 py-2 rounded-lg font-semibold"
             >
-             WHATSAPP US
+              WHATSAPP
             </a>
-
-            <div className="flex items-center gap-1 border-l pl-3">
-              <Image src="/flag.avif" alt="IN" width={22} height={22} />
-              <span className="text-sm font-medium">IN</span>
-            </div>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Hamburger (Mobile + Tablet) */}
           <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden"
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="lg:hidden text-blue-700"
           >
-            {mobileOpen ? <X /> : <Menu />}
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
 
-      {/* ================= MAIN NAV ================= */}
-      <div className="bg-blue-700 relative">
-        <div className="max-w-[1320px] mx-auto flex items-center h-[60px] px-4 gap-6">
-          {/* CATEGORY BUTTON */}
-          <div className="relative group hidden lg:block">
-            <Link
-              href="/products"
-              className="flex uppercase cursor-pointer hover:scale-105 transition items-center gap-3 bg-blue-800 text-white font-semibold px-5 py-3 rounded-md"
-            >
-              <span className="text-xl">☰</span>
-              Milk Cooling Solutions
-            </Link>
-          </div>
+      {/* ================= DESKTOP NAV ================= */}
+      <div className="hidden lg:block bg-blue-700">
+        <div className="max-w-[1320px] mx-auto flex items-center gap-8 px-4 h-[52px]">
+          <Link
+            href="/products"
+            className="bg-blue-800 text-white px-5 py-2 rounded-md font-semibold uppercase"
+          >
+            ☰ Milk Cooling Solutions
+          </Link>
 
-          {/* MENU */}
-          <nav className="hidden lg:flex items-center gap-8 text-white font-semibold">
+          <nav className="flex items-center gap-8 text-white font-semibold">
             <Link href="/" className="hover:text-lime-300">
-              HOME
+              Home
             </Link>
-            <Link href="/about-us" className="hover:text-lime-300 uppercase">
+            <Link href="/about-us" className="hover:text-lime-300">
               About Us
             </Link>
-            <Link href="/blogs" className="hover:text-lime-300 uppercase">
+            <Link href="/blogs" className="hover:text-lime-300">
               Blogs
             </Link>
-            <button onClick={() => setIsOpen(true)} className="hover:text-lime-300 uppercase">
-              DEALER INQUIRY
+            <button
+              onClick={() => setDealerOpen(true)}
+              className="hover:text-lime-300"
+            >
+              Dealer Inquiry
             </button>
-            <Link href="/contact-us" className="hover:text-lime-300 uppercase">
-              CONTACT Us
+            <Link href="/contact-us" className="hover:text-lime-300">
+              Contact
             </Link>
           </nav>
 
-          {/* ✅ SEARCH BAR WITH DROPDOWN */}
-          <div className="ml-auto hidden lg:block relative">
+          {/* Desktop Search */}
+          <div className="ml-auto relative">
             <form
               onSubmit={handleSearchSubmit}
               className="flex items-center bg-blue-800 px-4 py-2 rounded-md"
             >
               <input
-                type="text"
-                placeholder="Search products..."
                 value={query}
                 onChange={(e) => {
                   setQuery(e.target.value);
                   setShowDropdown(true);
                 }}
-                onFocus={() => setShowDropdown(true)}
-                className="bg-transparent outline-none text-white placeholder:text-white/70 text-sm w-52"
+                placeholder="Search products..."
+                className="bg-transparent text-white placeholder-white/70 outline-none text-sm w-52"
               />
-              <button type="submit">
-                <Search className="text-white ml-2 w-5 h-5" />
-              </button>
+              <Search className="text-white ml-2 w-5 h-5" />
             </form>
 
-            {/* ✅ Dropdown Results */}
-            {showDropdown && query.trim() !== "" && (
-              <div className="absolute left-0 top-[50px] w-full bg-white text-black rounded-md shadow-lg z-50">
-                {filteredProducts.length > 0 ? (
+            {showDropdown && query && (
+              <div className="absolute top-[46px] left-0 w-full bg-white rounded-md shadow-lg z-50">
+                {filteredProducts.length ? (
                   filteredProducts.slice(0, 6).map((item) => (
                     <button
                       key={item.slug}
                       onClick={() => handleProductClick(item.slug)}
-                      className="w-full text-left px-4 py-2 hover:bg-gray-100 text-sm"
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-sm"
                     >
                       {item.name}
                     </button>
@@ -168,34 +144,68 @@ export default function Header({onClose}) {
             )}
           </div>
         </div>
-
-        {/* ================= MOBILE MENU ================= */}
-        {mobileOpen && (
-          <div className="lg:hidden bg-blue-800 text-white px-4 py-4 space-y-4">
-            <div className="font-semibold">PRODUCT CATEGORIES</div>
-            <ul className="space-y-2 text-sm pl-3">
-              <li>Face Tissue</li>
-              <li>Paper Napkin</li>
-              <li>Kitchen Towel</li>
-              <li>Toilet Roll</li>
-              <li>Butter Paper Roll</li>
-              <li>Cake Box</li>
-            </ul>
-
-            <hr className="border-white/30" />
-
-            <nav className="flex flex-col gap-3 font-semibold">
-              <a href="#">HOME</a>
-              <a href="#">ABOUT US</a>
-              <a href="#">BLOG</a>
-              <a href="#">DEALER ENQUIRY</a>
-              <a href="#">CONTACT US</a>
-            </nav>
-          </div>
-        )}
       </div>
 
-      <Dealer isOpen={isOpen} onClose={handleClose}></Dealer>
+      {/* ================= MOBILE + TABLET MENU ================= */}
+      {menuOpen && (
+        <div className="lg:hidden bg-blue-700 text-white px-5 py-6 space-y-6">
+          {/* Search */}
+          <form
+            onSubmit={handleSearchSubmit}
+            className="flex items-center bg-blue-800 px-4 py-2 rounded-md"
+          >
+            <input
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setShowDropdown(true);
+              }}
+              placeholder="Search products..."
+              className="bg-transparent text-white placeholder-white/70 outline-none w-full text-sm"
+            />
+            <Search className="text-white w-5 h-5" />
+          </form>
+
+          {showDropdown && query && (
+            <div className="bg-white rounded-md text-black">
+              {filteredProducts.slice(0, 5).map((item) => (
+                <button
+                  key={item.slug}
+                  onClick={() => handleProductClick(item.slug)}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-sm"
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <nav className="flex flex-col gap-4 font-semibold uppercase">
+            <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
+            <Link href="/about-us" onClick={() => setMenuOpen(false)}>About Us</Link>
+            <Link href="/blogs" onClick={() => setMenuOpen(false)}>Blogs</Link>
+       
+            <Link href="/contact-us" onClick={() => setMenuOpen(false)}>Contact</Link>
+          </nav>
+
+          <div className="flex gap-3">
+            <a
+              href="tel:+919560156328"
+              className="flex-1 text-center bg-lime-500 py-2 rounded-lg font-semibold"
+            >
+              Call
+            </a>
+            <a
+              href="https://wa.me/919560156328"
+              className="flex-1 text-center bg-lime-500 py-2 rounded-lg font-semibold"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      )}
+
+      <Dealer isOpen={dealerOpen} onClose={() => setDealerOpen(false)} />
     </header>
   );
 }

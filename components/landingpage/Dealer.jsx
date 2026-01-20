@@ -5,9 +5,6 @@ import axios from "axios";
 import { products } from "@/Data";
 
 export default function Dealer({ isOpen, onClose }) {
-  const productList = products;
-
-  // ✅ Form states
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
 
@@ -20,12 +17,10 @@ export default function Dealer({ isOpen, onClose }) {
   const [machine, setMachine] = useState("");
   const [message, setMessage] = useState("");
 
-  // ✅ Reset form when popup opens
   useEffect(() => {
     if (isOpen) {
       setStatus("");
       setLoading(false);
-
       setName("");
       setEmail("");
       setPhone("");
@@ -38,10 +33,6 @@ export default function Dealer({ isOpen, onClose }) {
   }, [isOpen]);
 
   if (!isOpen) return null;
-
-  const handleClose = () => {
-    onClose?.();
-  };
 
   const cities = [
     "Select City",
@@ -85,222 +76,138 @@ export default function Dealer({ isOpen, onClose }) {
 
       if (data?.success) {
         setStatus("✅ Enquiry submitted successfully!");
-
-        // reset form after success
-        setName("");
-        setEmail("");
-        setPhone("");
-        setPlace("");
-        setCity("");
-        setCustomerType("");
-        setMachine("");
-        setMessage("");
       } else {
-        setStatus("❌ Something went wrong. Please try again.");
+        setStatus("❌ Something went wrong. Try again.");
       }
-    } catch (error) {
-      setStatus("❌ Submission failed. Please try again.");
+    } catch {
+      setStatus("❌ Submission failed. Try again.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="fixed inset-0 z-[3000] flex items-center justify-center bg-black/60 px-4">
-      {/* Popup Card */}
-      <div className="relative w-full max-w-[900px] overflow-hidden rounded-2xl bg-white shadow-2xl animate-[popup_0.25s_ease-out]">
-        {/* Close Button */}
+    <div className="fixed inset-0 z-[3000] bg-black/60 flex items-center justify-center px-3 sm:px-4">
+      <div className="relative w-full max-w-[900px] bg-white rounded-2xl shadow-2xl max-h-[90vh] overflow-hidden animate-[popup_0.25s_ease-out]">
+
+        {/* CLOSE */}
         <button
-          onClick={handleClose}
-          className="absolute right-4 top-4 z-50 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-gray-700 shadow hover:bg-gray-100 hover:text-black transition"
-          aria-label="Close popup"
+          onClick={onClose}
+          className="absolute top-3 right-3 z-50 h-9 w-9 rounded-full bg-white shadow grid place-items-center text-gray-600 hover:text-black"
         >
           ✕
         </button>
 
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          {/* LEFT IMAGE SECTION */}
-          <div className="relative hidden md:block">
+        <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+          {/* IMAGE */}
+          <div className="hidden md:block relative">
             <Image
               src="/formbg.webp"
-              alt="Dealer Enquiry Form"
+              alt="Dealer Enquiry"
               fill
-              className="object-cover"
               priority
+              className="object-cover"
             />
-
-            {/* Overlay content */}
-            <div className="absolute inset-0 p-6 flex flex-col justify-end">
-              <h3 className="text-white text-2xl font-bold">
+            <div className="absolute inset-0 bg-black/40 p-6 flex flex-col justify-end">
+              <h3 className="text-white text-xl font-bold">
                 Dealer Enquiry Form
               </h3>
-              <p className="text-white text-md mt-2 leading-relaxed">
+              <p className="text-white/90 text-sm mt-2">
                 Share your details and our team will contact you shortly.
               </p>
-
-              <div className="mt-5 flex gap-2 flex-wrap">
-                <span className="rounded-full bg-white/15 px-3 py-1 text-xs text-white">
-                  Fast Response
-                </span>
-                <span className="rounded-full bg-white/15 px-3 py-1 text-xs text-white">
-                  Best Price
-                </span>
-                <span className="rounded-full bg-white/15 px-3 py-1 text-xs text-white">
-                  Genuine Products
-                </span>
-              </div>
             </div>
           </div>
 
-          {/* RIGHT FORM SECTION */}
-          <div className="p-6 sm:p-8 md:p-10">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center">
-              Get Your <span className="text-blue-700">Free Quote</span> Today
+          {/* FORM */}
+          <div className="p-4 sm:p-6 md:p-8 overflow-y-auto">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-center">
+              Become Our <span className="text-blue-700">Dealer</span>
             </h2>
 
-            <p className="text-center text-gray-600 text-sm mt-2 mb-6">
-              Fill in your details and choose the product you need.
+            <p className="text-center text-gray-600 text-xs sm:text-sm mt-2 mb-4">
+              Fill the form below to get started.
             </p>
 
-<form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <input className="input" placeholder="Name*" required value={name} onChange={(e) => setName(e.target.value)} />
+                <input className="input" placeholder="Email*" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input className="input" placeholder="Phone*" type="tel" maxLength={10} required value={phone} onChange={(e) => setPhone(e.target.value)} />
+                <input className="input" placeholder="Place*" required value={place} onChange={(e) => setPlace(e.target.value)} />
 
-  {/* ✅ 2 Column Grid */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-    {/* Name */}
-    <input
-      value={name}
-      onChange={(e) => setName(e.target.value)}
-      type="text"
-      placeholder="Name*"
-      required
-      className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none focus:border-blue-600 focus:bg-white transition"
-    />
+                <select className="input" required value={city} onChange={(e) => setCity(e.target.value)}>
+                  {cities.map((c, i) => (
+                    <option key={i} value={i === 0 ? "" : c} disabled={i === 0}>
+                      {c}
+                    </option>
+                  ))}
+                </select>
 
-    {/* Email */}
-    <input
-      value={email}
-      onChange={(e) => setEmail(e.target.value)}
-      type="email"
-      placeholder="Email ID*"
-      required
-      className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none focus:border-blue-600 focus:bg-white transition"
-    />
+                <select className="input" required value={customerType} onChange={(e) => setCustomerType(e.target.value)}>
+                  {customerOptions.map((c, i) => (
+                    <option key={i} value={i === 0 ? "" : c} disabled={i === 0}>
+                      {c}
+                    </option>
+                  ))}
+                </select>
 
-    {/* Phone */}
-    <input
-      value={phone}
-      onChange={(e) => setPhone(e.target.value)}
-      type="tel"
-      placeholder="Phone*"
-      maxLength={10}
-      pattern="[0-9]{10}"
-      required
-      className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none focus:border-blue-600 focus:bg-white transition"
-    />
+                <div className="sm:col-span-2">
+                  <select className="input" required value={machine} onChange={(e) => setMachine(e.target.value)}>
+                    <option value="">Select Product*</option>
+                    {products.map((p) => (
+                      <option key={p.id} value={p.name}>
+                        {p.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
 
-    {/* Place */}
-    <input
-      value={place}
-      onChange={(e) => setPlace(e.target.value)}
-      type="text"
-      placeholder="Place*"
-      required
-      className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none focus:border-blue-600 focus:bg-white transition"
-    />
+                <div className="sm:col-span-2">
+                  <textarea className="input resize-none" rows={3} placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)} />
+                </div>
+              </div>
 
-    {/* Select City */}
-    <select
-      value={city}
-      onChange={(e) => setCity(e.target.value)}
-      required
-      className="w-full cursor-pointer rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none focus:border-blue-600 focus:bg-white transition"
-    >
-      {cities.map((c, i) => (
-        <option key={i} value={i === 0 ? "" : c} disabled={i === 0}>
-          {c}*
-        </option>
-      ))}
-    </select>
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 rounded-xl font-semibold transition disabled:opacity-60"
+              >
+                {loading ? "Sending..." : "Submit Enquiry →"}
+              </button>
 
-    {/* Choose Option */}
-    <select
-      value={customerType}
-      onChange={(e) => setCustomerType(e.target.value)}
-      required
-      className="w-full cursor-pointer rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none focus:border-blue-600 focus:bg-white transition"
-    >
-      {customerOptions.map((opt, i) => (
-        <option key={i} value={i === 0 ? "" : opt} disabled={i === 0}>
-          {opt}*
-        </option>
-      ))}
-    </select>
+              {status && (
+                <p className="text-center text-sm font-medium">{status}</p>
+              )}
 
-    {/* Product Select ✅ Full width */}
-    <div className="sm:col-span-2">
-      <select
-        value={machine}
-        onChange={(e) => setMachine(e.target.value)}
-        required
-        className="w-full cursor-pointer rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none focus:border-blue-600 focus:bg-white transition"
-      >
-        <option value="">Select Product*</option>
-        {productList.map((product) => (
-          <option key={product.id} value={product.name}>
-            {product.name}
-          </option>
-        ))}
-      </select>
-    </div>
-
-    {/* Message ✅ Full width */}
-    <div className="sm:col-span-2">
-      <textarea
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        placeholder="Message"
-        rows={3}
-        className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none focus:border-blue-600 focus:bg-white transition resize-none"
-      />
-    </div>
-  </div>
-
-  {/* Submit ✅ Full width */}
-  <button
-    type="submit"
-    disabled={loading}
-    className="w-full cursor-pointer rounded-xl bg-blue-700 py-3 text-white font-semibold hover:bg-blue-800 transition disabled:opacity-60 disabled:cursor-not-allowed"
-  >
-    {loading ? "Sending..." : "Send My Enquiry →"}
-  </button>
-
-  {/* Status */}
-  {status && (
-    <p className="text-center text-sm font-medium">
-      {status}
-    </p>
-  )}
-
-  <p className="text-xs text-gray-500 text-center">
-    We respect your privacy. No spam calls.
-  </p>
-</form>
-
+             
+            </form>
           </div>
         </div>
       </div>
 
-      {/* animation */}
       <style jsx>{`
         @keyframes popup {
           from {
             opacity: 0;
-            transform: translateY(15px) scale(0.98);
+            transform: translateY(20px) scale(0.97);
           }
           to {
             opacity: 1;
             transform: translateY(0) scale(1);
           }
+        }
+        .input {
+          width: 100%;
+          padding: 0.75rem 1rem;
+          font-size: 0.875rem;
+          border-radius: 0.75rem;
+          border: 1px solid #e5e7eb;
+          background: #f9fafb;
+          outline: none;
+        }
+        .input:focus {
+          border-color: #2563eb;
+          background: white;
         }
       `}</style>
     </div>
