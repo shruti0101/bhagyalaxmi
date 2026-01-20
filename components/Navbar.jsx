@@ -7,13 +7,16 @@ import {
   Menu,
   X,
   PhoneCall,
-  MessageCircle,
-  ChevronDown,
+  
+  
 } from "lucide-react";
+
+
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Dealer from "./landingpage/Dealer";
 import { products } from "@/Data";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Header({ onClose }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -92,7 +95,7 @@ export default function Header({ onClose }) {
                 href="https://wa.me/919560156328"
                 className="bg-lime-500 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2"
               >
-                <MessageCircle size={18} />
+                <FaWhatsapp size={18} />
                 WHATSAPP
               </a>
             </div>
