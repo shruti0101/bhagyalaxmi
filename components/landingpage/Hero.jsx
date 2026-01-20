@@ -5,7 +5,6 @@ import Image from "next/image";
 
 /* ================= IMAGES ================= */
 const desktopImages = ["/hero1.png", "/hero2.png"];
-const tabletImages = ["/mobile1.png", "/mobile2.png"];
 const mobileImages = ["/mobile1.png", "/mobile2.png"];
 
 const Hero = () => {
@@ -22,7 +21,7 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  /* ============== SLIDE ANIMATION ============== */
+  /* ============== SLIDE ANIMATION PROPS ============== */
   const slideProps = {
     custom: direction,
     initial: { x: direction > 0 ? "100%" : "-100%" },
@@ -34,8 +33,8 @@ const Hero = () => {
 
   return (
     <>
-      {/* ================= DESKTOP (LG+) ================= */}
-      <section className="relative hidden lg:flex w-full mt-25 h-screen overflow-hidden">
+      {/* ================= DESKTOP (lg+) ================= */}
+      <section className="relative hidden lg:flex w-full h-[110vh] mt-25 overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div key={`desktop-${currentIndex}`} {...slideProps}>
             <Image
@@ -50,33 +49,17 @@ const Hero = () => {
         </AnimatePresence>
       </section>
 
-      {/* ================= TABLET (MD ONLY) ================= */}
-      <section className="relative hidden mt-23 md:flex lg:hidden w-full h-[80vh] overflow-hidden">
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.div key={`tablet-${currentIndex}`} {...slideProps}>
-            <Image
-              src={tabletImages[currentIndex]}
-              alt="Tablet Hero"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-            />
-          </motion.div>
-        </AnimatePresence>
-      </section>
-
-      {/* ================= MOBILE (SM) ================= */}
-      <section className="relative mt-18 block md:hidden w-full h-[55vh] overflow-hidden">
+      {/* ================= TABLET + MOBILE (md & sm) ================= */}
+      <section className="relative block lg:hidden w-full h-[60vh] md:h-[80vh] overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div key={`mobile-${currentIndex}`} {...slideProps}>
             <Image
               src={mobileImages[currentIndex]}
-              alt="Mobile Hero"
+              alt="Mobile / Tablet Hero"
               fill
               priority
               sizes="100vw"
-              className="object-cover"
+              className="object-cover md:object-contain"
             />
           </motion.div>
         </AnimatePresence>
