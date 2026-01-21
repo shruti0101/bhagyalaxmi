@@ -7,12 +7,29 @@ import Social from "@/components/landingpage/Social";
 import Stickybutton from "@/components/landingpage/Stickybutton";
 import Whatsapp from "@/components/Whatsapp";
 
-/* ✅ Font setup (renamed properly) */
+/* ✅ Font setup */
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-poppins",
 });
+
+/* ✅ GLOBAL META DATA */
+export const metadata = {
+  title: "Bulk Milk Cooler for Dairy Farms | Reliable Cooling Solutions",
+
+  description:
+    "Industrial Bulk Milk Coolers for hygienic milk storage. Trusted solution for dairy farmers, cooperatives, and processing units.",
+  keywords: [
+    "Bulk Milk Cooler Manufacturer",
+    "Milk Processing Equipment",
+    "Dairy Machinery Manufacturer",
+    "Milk Vending Machine",
+    "Curd Making Machine",
+  ],
+  authors: [{ name: "Bhagyalaxmi Industries" }],
+  robots: "index, follow",
+};
 
 export default function RootLayout({ children }) {
   return (

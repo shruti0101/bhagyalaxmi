@@ -60,7 +60,7 @@ export default function HeroSlider() {
 /* ================= SLIDE 1 (YOUR FIRST HERO DESIGN) ================= */
 function HeroSlide1() {
   return (
-    <section className="relative w-full h-[50vh] sm:h-[80vh] lg:h-[100vh] overflow-hidden bg-white">
+    <section className="relative w-full h-[50vh] sm:h-[70vh] lg:h-[100vh] overflow-hidden bg-white">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -129,7 +129,7 @@ function HeroSlide2() {
   return (
     <section
       style={{ backgroundImage: "url(/secondcheck1.png)" }}
-      className="relative w-full h-[60vh] sm:h-[80vh] lg:h-[100vh] bg-cover bg-center bg-[#f4f5f7] overflow-hidden"
+      className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[100vh] bg-cover bg-center bg-[#f4f5f7] overflow-hidden"
     >
       <div className="relative z-10 mx-auto mt-8 grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-10 lg:grid-cols-2 lg:px-10">
         {/* LEFT */}

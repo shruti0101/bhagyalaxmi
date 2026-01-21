@@ -96,7 +96,7 @@ export default function BulkMilkCoolerBlueSection() {
           ></div>
 
           <Image
-            className="hidden md:block absolute object-contain right-97 bottom-10 rounded-xl"
+            className="hidden lg:block absolute object-contain right-97 bottom-10 rounded-xl"
             width={250}
             height={200}
             alt="lead"
