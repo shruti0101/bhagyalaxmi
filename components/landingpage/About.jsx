@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function AboutSection() {
   return (
     <>
-      <section className="relative bg-[#F5F7F9] py-13 overflow-hidden">
+      <section className="relative bg-[#F5F7F9] py-5 overflow-hidden">
         {/* Background tech pattern */}
         <div className="hidden md:block  absolute right-0 bottom-0 pointer-events-none">
           <Image
