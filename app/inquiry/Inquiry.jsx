@@ -72,27 +72,45 @@ const Inquiry = () => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const data = {
-            platform: "BhagyaLaxmi Industries",
+            platform: "BhagyaLaxmi Industries Landing Form",
             platformEmail: "bhagyalaxmigroup12@gmail.com",
             name: formData.get("name"),
             email: formData.get("email"),
             phone: formData.get("phone"),
             product: formData.get("machine"),
-            place: "Mumbai, India",
+            place: "N/A",
             message: formData.get("message"),
         };
-        // console.log(data);
+        if (data.phone.toString().length < 10) return toast.error("Enter Valid Phone Number")
+
         try {
             const res = await axios.post("https://brandbnalo.com/api/form/add", data);
-            // console.log(res)
-            // if (res.ok) {
-                toast.success("Message Send Successfully")
-                // console.log(res);
-            // }
+            toast.success("Message Send Successfully")
+            e.target.reset();
+            window.location.href = "https://wa.me/919560156328"
         } catch (err) {
             console.log(err)
         }
     };
+
+    const clientSlider = [
+        { title: "Amul Dairy", image: "/amulLogo.png", },
+        { title: "Mother Dairy", image: "/motherDairy.png" },
+        { title: "Britannia", image: "/britanniaLogo.png" },
+        { title: "Verka", image: "/verka.png" },
+        { title: "Vita", image: "/vita.png" },
+        { title: "Saras", image: "/saras.png" },
+        { title: "Sudha", image: "/sudha.png" },
+        { title: "Telangana", image: "/telangana.png" },
+        { title: "Amul Dairy", image: "/amulLogo.png", },
+        { title: "Mother Dairy", image: "/motherDairy.png" },
+        { title: "Britannia", image: "/britanniaLogo.png" },
+        { title: "Verka", image: "/verka.png" },
+        { title: "Vita", image: "/vita.png" },
+        { title: "Saras", image: "/saras.png" },
+        { title: "Sudha", image: "/sudha.png" },
+        { title: "Telangana", image: "/telangana.png" },
+    ]
 
     return (<>
         <Navbar />
@@ -170,6 +188,51 @@ const Inquiry = () => {
                         </button>
                     </form>
                 </div>
+            </div>
+        </section>
+
+        {/* Client Slider */}
+        <section className="pt-8 bg-gray-50">
+            <div className="mx-auto px-8">
+                {/* Heading */}
+                <h2 className="text-center text-2xl md:text-3xl font-semibold text-indigo-600 mb-6">
+                    Trusted by leading brands in the dairy industry.
+                </h2>
+
+                <Swiper
+                    modules={[Autoplay]}
+                    loop={true}
+                    speed={500}
+                    spaceBetween={24}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    breakpoints={{
+                        0: { slidesPerView: 1 },
+                        640: { slidesPerView: 1 },
+                        768: { slidesPerView: 4 },
+                        1024: { slidesPerView: 6 },
+                        1280: { slidesPerView: 7 },
+                    }}
+                    className="pb-6"
+                >
+                    {clientSlider.map((item, index) => (
+                        <SwiperSlide key={index}>
+                            <div title={item.title} className="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
+
+                                <div className="relative h-48 w-full">
+                                    <Image
+                                        src={item?.image}
+                                        alt={item?.title}
+                                        fill
+                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </section>
 

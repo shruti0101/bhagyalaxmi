@@ -1,4 +1,33 @@
+"use client";
+import React from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
+
 const CTASection = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = {
+      platform: "BhagyaLaxmi Industries CTA Form",
+      platformEmail: "bhagyalaxmigroup12@gmail.com",
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      product: formData.get("machine"),
+      place: "N/A",
+      message: formData.get("message"),
+    };
+    if (data.phone.toString().length < 10) return toast.error("Enter Valid Phone Number")
+    try {
+      const res = await axios.post("https://brandbnalo.com/api/form/add", data);
+      toast.success("Message Send Successfully")
+      // setStatus("Thank you! Your message has been sent.")
+      e.target.reset();
+    } catch (err) {
+      console.log(err)
+    }
+  };
+
   return (
     <section
       style={{ backgroundImage: "url(/formbg.webp)" }}
@@ -22,7 +51,7 @@ const CTASection = () => {
             Fill out the form and our team will contact you soon.
           </p>
 
-          <form className="space-y-3">
+          <form onSubmit={handleSubmit} className="space-y-3">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Name */}
               <div>
@@ -31,6 +60,7 @@ const CTASection = () => {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   className="w-full p-3 border-2 border-black rounded-lg focus:ring focus:ring-orange-300"
                   placeholder="Enter your name"
                 />
@@ -43,6 +73,7 @@ const CTASection = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   className="w-full p-3 border-2 border-black rounded-lg focus:ring focus:ring-orange-300"
                   placeholder="Enter your email"
                 />
@@ -55,6 +86,7 @@ const CTASection = () => {
               </label>
               <input
                 type="text"
+                name="phone"
                 className="w-full p-3 border-2 border-black rounded-lg focus:ring focus:ring-orange-300"
                 placeholder="Enter your phone number"
               />
@@ -65,6 +97,7 @@ const CTASection = () => {
                 Message
               </label>
               <textarea
+                name="message"
                 className="w-full p-3 border-2 border-black rounded-lg focus:ring focus:ring-orange-300"
                 placeholder="Write your message..."
                 rows={4}

@@ -1,14 +1,8 @@
-
-
-
-
-
-
 import BlogClient from "./BlogClient";
 
 export const metadata = {
-  title: "Shree Shakti Infratech Blogs - Stay Updated with Industry Insights",
-  description: "Discover fresh ideas, tips, and inspiration in our blogs. Stay informed with expert advice, stories, and guides updated regularly.",
+  title: "Bhagyalaxmi Industries Blogs for Bulk Milk Cooler latest Updated",
+  description: "Bhagyalaxmi Industries Blogs for Bulk Milk Cooler latest Updated Read the latest blogs by Bhagyalaxmi Industries on bulk milk coolers, dairy cooling technology, capacity selection, energy efficiency, and best practices for milk chilling systems in India.",
 };
 
 export default function BlogsPage() {

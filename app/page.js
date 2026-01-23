@@ -22,29 +22,29 @@ import Footer from "@/components/landingpage/Footer";
 export default function Home() {
   return (
     <>
-   
+
       <Navbar />
       <Popup></Popup>
       <AccordionHero></AccordionHero>
 
       <About></About>
-          <Bestseller></Bestseller>
+      <Bestseller></Bestseller>
       <Productcategory></Productcategory>
       <Whychoose></Whychoose>
-  
-    
+
+
       <Check></Check>
 
       {/* <Gallery></Gallery> */}
-   <Barbending></Barbending>
-      <Cta></Cta>
-{/* <Quality></Quality> */}
-<Industry></Industry>
+      <Barbending></Barbending>
+      <Cta />
+      {/* <Quality></Quality> */}
+      <Industry></Industry>
 
       <Youtube></Youtube>
       <Testimonials></Testimonials>
       <Faq></Faq>
-   
+
       <Footer />
     </>
   );

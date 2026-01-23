@@ -26,7 +26,7 @@ export const categories = [
   { id: "milk-vending-machine", name: "Milk Vending Machine" },
 
 
-  { id: "curd-making-machine", name: "Curd Making Machine" },
+  { id: "curd-making-machine", name: "Curd and Paneer Making Machine" },
 
   {
     id: "steam-boiler",
