@@ -79,8 +79,15 @@ const allproducts = products
               <Phone className="text-[#0B5ED7]" />
               <h4 className="font-bold mt-2 text-[#0A2540]">Phone</h4>
               <p>+919560156328</p>
+              <p>+918860600234</p>
             
             </div>
+            {/* <div className="bg-white p-6 rounded-xl shadow">
+              <Phone className="text-[#0B5ED7]" />
+              <h4 className="font-bold mt-2 text-[#0A2540]">Alt Phone</h4>
+              <p>+918860600234</p>
+            
+            </div> */}
 
             <div className="bg-white p-6 rounded-xl shadow">
               <Mail className="text-[#0B5ED7]" />

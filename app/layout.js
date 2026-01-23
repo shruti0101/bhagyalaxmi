@@ -6,6 +6,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Social from "@/components/landingpage/Social";
 import Stickybutton from "@/components/landingpage/Stickybutton";
 import Whatsapp from "@/components/Whatsapp";
+import { ToastContainer } from "react-toastify";
 
 /* ✅ Font setup */
 const poppins = Poppins({
@@ -49,6 +50,7 @@ export default function RootLayout({ children }) {
         <Whatsapp />
 
         <main>{children}</main>
+        <ToastContainer/>
       </body>
     </html>
   );

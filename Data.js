@@ -7,7 +7,7 @@ export const categories = [
   { id: "milk-vending-machine", name: "Milk Atm Machine" },
 
  
-  { id: "curd-making-machine", name: "Curd Making Machine" },
+  { id: "curd-making-machine", name: "Curd and Paneer Making Machine" },
 
   {
     id: "steam-boiler",
@@ -812,7 +812,7 @@ export const products = [
 {
   "id": 11,
   "slug": "curd-making-machine",
-  "name": "Curd Making Machine",
+  "name": "Curd and Paneer Making Machine",
   "category": "curd-making-machine",
   "model": "CMM-2000LPH",
 

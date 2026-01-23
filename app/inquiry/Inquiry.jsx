@@ -16,13 +16,88 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import ProductCategorySlider from "@/components/landingpage/Productcategory";
 import ProductSectionPremium from "@/components/landingpage/Bestseller";
+import { products } from "@/Data";
+import axios from "axios";
+import { toast } from "react-toastify";
+
+/* Images */
+const Cooler = "/check3.png";
+const BgHero = "/aboutbanner.webp";
 
 const Inquiry = () => {
+    const reasons = [
+        "30+ Years of Experience as a trusted bulk milk cooler manufacturer",
+        "Nationwide reach as bulk milk cooler suppliers",
+        "100% Genuine Spare Parts",
+        "1-Year Warranty on all stainless steel bulk milk cooler models",
+        "Shortest cooling time guaranteed",
+        "Made in India, 100% in-house manufacturing",
+        "Robust, high-quality BMC Milk Machine Supplier",
+        "Energy-efficient and low electricity consumption",
+        "After-sales service and support",
+        // "Laser-welded evaporation plates for long-lasting performance",
+    ];
+
+    const faqs = [
+        {
+            question: "Are you a bulk milk cooler manufacturer or supplier?",
+            answer:
+                "Yes, Bhagyalaxmi Industries is a leading bulk milk cooler manufacturer as well as a reliable bulk milk cooler supplier. We design and manufacture high-quality BMC machines in our in-house facility.",
+        },
+        {
+            question: "What types of bulk milk coolers do you manufacture?",
+            answer:
+                "We manufacture a wide range of stainless steel bulk milk coolers, including open type and closed type bulk milk cooling tanks, suitable for dairy farms, milk collection centers, and processing plants.",
+        },
+        {
+            question: "Do you supply BMC machines across India?",
+            answer:
+                "Yes, we are trusted BMC machine suppliers serving customers across India. We also support clients searching for bulk milk cooler dealers near me with timely delivery and service support.",
+        },
+        {
+            question: "Why choose stainless steel bulk milk coolers?",
+            answer:
+                "Our SS bulk milk coolers ensure hygienic milk storage, faster cooling, corrosion resistance, and long service life, making them ideal for dairy operations.",
+        },
+        {
+            question: "Do you provide after-sales service and spare parts?",
+            answer:
+                "Yes, as a dependable BMC milk machine supplier and dairy milk chiller machine manufacturer, we provide after-sales support along with genuine spare parts to ensure smooth long-term operation.",
+        },
+    ];
+
+    const [openIndex, setOpenIndex] = useState(null);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = {
+            platform: "BhagyaLaxmi Industries",
+            platformEmail: "bhagyalaxmigroup12@gmail.com",
+            name: formData.get("name"),
+            email: formData.get("email"),
+            phone: formData.get("phone"),
+            product: formData.get("machine"),
+            place: "Mumbai, India",
+            message: formData.get("message"),
+        };
+        // console.log(data);
+        try {
+            const res = await axios.post("https://brandbnalo.com/api/form/add", data);
+            // console.log(res)
+            // if (res.ok) {
+                toast.success("Message Send Successfully")
+                // console.log(res);
+            // }
+        } catch (err) {
+            console.log(err)
+        }
+    };
 
     return (<>
         <Navbar />
         {/* Hero Section */}
-        <section className="min-h-screen bg-gradient-to-br from-indigo-600 to-indigo-500 flex items-center px-6">
+        <section className="min-h-screen bg-gradient-to-br from-indigo-600 to-indigo-500 flex items-center px-6" style={{ backgroundImage: `url(${BgHero})` }}>
             <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="text-white">
                     <h1 className="text-4xl md:text-5xl font-bold mb-3">
@@ -50,22 +125,40 @@ const Inquiry = () => {
                         Get Started
                     </h2>
 
-                    <form className="space-y-4">
+                    <form className="space-y-4 flex flex-col" onSubmit={handleSubmit}>
                         <input
+                            name="name"
                             type="text"
                             placeholder="Full Name"
                             className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                         />
 
                         <input
+                            name="email"
                             type="email"
                             placeholder="Email Address"
                             className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                         />
 
                         <input
+                            name="phone"
                             type="tel"
                             placeholder="Phone Number"
+                            className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        />
+                        <select name="machine" required className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="">Select Product*</option>
+                            {products.map((p) => (
+                                <option key={p.id} value={p.name}>
+                                    {p.name}
+                                </option>
+                            ))}
+                        </select>
+
+                        <textarea
+                            name="message"
+                            rows={3}
+                            placeholder="Message"
                             className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                         />
 
@@ -77,7 +170,6 @@ const Inquiry = () => {
                         </button>
                     </form>
                 </div>
-
             </div>
         </section>
 
@@ -85,24 +177,223 @@ const Inquiry = () => {
         <ProductSectionPremium />
 
         {/* CTA */}
-        <div className="bg-indigo-500 text-white px-6 py-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-                <div className="">
-                    <h2 className="text-4xl md:text-4xl font-bold mb-2 text-nowrap">Bulk Milk Cooler Manufacturer</h2>
-                    <p>For More Detail Contact Us Now!</p>
-                </div>
-                <div className="flex justify-center">
-                    <button className="bg-white hover:bg-gray-200 px-3 py-2 text-black rounded-md font-medium">
-                        Connect Now
-                    </button>
+        <div className="mt-6 w-full bg-gradient-to-r from-indigo-600 to-blue-600 text-white">
+            <div className="max-w-6xl mx-auto px-6 py-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6">
+                    <div className="text-center md:text-left">
+                        <h2 className="text-2xl md:text-3xl font-bold">
+                            Bulk Milk Cooler Manufacturer
+                        </h2>
+                        <h2 className="text-3xl md:text-4xl font-bold my-3">
+                            +919560156328
+                        </h2>
+                        <h2 className="text-3xl md:text-4xl font-bold my-3">
+                            +918860600234
+                        </h2>
+
+                        <p className="text-indigo-100 mt-1">
+                            Looking for reliable dairy milk chilling solutions? Get expert guidance today.
+                        </p>
+                    </div>
+
+                    <div className="flex justify-center md:justify-end">
+                        <a href="tel:+919560156328" className="group bg-white text-indigo-600 hover:bg-indigo-50 px-7 py-3 rounded-md font-semibold transition-all duration-300 flex items-center gap-2">
+                            Connect Now
+                            <span className="transform group-hover:translate-x-1 transition">
+                                →
+                            </span>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
 
         {/* Why Choose US */}
-        <div className="">
-            
-        </div>
+        <section className="bg-gray-50 py-10 px-4">
+            <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-8">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+                        Why Choose <span className="text-blue-600">Bhagyalaxmi Industries</span>?
+                    </h2>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {reasons.map((reason, index) => (
+                        <div
+                            key={index}
+                            className="flex items-center gap-4 bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
+                        >
+                            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                ✓
+                            </div>
+                            <p className="text-gray-700 font-medium">{reason}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        {/* About Us */}
+        <section className="w-full">
+            {/* <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white">
+                <div className="max-w-6xl mx-auto px-6 py-6">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
+
+                        <div>
+                            <p className="text-3xl font-bold">50+</p>
+                            <p className="text-sm text-indigo-100 mt-1">Years of Experience</p>
+                        </div>
+
+                        <div>
+                            <p className="text-3xl font-bold">5000+</p>
+                            <p className="text-sm text-indigo-100 mt-1">Installations Worldwide</p>
+                        </div>
+
+                        <div>
+                            <p className="text-3xl font-bold">1 Year</p>
+                            <p className="text-sm text-indigo-100 mt-1">Product Warranty</p>
+                        </div>
+
+                        <div>
+                            <p className="text-3xl font-bold">100%</p>
+                            <p className="text-sm text-indigo-100 mt-1">Genuine Spare Parts</p>
+                        </div>
+
+                        <div>
+                            <p className="text-3xl font-bold">5 Years</p>
+                            <p className="text-sm text-indigo-100 mt-1">Warranty on Dimple Plate</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div> */}
+
+            <div className="max-w-6xl mx-auto px-6 py-8">
+                <p className="text-lg leading-relaxed text-gray-700">
+                    <span className="font-semibold text-gray-900">
+                        About Bhagyalaxmi Industries
+                    </span>{" "}
+                    is a trusted bulk milk cooler manufacturer and BMC machine supplier,
+                    delivering reliable and energy-efficient dairy cooling solutions. We
+                    specialize in manufacturing high-quality stainless steel bulk milk
+                    coolers, milk chiller plants, and bulk milk cooling tanks for dairy farms
+                    and milk collection centers.
+                </p>
+
+                <p className="text-lg leading-relaxed text-gray-700 mt-6">
+                    As experienced bulk milk cooler suppliers and BMC machine manufacturers,
+                    we follow strict quality standards with complete in-house manufacturing
+                    to ensure faster cooling performance, long-lasting durability, and low
+                    power consumption. Our products are widely preferred by customers looking
+                    for dependable bulk milk cooler dealers and dairy milk chiller machine
+                    manufacturers.
+                </p>
+            </div>
+        </section>
+
+        {/* form */}
+        <section className="flex items-center justify-center bg-gray-50 px-4 py-8">
+            <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div className="bg-white rounded-xl shadow-xl overflow-hidden">
+                    <img
+                        src={Cooler} // just change image path
+                        alt="Bulk Milk Cooler"
+                        className="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div className="bg-white rounded-xl shadow-xl p-8">
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+                        Get Started
+                    </h2>
+
+                    <form className="space-y-4 flex flex-col" onSubmit={handleSubmit}>
+                        <input
+                            name="name"
+                            type="text"
+                            placeholder="Full Name"
+                            className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        />
+
+                        <input
+                            name="email"
+                            type="email"
+                            placeholder="Email Address"
+                            className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        />
+
+                        <input
+                            name="phone"
+                            type="tel"
+                            placeholder="Phone Number"
+                            className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        />
+                        <select name="machine" required className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="">Select Product*</option>
+                            {products.map((p) => (
+                                <option key={p.id} value={p.name}>
+                                    {p.name}
+                                </option>
+                            ))}
+                        </select>
+
+                        <textarea
+                            name="message"
+                            rows={3}
+                            placeholder="Message"
+                            className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        />
+
+                        <button
+                            type="submit"
+                            className="w-full bg-indigo-600 text-white py-3 rounded-lg font-medium hover:bg-indigo-700 transition"
+                        >
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section className="bg-gray-50 py-8 px-4">
+            <div className="max-w-4xl mx-auto">
+                <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
+                    Frequently Asked Questions (FAQs)
+                </h2>
+
+                {/* FAQ Items */}
+                <div className="space-y-4">
+                    {faqs.map((faq, index) => (
+                        <div
+                            key={index}
+                            className="bg-white rounded-xl shadow-md border"
+                        >
+                            <button
+                                onClick={() =>
+                                    setOpenIndex(openIndex === index ? null : index)
+                                }
+                                className="w-full flex justify-between items-center p-6 text-left"
+                            >
+                                <span className="font-semibold text-gray-800">
+                                    {faq.question}
+                                </span>
+                                <span className="text-indigo-600 text-xl">
+                                    {openIndex === index ? "−" : "+"}
+                                </span>
+                            </button>
+
+                            {openIndex === index && (
+                                <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                                    {faq.answer}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+
+            </div>
+        </section>
 
         <Footer />
     </>);
