@@ -66,7 +66,7 @@ export default function ContactPage() {
 
 
       {/* ================= CONTACT SECTION ================= */}
-      <section className="bg-[#E8F1FF] py-20">
+      <section className="bg-[#E8F1FF] py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-6">
 
           {/* INFO COLUMN */}
@@ -211,7 +211,7 @@ export default function ContactPage() {
       </section>
 
       {/* ================= MAP ================= */}
-      <section className="w-full h-[450px] p-4 bg-gray-100 m-4 rounded-md">
+      <section className="w-full h-[450px] p-4 bg-gray-100 rounded-md overflow-hidden">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.212567785343!2d77.00427959999999!3d28.623390600000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0534870bd5c3%3A0x95bb0d76bc16a6da!2sBhagyalaxmi%20Industries!5e0!3m2!1sen!2sin!4v1769152870200!5m2!1sen!2sin" className="w-full h-full" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </section>
 

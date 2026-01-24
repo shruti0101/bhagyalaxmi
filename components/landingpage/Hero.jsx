@@ -21,7 +21,7 @@ export default function Hero() {
     <section
       className="
         relative w-full overflow-hidden
-        h-[190px] sm:h-[370px] lg:h-[100vh] bg-[#F5F7F9]
+        h-[190px] sm:h-[370px] md:h-[80vh] xl:h-[100vh] bg-[#F5F7F9]
       "
     >
       <AnimatePresence mode="sync">
@@ -34,13 +34,13 @@ export default function Hero() {
           className="absolute inset-0"
         >
           {/* ✅ Next Image Responsive */}
-      <Image
-  src={desktopImages[index % desktopImages.length]}
-  alt="Hero banner"
-  width={3000}
-  height={3000}
-  className="w-full h-auto object-cover"
-/>
+          <Image
+            src={desktopImages[index % desktopImages.length]}
+            alt="Hero banner"
+            width={3000}
+            height={3000}
+            className="w-full h-auto object-cover"
+          />
 
         </motion.div>
       </AnimatePresence>

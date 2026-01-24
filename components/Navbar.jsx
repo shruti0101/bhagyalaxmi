@@ -7,8 +7,8 @@ import {
   Menu,
   X,
   PhoneCall,
-  
-  
+
+
 } from "lucide-react";
 
 
@@ -46,8 +46,8 @@ export default function Header({ onClose }) {
   const filteredProducts =
     query.trim().length > 0
       ? products.filter((item) =>
-          item.name.toLowerCase().includes(query.toLowerCase())
-        )
+        item.name.toLowerCase().includes(query.toLowerCase())
+      )
       : [];
 
   const handleSearchSubmit = (e) => {
@@ -72,9 +72,8 @@ export default function Header({ onClose }) {
       <header className="bg-white shadow-md">
         {/* ================= TOP BAR (Sticky only after scroll) ================= */}
         <div
-          className={`border-b w-full bg-white z-50 transition-all duration-300 ${
-            isSticky ? "fixed top-0 left-0 shadow-md" : "relative"
-          }`}
+          className={`border-b w-full bg-white z-50 transition-all duration-300 ${isSticky ? "fixed top-0 left-0 shadow-md" : "relative"
+            }`}
         >
           <div className="max-w-[1320px] mx-auto flex items-center justify-between px-4 py-3">
             <Link href="/">
@@ -229,9 +228,9 @@ export default function Header({ onClose }) {
                 About Us
               </Link>
 
-              
+
               <Link href="/products" onClick={() => setMenuOpen(false)}>
-              All Products
+                All Products
               </Link>
 
               <Link href="/blogs" onClick={() => setMenuOpen(false)}>
@@ -243,7 +242,7 @@ export default function Header({ onClose }) {
               </Link>
             </nav>
 
-         
+
 
             {/* Mobile Actions with Icons */}
             <div className="flex gap-3">
@@ -267,6 +266,16 @@ export default function Header({ onClose }) {
         )}
 
         <Dealer isOpen={dealerOpen} onClose={() => setDealerOpen(false)} />
+
+        <div className="fixed bottom-6 left-2 z-50">
+          <a
+            href="tel:+919560156328"
+            className="bg-red-500 text-white px-4 py-2 rounded-2xl font-semibold flex items-center gap-2 md:hidden"
+          >
+            <PhoneCall size={25} />
+          </a>
+        </div>
+
       </header>
     </>
   );
