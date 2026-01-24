@@ -122,19 +122,19 @@ const Inquiry = () => {
         >
             <div className="absolute inset-0 bg-black/40"></div>
             <div className="relative max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div className="text-white">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-3">
+                <div className="text-white text-center md:text-start">
+                    <h1 className="text-2xl md:text-5xl font-bold mb-3 mt-10 md:m-0">
                         Bulk Milk Cooler Manufacturer &amp; Supplier
                     </h1>
-                    <h1 className="text-2xl font-bold mb-6">
+                    <h1 className="text-xl font-bold md:mb-6 mb-2">
                         Buy High-Quality Bulk Milk Cooler at Affordable Prices from Bhagyalaxmi Industries
                     </h1>
-                    <p className="text-lg mb-3 text-white">
+                    <p className="text-md md:text-lg mb-3 text-white">
                         Bhagyalaxmi Industries is a trusted bulk milk cooler manufacturer and BMC machine supplier,
                         offering durable and efficient stainless steel bulk milk cooler solutions for your dairy needs.
                     </p>
 
-                    <div className="flex mt-10">
+                    <div className="flex mt-10 md:justify-start justify-center">
                         <a
                             href="https://wa.me/919560156328"
                             className="bg-lime-500 hover:bg-lime-600 text-white px-5 py-3 rounded-lg font-semibold flex items-center gap-2"
@@ -252,21 +252,30 @@ const Inquiry = () => {
         <div className="mt-6 w-full bg-gradient-to-r from-indigo-600 to-blue-600 text-white">
             <div className="max-w-6xl mx-auto px-6 py-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6">
+
                     <div className="text-center md:text-left">
                         <h2 className="text-2xl md:text-3xl font-bold">
                             Bulk Milk Cooler Manufacturer
                         </h2>
-                        <h2 className="text-3xl md:text-4xl font-bold my-3 flex text-nowrap">
-                            +919560156328 & +918860600234
-                        </h2>
 
-                        <p className="text-indigo-100 mt-1">
+                        {/* Phone Numbers */}
+                        <div className="mt-3 flex flex-col sm:flex-row md:flex-nowrap justify-center md:justify-start gap-2 text-2xl md:text-3xl font-bold">
+                            <span>+91 95601 56328</span>
+                            <span className="hidden md:inline">,</span>
+                            <span>+91 88606 00234</span>
+                        </div>
+
+                        <p className="text-indigo-100 mt-2">
                             Looking for reliable dairy milk chilling solutions? Get expert guidance today.
                         </p>
                     </div>
 
+                    {/* CTA Button */}
                     <div className="flex justify-center md:justify-end">
-                        <a href="tel:+919560156328" className="group bg-white text-indigo-600 hover:bg-indigo-50 px-7 py-3 rounded-md font-semibold transition-all duration-300 flex items-center gap-2">
+                        <a
+                            href="tel:+919560156328"
+                            className="group bg-white text-indigo-600 hover:bg-indigo-50 px-7 py-3 rounded-md font-semibold transition-all duration-300 flex items-center gap-2"
+                        >
                             Connect Now
                             <span className="transform group-hover:translate-x-1 transition">
                                 →
@@ -277,6 +286,7 @@ const Inquiry = () => {
                 </div>
             </div>
         </div>
+
 
         {/* Why Choose US */}
         <section className="bg-gray-50 py-10 px-4">

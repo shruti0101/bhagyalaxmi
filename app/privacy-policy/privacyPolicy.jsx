@@ -10,14 +10,14 @@ const PrivacyPolicy = () => {
         <Navbar />
         {/* Hero Section */}
         <section
-            className="relative min-h-screen flex items-center bg-cover bg-center px-6"
+            className="relative flex items-center bg-cover bg-center px-6 py-16 md:py-24"
             style={{ backgroundImage: `url("/bannerNew.webp")` }}
         >
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/50"></div>
 
             <div className="relative max-w-4xl mx-auto text-center">
-                <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
+                <h1 className="text-white text-3xl md:text-4xl font-bold mb-4">
                     Privacy Policy
                 </h1>
 
@@ -28,6 +28,7 @@ const PrivacyPolicy = () => {
                 </p>
             </div>
         </section>
+
 
         <section className="bg-gray-50 py-10 px-6">
             <div className="max-w-5xl mx-auto">
