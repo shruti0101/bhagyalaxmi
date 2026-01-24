@@ -19,6 +19,7 @@ import ProductSectionPremium from "@/components/landingpage/Bestseller";
 import { products } from "@/Data";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { FaWhatsapp } from "react-icons/fa";
 
 /* Images */
 const Cooler = "/check3.png";
@@ -115,30 +116,37 @@ const Inquiry = () => {
     return (<>
         <Navbar />
         {/* Hero Section */}
-        <section className="min-h-screen bg-gradient-to-br from-indigo-600 to-indigo-500 flex items-center px-6" style={{ backgroundImage: `url(${BgHero})` }}>
-            <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <section
+            className="relative min-h-screen flex items-center px-6 bg-cover bg-center"
+            style={{ backgroundImage: `url("/bannerNew.webp")` }}
+        >
+            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="relative max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="text-white">
                     <h1 className="text-4xl md:text-5xl font-bold mb-3">
                         Bulk Milk Cooler Manufacturer &amp; Supplier
                     </h1>
-                    <h1 className="text-2xl md:text-2xl font-bold mb-6">
+                    <h1 className="text-2xl font-bold mb-6">
                         Buy High-Quality Bulk Milk Cooler at Affordable Prices from Bhagyalaxmi Industries
                     </h1>
-                    <p className="text-lg mb-3 text-indigo-100">
+                    <p className="text-lg mb-3 text-white">
                         Bhagyalaxmi Industries is a trusted bulk milk cooler manufacturer and BMC machine supplier,
                         offering durable and efficient stainless steel bulk milk cooler solutions for your dairy needs.
                     </p>
-                    <p className="text-lg mb-6 text-indigo-100 font-bold">
-                        Trusted by 1000+ Dairy Farmers. Get 1 Year Warranty &amp; Factory Rates.
-                    </p>
-                    {/* <p className="text-lg">
-                        As leading bulk milk cooler suppliers and BMC machine manufacturers, we provide top-notch
-                        milk chiller plants and SS bulk milk cooler suppliers across India. Our products ensure rapid
-                        cooling, long-lasting performance, and energy efficiency.
-                    </p> */}
+
+                    <div className="flex mt-10">
+                        <a
+                            href="https://wa.me/919560156328"
+                            className="bg-lime-500 hover:bg-lime-600 text-white px-5 py-3 rounded-lg font-semibold flex items-center gap-2"
+                        >
+                            <FaWhatsapp size={18} />
+                            WHATSAPP
+                        </a>
+                    </div>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-xl p-8">
+                {/* Form Card */}
+                <div className="bg-white/90 backdrop-blur-lg rounded-xl shadow-xl p-8">
                     <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
                         Get Started
                     </h2>
@@ -190,6 +198,7 @@ const Inquiry = () => {
                 </div>
             </div>
         </section>
+
 
         {/* Client Slider */}
         <section className="pt-8 bg-gray-50">
@@ -247,11 +256,8 @@ const Inquiry = () => {
                         <h2 className="text-2xl md:text-3xl font-bold">
                             Bulk Milk Cooler Manufacturer
                         </h2>
-                        <h2 className="text-3xl md:text-4xl font-bold my-3">
-                            +919560156328
-                        </h2>
-                        <h2 className="text-3xl md:text-4xl font-bold my-3">
-                            +918860600234
+                        <h2 className="text-3xl md:text-4xl font-bold my-3 flex text-nowrap">
+                            +919560156328 & +918860600234
                         </h2>
 
                         <p className="text-indigo-100 mt-1">
@@ -299,12 +305,11 @@ const Inquiry = () => {
 
         {/* About Us */}
         <section className="w-full">
-            {/* <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white">
+            <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white">
                 <div className="max-w-6xl mx-auto px-6 py-6">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
-
+                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
                         <div>
-                            <p className="text-3xl font-bold">50+</p>
+                            <p className="text-3xl font-bold">10+</p>
                             <p className="text-sm text-indigo-100 mt-1">Years of Experience</p>
                         </div>
 
@@ -314,23 +319,18 @@ const Inquiry = () => {
                         </div>
 
                         <div>
-                            <p className="text-3xl font-bold">1 Year</p>
-                            <p className="text-sm text-indigo-100 mt-1">Product Warranty</p>
-                        </div>
-
-                        <div>
                             <p className="text-3xl font-bold">100%</p>
                             <p className="text-sm text-indigo-100 mt-1">Genuine Spare Parts</p>
                         </div>
 
                         <div>
-                            <p className="text-3xl font-bold">5 Years</p>
-                            <p className="text-sm text-indigo-100 mt-1">Warranty on Dimple Plate</p>
+                            <p className="text-3xl font-bold">4500+</p>
+                            <p className="text-sm text-indigo-100 mt-1">Happy Customers</p>
                         </div>
-
                     </div>
                 </div>
-            </div> */}
+            </div>
+
 
             <div className="max-w-6xl mx-auto px-6 py-8">
                 <p className="text-lg leading-relaxed text-gray-700">
