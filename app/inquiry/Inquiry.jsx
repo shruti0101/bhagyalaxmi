@@ -140,7 +140,7 @@ const Inquiry = () => {
                             className="bg-lime-500 hover:bg-lime-600 text-white px-5 py-3 rounded-lg font-semibold flex items-center gap-2"
                         >
                             <FaWhatsapp size={18} />
-                            WHATSAPP
+                            Get Instant Quote
                         </a>
                     </div>
                 </div>
@@ -148,7 +148,7 @@ const Inquiry = () => {
                 {/* Form Card */}
                 <div className="bg-white/90 backdrop-blur-lg rounded-xl shadow-xl p-8">
                     <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
-                        Get Started
+                        Request a Quotation for Your Dairy BMC Requirement
                     </h2>
 
                     <form className="space-y-4 flex flex-col" onSubmit={handleSubmit}>
@@ -378,7 +378,7 @@ const Inquiry = () => {
 
                 <div className="bg-white rounded-xl shadow-xl p-8">
                     <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
-                        Get Started
+                        Get Expert Help to Choose the Right BMC
                     </h2>
 
                     <form className="space-y-4 flex flex-col" onSubmit={handleSubmit}>
