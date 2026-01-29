@@ -317,7 +317,7 @@ const Footer = () => {
                 onClick={() => setIsModalOpen(true)}
               >
                 <Image
-                  src="/home/trust.webp"
+                  src="/TRUST-ELITE.webp"
                   alt="Trust Elite"
                   width={100}
                   height={100}
@@ -347,7 +347,7 @@ const Footer = () => {
 
                     {/* Full Certificate */}
                     <Image
-                      src="/cert.webp" // full-size certificate
+                      src="/trust.webp" // full-size certificate
                       alt="Trust Elite Full"
                       width={800} // adjust as needed
                       height={500} // adjust as needed
