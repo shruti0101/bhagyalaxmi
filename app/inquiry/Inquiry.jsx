@@ -95,22 +95,22 @@ const Inquiry = () => {
     };
 
     const clientSlider = [
-        { title: "Amul Dairy", image: "/amulLogo.png", },
-        { title: "Mother Dairy", image: "/motherDairy.png" },
-        { title: "Britannia", image: "/britanniaLogo.png" },
-        { title: "Verka", image: "/verka.png" },
-        { title: "Vita", image: "/vita.png" },
-        { title: "Saras", image: "/saras.png" },
-        { title: "Sudha", image: "/sudha.png" },
-        { title: "Telangana", image: "/telangana.png" },
-        { title: "Amul Dairy", image: "/amulLogo.png", },
-        { title: "Mother Dairy", image: "/motherDairy.png" },
-        { title: "Britannia", image: "/britanniaLogo.png" },
-        { title: "Verka", image: "/verka.png" },
-        { title: "Vita", image: "/vita.png" },
-        { title: "Saras", image: "/saras.png" },
-        { title: "Sudha", image: "/sudha.png" },
-        { title: "Telangana", image: "/telangana.png" },
+        { title: "Amul Dairy", image: "/amulLogo.webp", },
+        { title: "Mother Dairy", image: "/motherDairy.webp" },
+        { title: "Britannia", image: "/britanniaLogo.webp" },
+        { title: "Verka", image: "/verka.webp" },
+        { title: "Vita", image: "/vita.webp" },
+        { title: "Saras", image: "/saras.webp" },
+        { title: "Sudha", image: "/sudha.webp" },
+        { title: "Telangana", image: "/telangana.webp" },
+        { title: "Amul Dairy", image: "/amulLogo.webp", },
+        { title: "Mother Dairy", image: "/motherDairy.webp" },
+        { title: "Britannia", image: "/britanniaLogo.webp" },
+        { title: "Verka", image: "/verka.webp" },
+        { title: "Vita", image: "/vita.webp" },
+        { title: "Saras", image: "/saras.webp" },
+        { title: "Sudha", image: "/sudha.webp" },
+        { title: "Telangana", image: "/telangana.webp" },
     ]
 
     return (<>
