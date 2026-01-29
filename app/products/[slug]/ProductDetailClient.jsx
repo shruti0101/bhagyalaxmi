@@ -5,10 +5,12 @@ import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 export default function ProductDetailClient({ product, relatedProducts = [] }) {
 
-    
+
   const [activeImage, setActiveImage] = useState(product.image);
   const [showPopup, setShowPopup] = useState(false);
   const [status, setStatus] = useState("");
@@ -25,27 +27,25 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Sending...");
-
     const formData = new FormData(e.target);
-
+    const data = {
+      platform: "BhagyaLaxmi Industries Product Form",
+      platformEmail: "bhagyalaxmigroup12@gmail.com",
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      product: formData.get("machine"),
+      place: "N/A",
+      message: formData.get("message"),
+    };
+    if (data.phone.toString().length < 10) return toast.error("Enter Valid Phone Number")
     try {
-      const res = await fetch(
-        "https://formsubmit.co/shreeshaktiinfratech@gmail.com",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
-
-      if (res.ok) {
-        setStatus("✅ Thank you! Your message has been sent.");
-        e.target.reset(); // clear form
-      } else {
-        setStatus("❌ Oops! Something went wrong. Please try again.");
-      }
+      const res = await axios.post("https://brandbnalo.com/api/form/add", data);
+      toast.success("Message Send Successfully")
+      setStatus("Thank you! Your message has been sent.")
+      e.target.reset();
     } catch (err) {
-      setStatus("❌ Failed to send. Please check your connection.");
+      console.log(err)
     }
   };
 
@@ -62,7 +62,7 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
           <h1 className="max-w-2xl text-white z-100 text-3xl md:text-6xl tracking-wider leading-tight uppercase font-bold">
             {product.name}
           </h1>
-        
+
         </div>
       </section>
 
@@ -85,9 +85,8 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
                     height="100%"
                     src={
                       activeImage.src.includes("youtu.be")
-                        ? `https://www.youtube.com/embed/${
-                            activeImage.src.split("youtu.be/")[1].split("?")[0]
-                          }`
+                        ? `https://www.youtube.com/embed/${activeImage.src.split("youtu.be/")[1].split("?")[0]
+                        }`
                         : activeImage.src.replace("watch?v=", "embed/")
                     }
                     title={product.name}
@@ -100,7 +99,7 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
                   <Image
                     src={activeImage.src}
                     alt="paper cup making machine"
-                   fill
+                    fill
                     unoptimized
                     className="relative h-[300px] md:h-[260px] transition-transform duration-100 ease-linear"
                     style={{
@@ -113,7 +112,7 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
             </div>
 
             {/* Thumbnails */}
-        
+
           </div>
 
           {/* Specifications */}
@@ -128,9 +127,8 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
                   {product.specs?.map((spec, i) => (
                     <tr
                       key={i}
-                      className={`${
-                        i % 2 === 0 ? "bg-gray-50" : "bg-white"
-                      } border-b`}
+                      className={`${i % 2 === 0 ? "bg-gray-50" : "bg-white"
+                        } border-b`}
                     >
                       <td className="p-2 md:p-3 font-medium text-gray-800 w-1/3 text-sm md:text-lg">
                         {spec.label}
@@ -144,7 +142,7 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
               </table>
             </div>
 
-         
+
             <p className="mt-2 text-gray-600 text-sm md:text-base">
               For more information about the product, please contact us.
             </p>
@@ -299,26 +297,26 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
                   <h3 className="mt-3 md:mt-4 text-base md:text-lg font-semibold text-gray-800">
                     {item.name}
                   </h3>
-             
+
                 </a>
               ))}
 
-              
+
             </div>
           </div>
         )}
-<div className="flex justify-center items-center my-4">
-  <Link href="/products">
-    <button
-      className="px-8 py-3 cursor-pointer bg-gradient-to-r from-blue-500 to-teal-500 
+        <div className="flex justify-center items-center my-4">
+          <Link href="/products">
+            <button
+              className="px-8 py-3 cursor-pointer bg-gradient-to-r from-blue-500 to-teal-500 
       text-white text-lg font-medium rounded-full 
       shadow-md hover:shadow-lg 
       hover:brightness-110 transition-all duration-300"
-    >
-      Explore More
-    </button>
-  </Link>
-</div>
+            >
+              Explore More
+            </button>
+          </Link>
+        </div>
 
 
       </section>

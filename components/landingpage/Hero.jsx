@@ -34,13 +34,13 @@ export default function Hero() {
           className="absolute inset-0"
         >
           {/* ✅ Next Image Responsive */}
-      <Image
-  src={desktopImages[index % desktopImages.length]}
-  alt="Hero banner"
-  width={3000}
-  height={3000}
-  className="w-full h-auto object-cover"
-/>
+          <Image
+            src={desktopImages[index % desktopImages.length]}
+            alt="Hero banner"
+            width={3000}
+            height={3000}
+            className="w-full h-auto object-cover"
+          />
 
         </motion.div>
       </AnimatePresence>

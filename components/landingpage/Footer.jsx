@@ -25,8 +25,8 @@ export const categories = [
 
   { id: "milk-vending-machine", name: "Milk Vending Machine" },
 
- 
-  { id: "curd-making-machine", name: "Curd Making Machine" },
+
+  { id: "curd-making-machine", name: "Curd and Paneer Making Machine" },
 
   {
     id: "steam-boiler",
@@ -77,31 +77,41 @@ const Footer = () => {
                 </span> */}
               </div>
 
-         <p className="text-xs leading-relaxed text-white">
-  Our Bulk Milk Coolers ensure rapid cooling, hygienic storage, and long-lasting
-  stainless steel durability. Designed for efficiency and reliability, they maintain
-  milk freshness at farm and dairy levels with industry-approved safety standards.
-</p>
+              <p className="text-xs leading-relaxed text-white">
+                Our Bulk Milk Coolers ensure rapid cooling, hygienic storage, and long-lasting
+                stainless steel durability. Designed for efficiency and reliability, they maintain
+                milk freshness at farm and dairy levels with industry-approved safety standards.
+              </p>
 
 
-             <div className="flex items-start gap-4 mt-2 flex-1">
-  <a
-    href="tel:+918826544443"
-    className="flex items-center gap-2"
-  >
-    <Phone className="w-5 h-5 text-blue-500 hover:scale-110 transition-transform duration-200" />
-    <h5 className="text-[16px] font-semibold underline">+919560156328</h5>
-  </a>
-  
-</div>
+              <div className="flex items-start gap-4 mt-2 flex-1">
+                <a
+                  href="tel:+919560156328"
+                  className="flex items-center gap-2"
+                >
+                  <Phone className="w-5 h-5 text-blue-500 hover:scale-110 transition-transform duration-200" />
+                  <h5 className="text-[16px] font-semibold underline">+919560156328</h5>
+                </a>
+
+              </div>
+              <div className="flex items-start gap-4 mt-2 flex-1">
+                <a
+                  href="tel:+918860600234"
+                  className="flex items-center gap-2"
+                >
+                  <Phone className="w-5 h-5 text-blue-500 hover:scale-110 transition-transform duration-200" />
+                  <h5 className="text-[16px] font-semibold underline">+918860600234</h5>
+                </a>
+
+              </div>
 
 
               {/* Address */}
               <div className="flex items-start gap-2 mt-4 text-sm">
                 <MapPin className="w-10 h-10 text-blue-500" />
                 <p className="txt-white">
-             KH No 14/15, 14/2/1,Built, Up Area 485 SQ, YDS Appx Nangli, Sakrawati Indl.Area,Najafgarh
-New Delhi - 110043, Delhi, India
+                  KH No 14/15, 14/2/1,Built, Up Area 485 SQ, YDS Appx Nangli, Sakrawati Indl.Area,Najafgarh
+                  New Delhi - 110043, Delhi, India
 
                 </p>
               </div>
@@ -343,24 +353,24 @@ New Delhi - 110043, Delhi, India
       </div>
 
 
-{/* Bottom Bar */}
-<div className="relative z-20 border-t border-gray-700 mt-10 pt-4 px-4 text-center text-sm text-white">
-  <div className="flex flex-col md:flex-row justify-between gap-1">
-    <span>© 2025 BhagyaLaxmi Industries, All Rights Reserved.</span>
+      {/* Bottom Bar */}
+      <div className="relative z-20 border-t border-gray-700 mt-10 pt-4 px-4 text-center text-sm text-white">
+        <div className="flex flex-col md:flex-row justify-between gap-1">
+          <span>© 2025 BhagyaLaxmi Industries, All Rights Reserved.</span>
 
-    <span>
-      Website Designed By Promozione Branding Pvt. Ltd.
-      <a
-        href="https://promozionebranding.com/"
-        className="text-blue-500 font-bold hover:underline ml-1"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Website Designing Company.
-      </a>
-    </span>
-  </div>
-</div>
+          <span>
+            Website Designed By Promozione Branding Pvt. Ltd.
+            <a
+              href="https://promozionebranding.com/"
+              className="text-blue-500 font-bold hover:underline ml-1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Website Designing Company.
+            </a>
+          </span>
+        </div>
+      </div>
 
 
 

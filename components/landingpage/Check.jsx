@@ -2,9 +2,30 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 const Check = () => {
-  return (
+  const clientSlider = [
+    { title: "Amul Dairy", image: "/amulLogo.png", },
+    { title: "Mother Dairy", image: "/motherDairy.png" },
+    { title: "Britannia", image: "/britanniaLogo.png" },
+    { title: "Verka", image: "/verka.png" },
+    { title: "Vita", image: "/vita.png" },
+    { title: "Saras", image: "/saras.png" },
+    { title: "Sudha", image: "/sudha.png" },
+    { title: "Telangana", image: "/telangana.png" },
+    { title: "Amul Dairy", image: "/amulLogo.png", },
+    { title: "Mother Dairy", image: "/motherDairy.png" },
+    { title: "Britannia", image: "/britanniaLogo.png" },
+    { title: "Verka", image: "/verka.png" },
+    { title: "Vita", image: "/vita.png" },
+    { title: "Saras", image: "/saras.png" },
+    { title: "Sudha", image: "/sudha.png" },
+    { title: "Telangana", image: "/telangana.png" },
+  ]
+  return (<>
     <section className="hidden md:flex relative w-full h-[95vh]  items-center justify-center overflow-hidden ">
       {/* Background Image */}
       <div
@@ -22,7 +43,7 @@ const Check = () => {
           <Image
             width={800}
             height={800}
-            src="/prod/major1.png"
+            src="/bulkcooler.png"
             alt="Machine Left"
             className="w-full h-full object-cover drop-shadow-2xl relative z-20"
           />
@@ -72,7 +93,51 @@ const Check = () => {
         }
       `}</style>
     </section>
-  );
+    {/* Client Slider */}
+    <section className="pt-8 bg-gray-50">
+      <div className="mx-auto px-8">
+        {/* Heading */}
+        <h2 className="text-center text-2xl md:text-3xl font-semibold text-indigo-600 mb-6">
+          Trusted by leading brands in the dairy industry.
+        </h2>
+
+        <Swiper
+          modules={[Autoplay]}
+          loop={true}
+          speed={500}
+          spaceBetween={24}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 4 },
+            1024: { slidesPerView: 6 },
+            1280: { slidesPerView: 7 },
+          }}
+          className="pb-6"
+        >
+          {clientSlider.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div title={item.title} className="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
+
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={item?.image}
+                    alt={item?.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+  </>);
 };
 
 export default Check;

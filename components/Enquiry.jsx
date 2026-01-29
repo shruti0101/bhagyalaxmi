@@ -9,6 +9,8 @@ import {
 } from "react-icons/fa";
 
 import { products } from "@/Data";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const allproduct = products;
 
@@ -20,27 +22,25 @@ const Enquiry = ({ isOpen, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-
+    const data = {
+      platform: "BhagyaLaxmi Industries Enquiry Form",
+      platformEmail: "bhagyalaxmigroup12@gmail.com",
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      product: formData.get("machine"),
+      place: "N/A",
+      message: formData.get("message"),
+    };
+    if (data.phone.toString().length < 10) return toast.error("Enter Valid Phone Number")
     try {
-      const res = await fetch(
-        "https://formsubmit.co/ajax/shreeshaktiinfratech@gmail.com",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
-
-      if (res.ok) {
-        setStatus("success");
-        e.target.reset();
-      } else {
-        setStatus("error");
-      }
+      const res = await axios.post("https://brandbnalo.com/api/form/add", data);
+      toast.success("Message Send Successfully")
+      setStatus("Thank you! Your message has been sent.")
+      e.target.reset();
     } catch (err) {
-      setStatus("error");
+      console.log(err)
     }
-
-    setTimeout(() => setStatus(null), 4000);
   };
 
   return (
@@ -117,7 +117,7 @@ const Enquiry = ({ isOpen, onClose }) => {
             <div className="flex items-center border rounded-lg px-4 py-3 bg-white shadow-sm focus-within:ring-2 focus-within:ring-blue-500">
               <FaIndustry className="text-blue-600 mr-3" />
               <select
-                name="product"
+                name="machine"
                 required
                 className="w-full bg-transparent focus:outline-none text-gray-700"
               >
@@ -152,14 +152,9 @@ const Enquiry = ({ isOpen, onClose }) => {
           </form>
 
           {/* Status Message */}
-          {status === "success" && (
-            <p className="text-green-600 font-semibold text-center mt-5 animate-pulse">
-              ✅ Thank you! Your enquiry has been submitted.
-            </p>
-          )}
-          {status === "error" && (
-            <p className="text-red-600 font-semibold text-center mt-5 animate-pulse">
-              ❌ Oops! Something went wrong. Please try again.
+          {status && (
+            <p className="text-center mt-3 text-sm md:text-base">
+              {status}
             </p>
           )}
         </div>

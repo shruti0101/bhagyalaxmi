@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { products } from "@/Data";
+import { toast } from "react-toastify";
 
 export default function Dealer({ isOpen, onClose }) {
   const [loading, setLoading] = useState(false);
@@ -54,35 +55,25 @@ export default function Dealer({ isOpen, onClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setStatus("Sending...");
-
+    const formData = new FormData(e.target);
+    const data = {
+      platform: "BhagyaLaxmi Industries Dealer Inquiry Form",
+      platformEmail: "bhagyalaxmigroup12@gmail.com",
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      product: formData.get("machine"),
+      place: formData.get("place"),
+      message: formData.get("message"),
+    };
+    if (data.phone.toString().length < 10) return toast.error("Enter Valid Phone Number")
     try {
-      const payload = {
-        platform: "Shree Shakti Infratech Website",
-        platformEmail: "shrutiguptabhu@gmail.com",
-        name,
-        phone,
-        email,
-        place: `${place}, ${city} (${customerType})`,
-        product: machine,
-        message,
-      };
-
-      const { data } = await axios.post(
-        "https://brandbnalo.com/api/form/add",
-        payload
-      );
-
-      if (data?.success) {
-        setStatus("✅ Enquiry submitted successfully!");
-      } else {
-        setStatus("❌ Something went wrong. Try again.");
-      }
-    } catch {
-      setStatus("❌ Submission failed. Try again.");
-    } finally {
-      setLoading(false);
+      const res = await axios.post("https://brandbnalo.com/api/form/add", data);
+      toast.success("Message Send Successfully")
+      setStatus("Thank you! Your message has been sent.")
+      e.target.reset();
+    } catch (err) {
+      console.log(err)
     }
   };
 
@@ -130,12 +121,12 @@ export default function Dealer({ isOpen, onClose }) {
 
             <form onSubmit={handleSubmit} className="space-y-3">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <input className="input" placeholder="Name*" required value={name} onChange={(e) => setName(e.target.value)} />
-                <input className="input" placeholder="Email*" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-                <input className="input" placeholder="Phone*" type="tel" maxLength={10} required value={phone} onChange={(e) => setPhone(e.target.value)} />
-                <input className="input" placeholder="Place*" required value={place} onChange={(e) => setPlace(e.target.value)} />
+                <input className="input" placeholder="Name*" name="name" />
+                <input className="input" placeholder="Email*" type="email" name="email" />
+                <input className="input" placeholder="Phone*" type="tel" name="phone" />
+                {/* <input className="input" placeholder="Place*" /> */}
 
-                <select className="input" required value={city} onChange={(e) => setCity(e.target.value)}>
+                <select className="input" name="place">
                   {cities.map((c, i) => (
                     <option key={i} value={i === 0 ? "" : c} disabled={i === 0}>
                       {c}
@@ -143,16 +134,16 @@ export default function Dealer({ isOpen, onClose }) {
                   ))}
                 </select>
 
-                <select className="input" required value={customerType} onChange={(e) => setCustomerType(e.target.value)}>
+                {/* <select className="input" name="place">
                   {customerOptions.map((c, i) => (
                     <option key={i} value={i === 0 ? "" : c} disabled={i === 0}>
                       {c}
                     </option>
                   ))}
-                </select>
+                </select> */}
 
                 <div className="sm:col-span-2">
-                  <select className="input" required value={machine} onChange={(e) => setMachine(e.target.value)}>
+                  <select className="input" name="machine">
                     <option value="">Select Product*</option>
                     {products.map((p) => (
                       <option key={p.id} value={p.name}>
@@ -163,7 +154,7 @@ export default function Dealer({ isOpen, onClose }) {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <textarea className="input resize-none" rows={3} placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)} />
+                  <textarea className="input resize-none" rows={3} placeholder="Message" name="message" />
                 </div>
               </div>
 
@@ -179,7 +170,7 @@ export default function Dealer({ isOpen, onClose }) {
                 <p className="text-center text-sm font-medium">{status}</p>
               )}
 
-             
+
             </form>
           </div>
         </div>

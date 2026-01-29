@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { products } from "@/Data";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 export default function PopupForm({ onClose }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,11 +20,34 @@ export default function PopupForm({ onClose }) {
     if (onClose) onClose();
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = {
+      platform: "BhagyaLaxmi Industries Popup Form",
+      platformEmail: "bhagyalaxmigroup12@gmail.com",
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      product: formData.get("machine"),
+      place: "N/A",
+      message: formData.get("message"),
+    };
+    if (data.phone.toString().length < 10) return toast.error("Enter Valid Phone Number")
+    try {
+      const res = await axios.post("https://brandbnalo.com/api/form/add", data);
+      toast.success("Message Send Successfully")
+      e.target.reset();
+    } catch (err) {
+      console.log(err)
+    }
+  };
+
   return (
     <div className="fixed inset-0 z-[3000] flex items-center justify-center bg-black/60 px-3 sm:px-4">
       {/* CARD */}
       <div className="relative w-full max-w-[900px] bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] animate-[popup_0.25s_ease-out]">
-        
+
         {/* CLOSE */}
         <button
           onClick={handleClose}
@@ -76,8 +101,7 @@ export default function PopupForm({ onClose }) {
             </p>
 
             <form
-              action="https://formsubmit.co/shreeshaktiinfratech@gmail.com"
-              method="POST"
+              onSubmit={handleSubmit}
               className="space-y-3"
             >
               {/* Hidden fields */}
@@ -99,7 +123,7 @@ export default function PopupForm({ onClose }) {
                 />
                 <input
                   type="tel"
-                  name="mobile"
+                  name="phone"
                   required
                   placeholder="Mobile Number*"
                   className="input"
