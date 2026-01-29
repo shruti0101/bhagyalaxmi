@@ -7,7 +7,6 @@ export default function WhyChooseUs() {
   return (
     <section className="bg-[#f6fbfc] px-8 py-8 md:py-20 relative overflow-hidden">
       {/* faint tech background */}
-      <div className="absolute inset-0 opacity-[0.06] bg-[url('/patterns/circuit.svg')] bg-repeat" />
 
       <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 px-4 sm:px-6 lg:px-0 gap-10 lg:gap-0">
         {/* ================= LEFT CONTENT ================= */}
@@ -67,8 +66,8 @@ export default function WhyChooseUs() {
           <Image
             width={1000}
             height={1000}
-            alt="prod1"
-            src="/prod1.png"
+            alt="prod1_1"
+            src="/prod1_1.webp"
             className="w-full h-auto"
           />
 

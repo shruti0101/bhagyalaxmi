@@ -61,7 +61,7 @@ export default function Testimonials() {
 
   return (
     <section
-      style={{ backgroundImage: "url(/bg.jpg)" }}
+      style={{ backgroundImage: "url(/bg.webp)" }}
       className="relative overflow-hidden bg-center bg-cover py-28"
     >
       <div className="relative mx-auto w-full px-8 md:px-16">

@@ -8,29 +8,29 @@ import "swiper/css";
 
 const Check = () => {
   const clientSlider = [
-    { title: "Amul Dairy", image: "/amulLogo.png", },
-    { title: "Mother Dairy", image: "/motherDairy.png" },
-    { title: "Britannia", image: "/britanniaLogo.png" },
-    { title: "Verka", image: "/verka.png" },
-    { title: "Vita", image: "/vita.png" },
-    { title: "Saras", image: "/saras.png" },
-    { title: "Sudha", image: "/sudha.png" },
-    { title: "Telangana", image: "/telangana.png" },
-    { title: "Amul Dairy", image: "/amulLogo.png", },
-    { title: "Mother Dairy", image: "/motherDairy.png" },
-    { title: "Britannia", image: "/britanniaLogo.png" },
-    { title: "Verka", image: "/verka.png" },
-    { title: "Vita", image: "/vita.png" },
-    { title: "Saras", image: "/saras.png" },
-    { title: "Sudha", image: "/sudha.png" },
-    { title: "Telangana", image: "/telangana.png" },
+    { title: "Amul Dairy", image: "/amulLogo.webp", },
+    { title: "Mother Dairy", image: "/motherDairy.webp" },
+    { title: "Britannia", image: "/britanniaLogo.webp" },
+    { title: "Verka", image: "/verka.webp" },
+    { title: "Vita", image: "/vita.webp" },
+    { title: "Saras", image: "/saras.webp" },
+    { title: "Sudha", image: "/sudha.webp" },
+    { title: "Telangana", image: "/telangana.webp" },
+    { title: "Amul Dairy", image: "/amulLogo.webp", },
+    { title: "Mother Dairy", image: "/motherDairy.webp" },
+    { title: "Britannia", image: "/britanniaLogo.webp" },
+    { title: "Verka", image: "/verka.webp" },
+    { title: "Vita", image: "/vita.webp" },
+    { title: "Saras", image: "/saras.webp" },
+    { title: "Sudha", image: "/sudha.webp" },
+    { title: "Telangana", image: "/telangana.webp" },
   ]
   return (<>
     <section className="hidden md:flex relative w-full h-[95vh]  items-center justify-center overflow-hidden ">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/ctabg.png')" }}
+        style={{ backgroundImage: "url('/ctabg.webp')" }}
       ></div>
 
       <div className="absolute inset-0 bg-black/10 "></div>
@@ -43,7 +43,7 @@ const Check = () => {
           <Image
             width={800}
             height={800}
-            src="/bulkcooler.png"
+            src="/bulkcooler.webp"
             alt="Machine Left"
             className="w-full h-full object-cover drop-shadow-2xl relative z-20"
           />
@@ -79,7 +79,7 @@ const Check = () => {
           <Image
             width={1000}
             height={1000}
-            src="/prod/major2.png"
+            src="/prod/major2.webp"
             alt="Machine Right"
             className="w-full h-full object-cover  drop-shadow-2xl  z-20"
           />

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 /* Images */
-const desktopImages = ["/hero2.png", "/hero1.png"];
+const desktopImages = ["/hero2.webp", "/hero1.webp"];
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
@@ -21,7 +21,7 @@ export default function Hero() {
     <section
       className="
         relative w-full overflow-hidden
-        h-[190px] sm:h-[370px] md:h-[80vh] xl:h-[100vh] bg-[#F5F7F9]
+        h-[190px] sm:h-[370px] md:h-[80vh] xl:h-[110vh] bg-[#F5F7F9]
       "
     >
       <AnimatePresence mode="sync">

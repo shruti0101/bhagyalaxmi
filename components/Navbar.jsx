@@ -77,7 +77,7 @@ export default function Header({ onClose }) {
         >
           <div className="max-w-[1320px] mx-auto flex items-center justify-between px-4 py-3">
             <Link href="/">
-              <Image src="/logonew.png" alt="Logo" width={150} height={60} />
+              <Image src="/logonew.webp" alt="Logo" width={150} height={60} />
             </Link>
 
             {/* Desktop Actions */}

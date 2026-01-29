@@ -46,7 +46,7 @@ export default function ContactPage() {
       <Navbar />
 
       <section
-        style={{ backgroundImage: "url(/milkflow4.jpg)" }}
+        style={{ backgroundImage: "url(/milkflow4.webp)" }}
         className="relative h-[90vh] bg-cover bg-center flex items-center justify-center"
       >
         <div className="absolute inset-0 bg-black/20"></div>
@@ -95,8 +95,7 @@ export default function ContactPage() {
               <MapPin className="text-[#0B5ED7]" />
               <h4 className="font-bold mt-2 text-[#0A2540]">Address</h4>
               <p className="text-sm">
-                KH No 14/15, 14/2/1,Built, Up Area 485 SQ, YDS Appx Nangli, Sakrawati Indl.Area,Najafgarh
-                New Delhi - 110043, Delhi, India
+           KH No 14/15, 14/2/1, Nangli, Sakrawati Industrial Area,Najafgarh,New Delhi - 110043, India
 
               </p>
             </div>

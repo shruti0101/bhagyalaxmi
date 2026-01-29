@@ -886,13 +886,13 @@ export const products = [
     "model": "CMM-2000LPH",
 
     "image": {
-      "src": "/products/pannerMachine.png",
+      "src": "/products/pannerMachine.webp",
       "alt": "Paneer Making Machine 2000 LPH"
     },
 
     "images": [
       {
-        "src": "/products/pannerMachine.png",
+        "src": "/products/pannerMachine.webp",
         "alt": "Stainless Steel Curd Making Machine"
       },
       {
@@ -1295,7 +1295,7 @@ export const products = [
     "model": "BMCP-5000L",
 
     "image": {
-      "src": "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768459877/milk-chilling-plant_vezdki.jpg",
+      "src": "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768459877/milk-chilling-plant_vezdki.webp",
       "alt": "Bulk Milk Chilling Plant"
     },
 

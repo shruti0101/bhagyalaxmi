@@ -10,7 +10,7 @@ export default function AboutSection() {
         {/* Background tech pattern */}
         <div className="hidden md:block  absolute right-0 bottom-0 pointer-events-none">
           <Image
-            src="/pattern.png"
+            src="/pattern.webp"
             alt=""
             width={720}
             height={520}
@@ -71,7 +71,7 @@ export default function AboutSection() {
             {/* Top Image */}
             <div className="">
               <Image
-                src="/bhagya.png"
+                src="/bhagya.webp"
                 alt="Pipeline"
                 width={820}
                 height={820}

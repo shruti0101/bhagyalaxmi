@@ -106,7 +106,7 @@ const Page = () => {
 
       {/* HERO SECTION */}
       <section
-        style={{ backgroundImage: "url(/milkflow4.jpg)" }}
+        style={{ backgroundImage: "url(/milkflow4.webp)" }}
         className="relative h-[55vh] sm:h-[80vh] md:h-[100vh] bg-cover bg-center flex items-center justify-center"
       >
         <div className="absolute inset-0 bg-black/20 "></div>
@@ -190,7 +190,7 @@ const Page = () => {
             <Image
               width={1000}
               height={1000}
-              src="/milkimg.png"
+              src="/milkimg.webp"
               alt="Aanya Enterprise"
               className="object-contain rounded-md w-full max-w-[650px]"
             />
@@ -236,7 +236,7 @@ const Page = () => {
       <Bestseller></Bestseller>
 
       <section
-        style={{ backgroundImage: "url(/aboutlast.jpg)" }}
+        style={{ backgroundImage: "url(/aboutlast.webp)" }}
         className="relative w-full bg-center bg-cover py-12 sm:py-16 mt-10 sm:mt-14 overflow-hidden md:bg-fixed"
       >
         {/* Overlay */}

@@ -54,7 +54,7 @@ const Footer = () => {
 
   return (
     <footer
-      style={{ backgroundImage: "url('/test1.jpeg')" }}
+      style={{ backgroundImage: "url('/test1.webp')" }}
       className="relative bg-cover bg-center text-gray-300 pt-12 pb-6"
     >
 
@@ -66,7 +66,7 @@ const Footer = () => {
             <div>
               <div className="relative inline-block mb-4">
                 <Image
-                  src="/logonew.png"
+                  src="/logonew.webp"
                   alt="Logo"
                   width={200}
                   height={50}
@@ -110,8 +110,7 @@ const Footer = () => {
               <div className="flex items-start gap-2 mt-4 text-sm">
                 <MapPin className="w-10 h-10 text-blue-500" />
                 <p className="txt-white">
-                  KH No 14/15, 14/2/1,Built, Up Area 485 SQ, YDS Appx Nangli, Sakrawati Indl.Area,Najafgarh
-                  New Delhi - 110043, Delhi, India
+              KH No 14/15, 14/2/1, Nangli, Sakrawati Industrial Area,Najafgarh,New Delhi - 110043, India
 
                 </p>
               </div>
@@ -318,7 +317,7 @@ const Footer = () => {
                 onClick={() => setIsModalOpen(true)}
               >
                 <Image
-                  src="/home/trustseal.png"
+                  src="/home/trust.webp"
                   alt="Trust Elite"
                   width={100}
                   height={100}

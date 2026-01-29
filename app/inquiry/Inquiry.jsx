@@ -22,7 +22,7 @@ import { toast } from "react-toastify";
 import { FaWhatsapp } from "react-icons/fa";
 
 /* Images */
-const Cooler = "/check3.png";
+const Cooler = "/check3.webp";
 const BgHero = "/aboutbanner.webp";
 
 const Inquiry = () => {

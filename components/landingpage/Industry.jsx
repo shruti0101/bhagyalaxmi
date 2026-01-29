@@ -12,7 +12,7 @@ export default function ApplicationsSlider() {
 
        {
       title: "Mini Dairy Plants",
-      image: "/indus5.jpg",
+      image: "/indus5.webp",
       desc: "Semi-Automatic Mini Dairy Plants, Mixing Tanks, and Steam Boilers enable efficient milk processing for small to medium-scale dairy operations.",
     },
 
@@ -23,7 +23,7 @@ export default function ApplicationsSlider() {
     },
     {
       title: "Dairy Farms",
-      image: "/indus1.jpg",
+      image: "/indus1.webp",
       desc: "Our Bulk Milk Coolers and Milk Cooling Tanks ensure rapid and uniform milk chilling, helping dairy farms maintain milk quality from collection to storage.",
     },
     {
@@ -33,7 +33,7 @@ export default function ApplicationsSlider() {
     },
     {
       title: "Dairy Cooperatives",
-      image: "/indus4.jpg",
+      image: "/indus4.webp",
       desc: "Cooling Tanks and Stainless Steel BMCs are designed to handle high milk volumes efficiently while maintaining strict hygiene standards.",
     },
  

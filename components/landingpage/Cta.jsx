@@ -39,7 +39,7 @@ const CTASection = () => {
         {/* Left Side Image */}
         <div className="w-full h-full flex justify-center">
           <img
-            src="/ctaimg.png"
+            src="/ctaimg.webp"
             alt="Contact Us"
             className="w-full max-w-[520px] md:max-w-none h-[260px] sm:h-[320px] md:h-[480px] object-cover"
           />

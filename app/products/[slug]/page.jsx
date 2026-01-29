@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
             url:
               typeof product.image === "string"
                 ? product.image
-                : product.image?.src || "/default-image.jpg",
+                : product.image?.src || "/default-image.webp",
             alt:
               typeof product.image === "string"
                 ? product.name

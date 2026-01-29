@@ -12,25 +12,25 @@ const categories = [
   {
     title: "Bulk Milk Coolers",
     desc: "Efficient cooling systems to preserve milk quality at collection centers.",
-    image: "/prod/7.jpg",
+    image: "/prod/7.webp",
     icon: "/icons/milk.svg",
   },
   {
     title: "Milk Storage Tanks",
     desc: "Food-grade stainless steel tanks for hygienic milk storage.",
-    image: "/prod/1.jpg",
+    image: "/prod/1.webp",
     icon: "/icons/tank.svg",
   },
    {
     title: "Milk Chilling Plant",
     desc: "Efficient cooling systems to preserve milk quality at collection centers.",
-    image: "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768459877/milk-chilling-plant_vezdki.jpg",
+    image: "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768459877/milk-chilling-plant_vezdki.webp",
     icon: "/icons/milk.svg",
   },
   {
     title: "Milk Pasteurizer",
     desc: "Advanced pasteurization equipment ensuring food safety standards.",
-    image: "/prod/2.jpg",
+    image: "/prod/2.webp",
     icon: "/icons/heat.svg",
   },
   {
@@ -51,7 +51,7 @@ const categories = [
      {
     title: "Dairy Equipment",
     desc: "Efficient cooling systems to preserve milk quality at collection centers.",
-    image: "/prod/4.jpg",
+    image: "/prod/4.webp",
     icon: "/icons/milk.svg",
   },
 ];

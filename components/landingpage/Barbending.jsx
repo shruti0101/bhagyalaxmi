@@ -100,7 +100,7 @@ export default function BulkMilkCoolerBlueSection() {
             width={250}
             height={200}
             alt="lead"
-            src="/leadbottom.jpg"
+            src="/leadbottom.webp"
           />
         </div>
       </div>
