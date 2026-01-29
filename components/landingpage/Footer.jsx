@@ -184,6 +184,11 @@ const Footer = () => {
                     CONTACT US
                   </Link>
                 </li>
+                <li>
+                  <Link href="/sitemap" className="hover:text-blue-500">
+                    SITEMAP
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -238,6 +243,11 @@ const Footer = () => {
                     <li>
                       <Link href="/contact-us" className="hover:text-[#FAAC18]">
                         CONTACT US
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/sitemap" className="hover:text-[#FAAC18]">
+                        SITEMAP
                       </Link>
                     </li>
                   </ul>
