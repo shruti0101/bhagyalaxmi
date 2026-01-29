@@ -53,8 +53,9 @@ export default function ApplicationsSlider() {
           <p className="mt-4 text-xs md:text-base text-black ">
         Bhagyalaxmi Industries provides a comprehensive range of <strong>dairy equipment</strong>  and <strong>bulk milk coolers</strong>  designed to meet the needs of diverse dairy operations. Our products are built for <strong>efficiency, hygiene, and durability,</strong>  ensuring optimal milk preservation, storage, and processing at every stage
           </p>
-          
+
         </div>
+        
 
         {/* Slider */}
         <Swiper
