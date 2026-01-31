@@ -267,10 +267,10 @@ export default function Header({ onClose }) {
 
         <Dealer isOpen={dealerOpen} onClose={() => setDealerOpen(false)} />
 
-        <div className="fixed bottom-6 left-2 z-50">
+        <div className="fixed bottom-5 left-2 z-50">
           <a
             href="tel:+919560156328"
-            className="bg-red-500 text-white px-4 py-2 rounded-2xl font-semibold flex items-center gap-2 md:hidden"
+            className="bg-red-500 text-white p-3 rounded-full font-semibold flex items-center gap-2 md:hidden"
           >
             <PhoneCall size={25} />
           </a>

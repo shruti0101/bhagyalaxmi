@@ -20,6 +20,8 @@ import { products } from "@/Data";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { FaWhatsapp } from "react-icons/fa";
+import PopupForm from "@/components/Popup";
+import Enquiry from "@/components/Enquiry";
 
 /* Images */
 const Cooler = "/check3.webp";
@@ -113,28 +115,30 @@ const Inquiry = () => {
         { title: "Telangana", image: "/telangana.webp" },
     ]
 
+    const [openPopup, setOpenPopup] = useState(false);
+
     return (<>
         <Navbar />
         {/* Hero Section */}
         <section
-            className="relative min-h-screen flex items-center px-6 bg-cover bg-center"
+            className="relative min-h-[70vh] lg:min-h-screen flex items-center px-6 bg-cover bg-center"
             style={{ backgroundImage: `url("/bannerNew.webp")` }}
         >
             <div className="absolute inset-0 bg-black/40"></div>
-            <div className="relative max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div className="text-white text-center md:text-start">
-                    <h1 className="text-2xl md:text-5xl font-bold mb-3 mt-10 md:m-0">
+            <div className="relative max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="text-white text-center lg:text-start">
+                    <h1 className="text-2xl lg:text-5xl font-bold mb-3 mt-5 md:m-0">
                         Bulk Milk Cooler Manufacturer &amp; Supplier
                     </h1>
-                    <h1 className="text-xl font-bold md:mb-6 mb-2">
+                    <h1 className="text-xl font-bold md:mb-6 mb-2 lg:block hidden">
                         Buy High-Quality Bulk Milk Cooler at Affordable Prices from Bhagyalaxmi Industries
                     </h1>
-                    <p className="text-md md:text-lg mb-3 text-white">
+                    <p className="text-md lg:text-lg mb-3 text-white">
                         Bhagyalaxmi Industries is a trusted bulk milk cooler manufacturer and BMC machine supplier,
                         offering durable and efficient stainless steel bulk milk cooler solutions for your dairy needs.
                     </p>
 
-                    <div className="flex mt-10 md:justify-start justify-center">
+                    <div className="flex mt-10 lg:justify-start justify-center">
                         <a
                             href="https://wa.me/919560156328"
                             className="bg-lime-500 hover:bg-lime-600 text-white px-5 py-3 rounded-lg font-semibold flex items-center gap-2"
@@ -146,7 +150,7 @@ const Inquiry = () => {
                 </div>
 
                 {/* Form Card */}
-                <div className="bg-white/90 backdrop-blur-lg rounded-xl shadow-xl p-8">
+                <div className="bg-white/90 backdrop-blur-lg rounded-xl shadow-xl p-8 lg:block hidden">
                     <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
                         Request a Quotation for Your Dairy BMC Requirement
                     </h2>
@@ -199,12 +203,11 @@ const Inquiry = () => {
             </div>
         </section>
 
-
         {/* Client Slider */}
         <section className="pt-8 bg-gray-50">
             <div className="mx-auto px-8">
                 {/* Heading */}
-                <h2 className="text-center text-2xl md:text-3xl font-semibold text-indigo-600 mb-6">
+                <h2 className="text-center text-xl md:text-3xl font-semibold text-indigo-600 mb-6">
                     Trusted by leading brands in the dairy industry.
                 </h2>
 
@@ -218,10 +221,10 @@ const Inquiry = () => {
                         disableOnInteraction: false,
                     }}
                     breakpoints={{
-                        0: { slidesPerView: 1 },
-                        640: { slidesPerView: 1 },
-                        768: { slidesPerView: 4 },
-                        1024: { slidesPerView: 6 },
+                        0: { slidesPerView: 2 },
+                        640: { slidesPerView: 2 },
+                        768: { slidesPerView: 3 },
+                        1024: { slidesPerView: 5 },
                         1280: { slidesPerView: 7 },
                     }}
                     className="pb-6"
@@ -230,13 +233,61 @@ const Inquiry = () => {
                         <SwiperSlide key={index}>
                             <div title={item.title} className="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
 
-                                <div className="relative h-48 w-full">
+                                <div className="relative md:h-48 h-30 w-full">
                                     <Image
                                         src={item?.image}
                                         alt={item?.title}
                                         fill
                                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                                     />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+        </section>
+
+        {/* Product slider */}
+        <section className="pt-8 bg-gray-50">
+            <div className="mx-auto px-8">
+                {/* Heading */}
+                <h2 className="text-center text-xl md:text-3xl font-semibold text-indigo-600 mb-6">
+                    Our Products
+                </h2>
+
+                <Swiper
+                    modules={[Autoplay]}
+                    loop={true}
+                    speed={1000}
+                    spaceBetween={10}
+                    autoplay={{
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    }}
+                    breakpoints={{
+                        0: { slidesPerView: 1 },
+                        640: { slidesPerView: 1 },
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 4 },
+                        1280: { slidesPerView: 4 },
+                    }}
+                    className="pb-6"
+                >
+                    {products.map((item, index) => (
+                        <SwiperSlide key={index}>
+                            <div title={item.name} className="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
+
+                                <div className="relative h-96 w-full px-4">
+                                    <Image
+                                        src={item?.image?.src}
+                                        alt={item?.image?.alt}
+                                        fill
+                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                    <button onClick={() => setOpenPopup(true)} className="cursor-pointer absolute bottom-3 left-1/2 -translate-x-1/2 text-white bg-blue-600 bg-opacity-70 px-4 py-2 rounded-md text-sm">
+                                        {item.name}
+                                    </button>
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -253,19 +304,19 @@ const Inquiry = () => {
             <div className="max-w-6xl mx-auto px-6 py-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6">
 
-                    <div className="text-center md:text-left">
-                        <h2 className="text-2xl md:text-3xl font-bold">
+                    <div className="text-left">
+                        <h2 className="text-xl md:text-3xl font-bold">
                             Bulk Milk Cooler Manufacturer
                         </h2>
 
                         {/* Phone Numbers */}
-                        <div className="mt-3 flex flex-col sm:flex-row md:flex-nowrap justify-center md:justify-start gap-2 text-2xl md:text-3xl font-bold">
+                        <div className="mt-3 lg:flex hidden flex-col sm:flex-row md:flex-nowrap justify-center md:justify-start gap-2 text-2xl md:text-3xl font-bold">
                             <span>+91 95601 56328</span>
                             <span className="hidden md:inline">,</span>
                             <span>+91 88606 00234</span>
                         </div>
 
-                        <p className="text-indigo-100 mt-2">
+                        <p className="text-indigo-100 mt-2 md:text-lg text-md">
                             Looking for reliable dairy milk chilling solutions? Get expert guidance today.
                         </p>
                     </div>
@@ -287,23 +338,22 @@ const Inquiry = () => {
             </div>
         </div>
 
-
         {/* Why Choose US */}
         <section className="bg-gray-50 py-10 px-4">
             <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-8">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+                <div className="text-center md:mb-8 mb-2">
+                    <h2 className="text-xl md:text-4xl font-bold text-gray-800">
                         Why Choose <span className="text-blue-600">Bhagyalaxmi Industries</span>?
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 md:gap-6 gap-2.5">
                     {reasons.map((reason, index) => (
                         <div
                             key={index}
-                            className="flex items-center gap-4 bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
+                            className="flex items-center gap-4 bg-white md:p-6 p-3 rounded-xl shadow hover:shadow-lg transition"
                         >
-                            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 text-blue-600 md:flex hidden items-center justify-center font-bold">
                                 ✓
                             </div>
                             <p className="text-gray-700 font-medium">{reason}</p>
@@ -342,8 +392,8 @@ const Inquiry = () => {
             </div>
 
 
-            <div className="max-w-6xl mx-auto px-6 py-8">
-                <p className="text-lg leading-relaxed text-gray-700">
+            <div className="max-w-6xl mx-auto px-6 md:py-8 pt-8">
+                <p className="text-lg leading-relaxed text-gray-700 md:block hidden">
                     <span className="font-semibold text-gray-900">
                         About Bhagyalaxmi Industries
                     </span>{" "}
@@ -353,8 +403,14 @@ const Inquiry = () => {
                     coolers, milk chiller plants, and bulk milk cooling tanks for dairy farms
                     and milk collection centers.
                 </p>
+                <p className="text-lg leading-relaxed text-gray-700 md:hidden block">
+                    <span className="font-semibold text-gray-900">
+                        About Bhagyalaxmi Industries
+                    </span>{" "}
+                    is a trusted bulk milk cooler manufacturer and BMC machine supplier, offering energy-efficient and durable dairy cooling solutions. We manufacture high-quality stainless steel bulk milk coolers and milk chiller plants for dairy farms and milk collection centers.
+                </p>
 
-                <p className="text-lg leading-relaxed text-gray-700 mt-6">
+                <p className="text-lg leading-relaxed text-gray-700 mt-6 md:block hidden">
                     As experienced bulk milk cooler suppliers and BMC machine manufacturers,
                     we follow strict quality standards with complete in-house manufacturing
                     to ensure faster cooling performance, long-lasting durability, and low
@@ -366,7 +422,7 @@ const Inquiry = () => {
         </section>
 
         {/* form */}
-        <section className="flex items-center justify-center bg-gray-50 px-4 py-8">
+        <section className="flex items-center justify-center bg-gray-50 md:px-4 md:py-4">
             <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                 <div className="bg-white rounded-xl shadow-xl overflow-hidden">
                     <img
@@ -413,7 +469,7 @@ const Inquiry = () => {
 
                         <textarea
                             name="message"
-                            rows={3}
+                            rows={1}
                             placeholder="Message"
                             className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                         />
@@ -469,6 +525,7 @@ const Inquiry = () => {
         </section>
 
         <Footer />
+        <Enquiry isOpen={openPopup} onClose={() => setOpenPopup(false)} />
     </>);
 };
 
