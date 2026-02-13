@@ -138,19 +138,19 @@ const Footer = () => {
                   <Instagram className="w-5 h-5 hover:text-blue-500 cursor-pointer hover:scale-110 transition-transform duration-200" />
                 </a>
                 <a
-                  href="www.youtube.com/@BhagyalaxmiIndustriesin"
+                  href="https://www.youtube.com/@BhagyalaxmiIndustriesin"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Youtube className="w-5 h-5 hover:text-blue-500 cursor-pointer hover:scale-110 transition-transform duration-200" />
                 </a>
-                <a
+                {/* <a
                   href="linkedin.com/cws/share?url=https://www.bhagyalaxmiindustries.co.in/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Linkedin className="w-5 h-5 hover:text-blue-500 cursor-pointer hover:scale-110 transition-transform duration-200" />
-                </a>
+                </a> */}
               </div>
             </div>
 
