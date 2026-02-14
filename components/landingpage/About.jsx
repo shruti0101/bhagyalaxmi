@@ -31,12 +31,12 @@ export default function AboutSection() {
                 Milk Cooler{"  "}
                 <span className="absolute left-0 -bottom-[6px] w-full h-[6px] bg-green-500"></span>
               </span>
-             {"  "} Manufacturer
+              {"  "} Manufacturer
             </h1>
 
             <p className="text-black text-[15px] sm:text-[16px] leading-[26px] sm:leading-[30px] mb-7 mt-[10px]">
-              Bhagyalaxmi Industries is a trusted{" "}
-              <strong>bulk milk cooler manufacturer</strong> offering a complete
+              Bhagyalaxmi Industries is a <Link href={"/products"} >trusted{" "} </Link>
+              <Link href={"/products"} className="font-bold">bulk milk cooler manufacturer</Link> offering a complete
               range of advanced <strong>dairy equipment</strong> designed to
               maintain milk quality, safety, and efficiency throughout the dairy
               process. Our product portfolio includes{" "}
@@ -63,7 +63,7 @@ export default function AboutSection() {
               >
                 Discover more
               </Link>
-            </div> 
+            </div>
           </div>
 
           {/* ================= LEFT IMAGE STACK ================= */}

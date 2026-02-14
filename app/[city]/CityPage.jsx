@@ -13,9 +13,21 @@ import ProductCategorySlider from "@/components/landingpage/Productcategory";
 export default function CityPage() {
     const params = useParams();
 
-    const cityName = params?.city?.includes("-in-")
+    const formatCityName = (slug) => {
+        if (!slug) return "India";
+
+        return slug
+            .replace(/\((.*?)\)/g, " ($1)")
+            .replace(/-/g, " ")
+            .replace(/\b\w/g, char => char.toUpperCase());
+    };
+
+    const citySlug = params?.city?.includes("-in-")
         ? params.city.split("-in-")[1]
-        : "India";
+        : null;
+
+    const cityName = citySlug ? formatCityName(citySlug) : "India";
+
 
     return (<>
         <Navbar />
@@ -46,7 +58,7 @@ export default function CityPage() {
                     </h1>
 
                     <p className="text-black mb-4">
-                        Bhagyalaxmi Industries is a <strong>trusted Bulk Milk Cooler Manufacturer in {cityName}</strong>, offering high-quality milk cooling solutions for dairy farms, milk collection centers, cooperatives, and commercial dairy operations across {cityName}.
+                        Bhagyalaxmi Industries is a <Link href={"/"} className="font-bold">trusted Bulk Milk Cooler Manufacturer in {cityName}</Link>, offering high-quality milk cooling solutions for dairy farms, milk collection centers, cooperatives, and commercial dairy operations across {cityName}.
                     </p>
 
                     <p className="text-black mb-4">
@@ -124,7 +136,7 @@ export default function CityPage() {
                     </h2>
 
                     <p className="text-black mb-4 leading-relaxed">
-                        Bhagyalaxmi Industries is among the <strong>leading Bulk Milk Cooler manufacturers and suppliers in {cityName}</strong>, delivering high-performance milk chilling equipment that meets modern dairy hygiene and quality standards.
+                        Bhagyalaxmi Industries is among the <Link href={"/"} className="font-bold">leading Bulk Milk Cooler manufacturers and suppliers in {cityName}</Link>, delivering high-performance milk chilling equipment that meets modern dairy hygiene and quality standards.
                     </p>
 
                     <p className="text-black mb-4 leading-relaxed">

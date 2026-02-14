@@ -2,6 +2,7 @@
 import React from "react";
 import { CheckCircle, Factory } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function BulkMilkCoolerBlueSection() {
   return (
@@ -32,7 +33,7 @@ export default function BulkMilkCoolerBlueSection() {
             {/* Description */}
             <p className="mt-4 text-black text-base sm:text-lg leading-relaxed max-w-2xl">
               <strong className="text-black">Bhagyalaxmi Industries</strong>{" "}
-              is a trusted <strong>bulk milk cooler manufacturer,</strong>{" "}
+              is a <Link href={"/products"} className="font-bold">trusted bulk milk cooler manufacturer,</Link>{" "}
               delivering{" "}
               <strong>
                 efficient, hygienic, and durable milk cooling solutions for modern

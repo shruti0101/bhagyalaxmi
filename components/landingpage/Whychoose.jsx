@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Check } from "lucide-react";
+import Link from "next/link";
 
 export default function WhyChooseUs() {
   return (
@@ -20,8 +21,8 @@ export default function WhyChooseUs() {
 
           {/* Intro Content */}
           <p className="text-black  text-[15px] leading-[28px] max-w-[520px] mt-[28px]">
-            Bhagyalaxmi Industries is a trusted{" "}
-            <strong>bulk milk cooler manufacturer</strong> and provider of premium{" "}
+            Bhagyalaxmi Industries is a <Link href={"/products"}> trusted{" "}</Link>
+            <Link href={"/products"} className="font-bold">bulk milk cooler manufacturer</Link> and provider of premium{" "}
             <strong>dairy equipment</strong> Our products are designed for efficiency,
             hygiene, and long-lasting performance.
           </p>
@@ -29,7 +30,7 @@ export default function WhyChooseUs() {
           <ul className="mt-[15px] space-y-[11px] text-black text-[15px] leading-[26px] max-w-[520px]">
             <li>
               <strong>Extensive Industry Experience –</strong> Years of expertise as a{" "}
-              <strong>bulk milk cooler manufacturer</strong> ensure deep understanding
+              <Link href={"/products"} className="font-bold">bulk milk cooler manufacturer</Link> ensure deep understanding
               of dairy-sector needs.
             </li>
             <li>

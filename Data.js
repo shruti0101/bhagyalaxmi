@@ -1,32 +1,16 @@
 export const categories = [
-  {
-    id: "bulk-milk-cooler",
-    name: "Bulk Milk Cooler",
-  },
-
+  { id: "bulk-milk-cooler", name: "Bulk Milk Cooler", },
   { id: "milk-vending-machine", name: "Milk Atm Machine" },
-
-
   { id: "curd-&-paneer-making-machine", name: "Curd & Paneer Making Machine" },
-
-  {
-    id: "steam-boiler",
-    name: "Steam Boiler",
-  },
-
+  { id: "steam-boiler", name: "Steam Boiler", },
   { id: "milk-homogenizer-mixer", name: "Milk Homogenizer Mixer" },
-
   { id: "milk-chiling-plant", name: "Milk Chiling Plant" },
-
   { id: "milk-processing-plant", name: "Milk Processing Plant" },
-
   { id: "milk-pasteurizer", name: "Milk Pasteurizer" },
-
   { id: "other", name: "Other Products" },
 ];
 
 export const products = [
-  // bar processing category
   {
     "id": 1,
     "slug": "bulk-milk-cooler-1500-Ltr",
@@ -106,8 +90,7 @@ export const products = [
 
     "metaTitle": "Bulk Milk Cooler 1500 Ltr – Bhagyalakshmi | Fast Chilling & SS304 Construction",
     "metaDescription": "Buy 1500 Ltr Bulk Milk Cooler with SS304 food-grade steel, 3–4 hrs chilling time, and 4°C cooling. Ideal for dairy farms & milk collection centers."
-  }
-  ,
+  },
 
   {
     "id": 2,
@@ -189,7 +172,6 @@ export const products = [
     "metaTitle": "Bulk Milk Cooler 500 Ltr – SS304 | Fast Cooling | Dairy Equipment",
     "metaDescription": "Buy 500 litre Bulk Milk Cooler with SS304 tank, fast 4 hour chilling time, 0–4°C cooling range, 2HP motor, 1 Phase, 220V. Ideal for dairy farms and milk collection centres."
   },
-
 
   {
     "id": 3,
@@ -355,7 +337,6 @@ export const products = [
     "metaDescription": "300L Vertical Bulk Milk Cooler by Bhagyalaxmi Industries. SS body, automatic operation, 50Hz, single-phase, 240V. Compact vertical design ideal for small dairy units."
   },
 
-
   {
     "id": 5,
     "slug": "5kl-bulk-milk-cooler",
@@ -496,8 +477,6 @@ export const products = [
     "metaDescription": "1000L D Shape Bulk Milk Cooler with SS304/316 tank, horizontal orientation, 20HP power, automatic cooling system. Designed for dairy farms and milk collection centers."
   },
 
-
-
   {
     "id": 7,
     "slug": "stainless-steel-bulk-milk-cooler",
@@ -587,13 +566,6 @@ export const products = [
   },
 
   // cat 2
-
-
-
-
-
-
-
   {
     "id": 8,
     "slug": "milk-atm-machine",
@@ -663,76 +635,6 @@ export const products = [
     "metaTitle": "Milk ATM Machine – Stainless Steel Automatic Dispenser",
     "metaDescription": " Milk ATM Machine with SS body, automatic dispensing system, 220V, 50Hz, 12HP motor. Hygienic electric milk vending solution by Bhagyalaxmi Industries."
   },
-
-
-  // {
-  //   "id": 9,
-  //   "slug": "milk-atm-cow-buffalo",
-  //   "name": "Milk ATM Cow & Buffalo",
-  //   "category": "milk-vending-machine",
-
-  //   "image": {
-  //     "src": "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768389097/Milk_ATM_Cow_Buffalo_qpqrdn.webp",
-  //     "alt": "Milk ATM Cow & Buffalo 100L"
-  //   },
-
-  //   "images": [
-  //     {
-  //       "src": "/products/milk-atm/cow-buffalo/2.webp",
-  //       "alt": "Automatic Milk ATM Cow & Buffalo"
-  //     },
-  //     {
-  //       "src": "/products/milk-atm/cow-buffalo/3.webp",
-  //       "alt": "Stainless Steel Milk ATM Cow Buffalo"
-  //     }
-  //   ],
-
-  //   "videoUrl": "",
-
-  //   "description": [
-  //     {
-  //       "type": "h2",
-  //       "text": "Overview of Milk ATM Cow & Buffalo"
-  //     },
-  //     {
-  //       "type": "p",
-  //       "text": "This Milk ATM Cow & Buffalo model is designed for dispensing loose milk with complete hygiene and automation. Ideal for dairy farms, milk collection centers, and retail milk outlets, it ensures accurate delivery with reduced wastage."
-  //     },
-  //     {
-  //       "type": "h2",
-  //       "text": "Key Features"
-  //     },
-  //     {
-  //       "type": "ul",
-  //       "items": [
-  //         "Automatic milk dispensing system with calibrated measurement.",
-  //         "Built using high-grade SS 304 stainless steel for hygiene.",
-  //         "Suitable for both cow and buffalo milk distribution.",
-  //         "Energy-efficient cooling and dispensing technology.",
-  //         "Easy-to-clean design with strong build quality."
-  //       ]
-  //     }
-  //   ],
-
-  //   "specs": [
-  //     { "label": "Product Name", "value": "Milk ATM Cow & Buffalo" },
-  //     { "label": "Minimum Order Quantity", "value": "1 Piece" },
-  //     { "label": "Storage Capacity", "value": "100 L" },
-  //     { "label": "Product Type", "value": "Loose Beverages" },
-  //     { "label": "Material", "value": "SS 304" },
-  //     { "label": "Model Name/Number", "value": "BL" },
-  //     { "label": "Automation Grade", "value": "Automatic" },
-  //     { "label": "Voltage", "value": "240V" },
-  //     { "label": "Frequency", "value": "50Hz" },
-  //     { "label": "Electrical", "value": "Electric" },
-  //     { "label": "Power", "value": "12 HP" },
-  //     { "label": "Country of Origin", "value": "Made in India" },
-  //     { "label": "Type of Beverage", "value": "Milk" }
-  //   ],
-
-  //   "metaTitle": "Milk ATM Cow & Buffalo – Automatic Loose Milk Dispenser 100L",
-  //   "metaDescription": "100L Milk ATM for Cow & Buffalo Milk. Automatic loose milk dispensing machine made with SS 304, 240V, 50Hz, 12HP. Suitable for dairy farms and milk outlets."
-  // },
 
   {
     "id": 10,
@@ -805,10 +707,7 @@ export const products = [
     "metaDescription": "Automatic Milk Vending Machine with stainless steel body, 1 dispensing valve, 240V, 50Hz, 20HP power. Hygienic, electric loose milk vending solution by Bhagyalaxmi Industries."
   },
 
-
-
   // cat 3
-
   {
     "id": 11,
     "slug": "curd-making-machine",
@@ -948,9 +847,7 @@ export const products = [
     ]
   },
 
-
   // cat 4
-
   {
     "id": 12,
     "slug": "steam-boiler-300kg",
@@ -1015,9 +912,6 @@ export const products = [
     "metaTitle": "Steam Boiler 300 Kg – Wood Fired Industrial Steam Generator",
     "metaDescription": "300 Kg wood-fired steam boiler with 1000 kg/hr capacity, Non-IBR certification, semi-automatic operation, suitable for food and beverage industries."
   },
-
-
-
 
   {
     "id": 14,
@@ -1104,10 +998,7 @@ export const products = [
     "metaDescription": "Electric Steam Boiler with 2000 kg/hr capacity, 50 HP power, mild steel construction, automatic operation, and 60 Hz frequency. Ideal for industrial steam applications."
   },
 
-
   // cat5 mixing
-
-
   {
     "id": 15,
     "slug": "high-pressure-milk-homogenizer",
@@ -1191,14 +1082,7 @@ export const products = [
     "metaDescription": "High Pressure Milk Homogenizer with 100 bar pressure, 1000 L/hr capacity, stainless steel body, automatic operation, single-phase 240V. Ideal for dairy and chemical applications."
   },
 
-
-
-
-
-
-
   // cat 6
-
   {
     "id": 18,
     "slug": "milk-chilling-plant",
@@ -1379,9 +1263,7 @@ export const products = [
     "metaDescription": "Bulk Milk Chilling Plant with high-efficiency chilling system, PHE plate heat exchanger, automatic controls, and stainless steel construction. Ideal for dairy farms and milk collection centers."
   },
 
-
   // cate 7
-
   {
     "id": 20,
     "slug": "milk-pasteurizer-machine-1000lph",
@@ -1465,7 +1347,6 @@ export const products = [
     "metaTitle": "Milk Pasteurizer Machine 1000 LPH – Semi-Automatic Industrial Dairy Equipment",
     "metaDescription": "1000 LPH Milk Pasteurizer Machine with MS construction, semi-automatic operation, 3-phase 220V, 60Hz. Industrial milk processing equipment by Bhagyalaxmi Industries."
   },
-
 
   {
     "id": 21,
@@ -1551,7 +1432,6 @@ export const products = [
   },
 
   // cat 8
-
   {
     "id": 22,
     "slug": "milk-processing-plant",
@@ -1636,12 +1516,7 @@ export const products = [
     "metaDescription": "Milk Processing Plant with horizontal tanks, SS316 construction, 3-phase 12HP electric power, and automatic operation. Ideal for dairy industries and milk collection centers."
   },
 
-
-
-
-
   // other
-
   {
     "id": 13,
     "slug": "khoya-kadai-lpg-diesel",
@@ -1719,7 +1594,6 @@ export const products = [
     "metaTitle": "Khoya Kadai LPG / Diesel – Bhagyalaxmi Industries",
     "metaDescription": "High-efficiency Khoya Kadai (LPG / Diesel) for commercial dairy and sweet production. Stainless steel kadai with uniform heating and low fuel consumption."
   },
-
 
   {
     "id": 16,
@@ -1984,112 +1858,109 @@ export const products = [
     "metaTitle": "Butter Churner Machine – Commercial Dairy Butter Maker | Bhagyalaxmi Industries",
     "metaDescription": "High-efficiency stainless steel butter churner machine for commercial dairy, farms, and sweet shops. Durable, hygienic, low power consumption, and ideal for butter extraction from curd or cream."
   },
-
-
 ]
 
 export const cites = [
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Ahmedabad", label: "Ahmedabad", id: 1 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Bengaluru", label: "Bengaluru", id: 2 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Chennai", label: "Chennai", id: 3 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Delhi", label: "Delhi", id: 4 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Hyderabad", label: "Hyderabad", id: 5 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Kolkata", label: "Kolkata", id: 6 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Mumbai", label: "Mumbai", id: 7 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Pune", label: "Pune", id: 8 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Jaipur", label: "Jaipur", id: 9 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Lucknow", label: "Lucknow", id: 10 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Surat", label: "Surat", id: 11 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Kanpur", label: "Kanpur", id: 12 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Nagpur", label: "Nagpur", id: 13 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Indore", label: "Indore", id: 14 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Bhopal", label: "Bhopal", id: 15 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Coimbatore", label: "Coimbatore", id: 16 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Kochi", label: "Kochi", id: 17 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Visakhapatnam", label: "Visakhapatnam", id: 18 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Patna", label: "Patna", id: 19 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Vadodara", label: "Vadodara", id: 20 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Chandigarh", label: "Chandigarh", id: 21 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Ludhiana", label: "Ludhiana", id: 22 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Amritsar", label: "Amritsar", id: 23 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Jalandhar", label: "Jalandhar", id: 24 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Agra", label: "Agra", id: 25 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Meerut", label: "Meerut", id: 26 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Noida", label: "Noida", id: 27 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Ghaziabad", label: "Ghaziabad", id: 28 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Faridabad", label: "Faridabad", id: 29 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Aligarh", label: "Aligarh", id: 30 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Nashik", label: "Nashik", id: 31 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Aurangabad", label: "Aurangabad", id: 32 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Rajkot", label: "Rajkot", id: 33 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Vadodara-(Baroda)", label: "Vadodara (Baroda)", id: 34 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Bhavnagar", label: "Bhavnagar", id: 35 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Udaipur", label: "Udaipur", id: 36 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Jodhpur", label: "Jodhpur", id: 37 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Bikaner", label: "Bikaner", id: 38 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Ajmer", label: "Ajmer", id: 39 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Indore", label: "Indore", id: 40 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Madurai", label: "Madurai", id: 41 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Mysore", label: "Mysore", id: 42 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Tiruchirappalli", label: "Tiruchirappalli", id: 43 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Salem", label: "Salem", id: 44 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Vijayawada", label: "Vijayawada", id: 45 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Visakhapatnam", label: "Visakhapatnam", id: 46 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Coimbatore", label: "Coimbatore", id: 47 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Thiruvananthapuram", label: "Thiruvananthapuram", id: 48 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Kozhikode", label: "Kozhikode", id: 49 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Hubli-Dharwad", label: "Hubli-Dharwad", id: 50 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Bhubaneswar", label: "Bhubaneswar", id: 51 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Ranchi", label: "Ranchi", id: 52 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Guwahati", label: "Guwahati", id: 53 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Jamshedpur", label: "Jamshedpur", id: 54 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Dibrugarh", label: "Dibrugarh", id: 55 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Siliguri", label: "Siliguri", id: 56 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Cuttack", label: "Cuttack", id: 57 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Patna", label: "Patna", id: 58 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Rourkela", label: "Rourkela", id: 59 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Dhanbad", label: "Dhanbad", id: 60 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Anand", label: "Anand", id: 61 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Mehsana", label: "Mehsana", id: 62 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Jamnagar", label: "Jamnagar", id: 63 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Kolhapur", label: "Kolhapur", id: 64 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Satara", label: "Satara", id: 65 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Karur", label: "Karur", id: 66 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Rajahmundry", label: "Rajahmundry", id: 67 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Vijayapura", label: "Vijayapura", id: 68 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Ambala", label: "Ambala", id: 69 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Yamunanagar", label: "Yamunanagar", id: 70 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Varanasi", label: "Varanasi", id: 71 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Allahabad-(Prayagraj)", label: "Allahabad (Prayagraj)", id: 72 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Gorakhpur", label: "Gorakhpur", id: 73 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Jabalpur", label: "Jabalpur", id: 74 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Gwalior", label: "Gwalior", id: 75 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Ujjain", label: "Ujjain", id: 76 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Dehradun", label: "Dehradun", id: 77 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Shimla", label: "Shimla", id: 78 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Rohtak", label: "Rohtak", id: 79 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Hisar", label: "Hisar", id: 80 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Amravati", label: "Amravati", id: 81 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Nanded", label: "Nanded", id: 82 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Kolhapur", label: "Kolhapur", id: 83 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Shimoga", label: "Shimoga", id: 84 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Tirupati", label: "Tirupati", id: 85 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Rajkot", label: "Rajkot", id: 86 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Ludhiana", label: "Ludhiana", id: 87 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Bareilly", label: "Bareilly", id: 88 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Agartala", label: "Agartala", id: 89 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Thane", label: "Thane", id: 90 },
+  { href: "/bulk-milk-cooler-manufacturer-in-ahmedabad", label: "Ahmedabad", id: 1 },
+  { href: "/bulk-milk-cooler-manufacturer-in-bengaluru", label: "Bengaluru", id: 2 },
+  { href: "/bulk-milk-cooler-manufacturer-in-chennai", label: "Chennai", id: 3 },
+  { href: "/bulk-milk-cooler-manufacturer-in-delhi", label: "Delhi", id: 4 },
+  { href: "/bulk-milk-cooler-manufacturer-in-hyderabad", label: "Hyderabad", id: 5 },
+  { href: "/bulk-milk-cooler-manufacturer-in-kolkata", label: "Kolkata", id: 6 },
+  { href: "/bulk-milk-cooler-manufacturer-in-mumbai", label: "Mumbai", id: 7 },
+  { href: "/bulk-milk-cooler-manufacturer-in-pune", label: "Pune", id: 8 },
+  { href: "/bulk-milk-cooler-manufacturer-in-jaipur", label: "Jaipur", id: 9 },
+  { href: "/bulk-milk-cooler-manufacturer-in-lucknow", label: "Lucknow", id: 10 },
+  { href: "/bulk-milk-cooler-manufacturer-in-surat", label: "Surat", id: 11 },
+  { href: "/bulk-milk-cooler-manufacturer-in-kanpur", label: "Kanpur", id: 12 },
+  { href: "/bulk-milk-cooler-manufacturer-in-nagpur", label: "Nagpur", id: 13 },
+  { href: "/bulk-milk-cooler-manufacturer-in-indore", label: "Indore", id: 14 },
+  { href: "/bulk-milk-cooler-manufacturer-in-bhopal", label: "Bhopal", id: 15 },
+  { href: "/bulk-milk-cooler-manufacturer-in-coimbatore", label: "Coimbatore", id: 16 },
+  { href: "/bulk-milk-cooler-manufacturer-in-kochi", label: "Kochi", id: 17 },
+  { href: "/bulk-milk-cooler-manufacturer-in-visakhapatnam", label: "Visakhapatnam", id: 18 },
+  { href: "/bulk-milk-cooler-manufacturer-in-patna", label: "Patna", id: 19 },
+  { href: "/bulk-milk-cooler-manufacturer-in-vadodara", label: "Vadodara", id: 20 },
+  { href: "/bulk-milk-cooler-manufacturer-in-chandigarh", label: "Chandigarh", id: 21 },
+  { href: "/bulk-milk-cooler-manufacturer-in-ludhiana", label: "Ludhiana", id: 22 },
+  { href: "/bulk-milk-cooler-manufacturer-in-amritsar", label: "Amritsar", id: 23 },
+  { href: "/bulk-milk-cooler-manufacturer-in-jalandhar", label: "Jalandhar", id: 24 },
+  { href: "/bulk-milk-cooler-manufacturer-in-agra", label: "Agra", id: 25 },
+  { href: "/bulk-milk-cooler-manufacturer-in-meerut", label: "Meerut", id: 26 },
+  { href: "/bulk-milk-cooler-manufacturer-in-noida", label: "Noida", id: 27 },
+  { href: "/bulk-milk-cooler-manufacturer-in-ghaziabad", label: "Ghaziabad", id: 28 },
+  { href: "/bulk-milk-cooler-manufacturer-in-faridabad", label: "Faridabad", id: 29 },
+  { href: "/bulk-milk-cooler-manufacturer-in-aligarh", label: "Aligarh", id: 30 },
+  { href: "/bulk-milk-cooler-manufacturer-in-nashik", label: "Nashik", id: 31 },
+  { href: "/bulk-milk-cooler-manufacturer-in-aurangabad", label: "Aurangabad", id: 32 },
+  { href: "/bulk-milk-cooler-manufacturer-in-rajkot", label: "Rajkot", id: 33 },
+  { href: "/bulk-milk-cooler-manufacturer-in-vadodara-(baroda)", label: "Vadodara (Baroda)", id: 34 },
+  { href: "/bulk-milk-cooler-manufacturer-in-bhavnagar", label: "Bhavnagar", id: 35 },
+  { href: "/bulk-milk-cooler-manufacturer-in-udaipur", label: "Udaipur", id: 36 },
+  { href: "/bulk-milk-cooler-manufacturer-in-jodhpur", label: "Jodhpur", id: 37 },
+  { href: "/bulk-milk-cooler-manufacturer-in-bikaner", label: "Bikaner", id: 38 },
+  { href: "/bulk-milk-cooler-manufacturer-in-ajmer", label: "Ajmer", id: 39 },
+  { href: "/bulk-milk-cooler-manufacturer-in-indore", label: "Indore", id: 40 },
+  { href: "/bulk-milk-cooler-manufacturer-in-madurai", label: "Madurai", id: 41 },
+  { href: "/bulk-milk-cooler-manufacturer-in-mysore", label: "Mysore", id: 42 },
+  { href: "/bulk-milk-cooler-manufacturer-in-tiruchirappalli", label: "Tiruchirappalli", id: 43 },
+  { href: "/bulk-milk-cooler-manufacturer-in-salem", label: "Salem", id: 44 },
+  { href: "/bulk-milk-cooler-manufacturer-in-vijayawada", label: "Vijayawada", id: 45 },
+  { href: "/bulk-milk-cooler-manufacturer-in-visakhapatnam", label: "Visakhapatnam", id: 46 },
+  { href: "/bulk-milk-cooler-manufacturer-in-coimbatore", label: "Coimbatore", id: 47 },
+  { href: "/bulk-milk-cooler-manufacturer-in-thiruvananthapuram", label: "Thiruvananthapuram", id: 48 },
+  { href: "/bulk-milk-cooler-manufacturer-in-kozhikode", label: "Kozhikode", id: 49 },
+  { href: "/bulk-milk-cooler-manufacturer-in-hubli-dharwad", label: "Hubli-Dharwad", id: 50 },
+  { href: "/bulk-milk-cooler-manufacturer-in-bhubaneswar", label: "Bhubaneswar", id: 51 },
+  { href: "/bulk-milk-cooler-manufacturer-in-ranchi", label: "Ranchi", id: 52 },
+  { href: "/bulk-milk-cooler-manufacturer-in-guwahati", label: "Guwahati", id: 53 },
+  { href: "/bulk-milk-cooler-manufacturer-in-jamshedpur", label: "Jamshedpur", id: 54 },
+  { href: "/bulk-milk-cooler-manufacturer-in-dibrugarh", label: "Dibrugarh", id: 55 },
+  { href: "/bulk-milk-cooler-manufacturer-in-siliguri", label: "Siliguri", id: 56 },
+  { href: "/bulk-milk-cooler-manufacturer-in-cuttack", label: "Cuttack", id: 57 },
+  { href: "/bulk-milk-cooler-manufacturer-in-patna", label: "Patna", id: 58 },
+  { href: "/bulk-milk-cooler-manufacturer-in-rourkela", label: "Rourkela", id: 59 },
+  { href: "/bulk-milk-cooler-manufacturer-in-dhanbad", label: "Dhanbad", id: 60 },
+  { href: "/bulk-milk-cooler-manufacturer-in-anand", label: "Anand", id: 61 },
+  { href: "/bulk-milk-cooler-manufacturer-in-mehsana", label: "Mehsana", id: 62 },
+  { href: "/bulk-milk-cooler-manufacturer-in-jamnagar", label: "Jamnagar", id: 63 },
+  { href: "/bulk-milk-cooler-manufacturer-in-kolhapur", label: "Kolhapur", id: 64 },
+  { href: "/bulk-milk-cooler-manufacturer-in-satara", label: "Satara", id: 65 },
+  { href: "/bulk-milk-cooler-manufacturer-in-karur", label: "Karur", id: 66 },
+  { href: "/bulk-milk-cooler-manufacturer-in-rajahmundry", label: "Rajahmundry", id: 67 },
+  { href: "/bulk-milk-cooler-manufacturer-in-vijayapura", label: "Vijayapura", id: 68 },
+  { href: "/bulk-milk-cooler-manufacturer-in-ambala", label: "Ambala", id: 69 },
+  { href: "/bulk-milk-cooler-manufacturer-in-yamunanagar", label: "Yamunanagar", id: 70 },
+  { href: "/bulk-milk-cooler-manufacturer-in-varanasi", label: "Varanasi", id: 71 },
+  { href: "/bulk-milk-cooler-manufacturer-in-allahabad-(prayagraj)", label: "Allahabad (Prayagraj)", id: 72 },
+  { href: "/bulk-milk-cooler-manufacturer-in-gorakhpur", label: "Gorakhpur", id: 73 },
+  { href: "/bulk-milk-cooler-manufacturer-in-jabalpur", label: "Jabalpur", id: 74 },
+  { href: "/bulk-milk-cooler-manufacturer-in-gwalior", label: "Gwalior", id: 75 },
+  { href: "/bulk-milk-cooler-manufacturer-in-ujjain", label: "Ujjain", id: 76 },
+  { href: "/bulk-milk-cooler-manufacturer-in-dehradun", label: "Dehradun", id: 77 },
+  { href: "/bulk-milk-cooler-manufacturer-in-shimla", label: "Shimla", id: 78 },
+  { href: "/bulk-milk-cooler-manufacturer-in-rohtak", label: "Rohtak", id: 79 },
+  { href: "/bulk-milk-cooler-manufacturer-in-hisar", label: "Hisar", id: 80 },
+  { href: "/bulk-milk-cooler-manufacturer-in-amravati", label: "Amravati", id: 81 },
+  { href: "/bulk-milk-cooler-manufacturer-in-nanded", label: "Nanded", id: 82 },
+  { href: "/bulk-milk-cooler-manufacturer-in-kolhapur", label: "Kolhapur", id: 83 },
+  { href: "/bulk-milk-cooler-manufacturer-in-shimoga", label: "Shimoga", id: 84 },
+  { href: "/bulk-milk-cooler-manufacturer-in-tirupati", label: "Tirupati", id: 85 },
+  { href: "/bulk-milk-cooler-manufacturer-in-rajkot", label: "Rajkot", id: 86 },
+  { href: "/bulk-milk-cooler-manufacturer-in-ludhiana", label: "Ludhiana", id: 87 },
+  { href: "/bulk-milk-cooler-manufacturer-in-bareilly", label: "Bareilly", id: 88 },
+  { href: "/bulk-milk-cooler-manufacturer-in-agartala", label: "Agartala", id: 89 },
+  { href: "/bulk-milk-cooler-manufacturer-in-thane", label: "Thane", id: 90 },
 
   // 🇮🇳 Farther Regions
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Guwahati", label: "Guwahati", id: 91 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Imphal", label: "Imphal", id: 92 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Shillong", label: "Shillong", id: 93 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Dimapur", label: "Nagaland (Dimapur)", id: 94 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Bhagalpur", label: "Bhagalpur", id: 95 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Muzaffarpur", label: "Muzaffarpur", id: 96 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Jodhpur", label: "Jodhpur", id: 97 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Jaisalmer", label: "Jaisalmer", id: 98 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Roorkee", label: "Roorkee", id: 99 },
-  { href: "/Bulk-Milk-Cooler-Manufacturer-in-Deoghar", label: "Deoghar", id: 100 },
+  { href: "/bulk-milk-cooler-manufacturer-in-guwahati", label: "Guwahati", id: 91 },
+  { href: "/bulk-milk-cooler-manufacturer-in-imphal", label: "Imphal", id: 92 },
+  { href: "/bulk-milk-cooler-manufacturer-in-shillong", label: "Shillong", id: 93 },
+  { href: "/bulk-milk-cooler-manufacturer-in-dimapur", label: "Nagaland (Dimapur)", id: 94 },
+  { href: "/bulk-milk-cooler-manufacturer-in-bhagalpur", label: "Bhagalpur", id: 95 },
+  { href: "/bulk-milk-cooler-manufacturer-in-muzaffarpur", label: "Muzaffarpur", id: 96 },
+  { href: "/bulk-milk-cooler-manufacturer-in-jodhpur", label: "Jodhpur", id: 97 },
+  { href: "/bulk-milk-cooler-manufacturer-in-jaisalmer", label: "Jaisalmer", id: 98 },
+  { href: "/bulk-milk-cooler-manufacturer-in-roorkee", label: "Roorkee", id: 99 },
+  { href: "/bulk-milk-cooler-manufacturer-in-deoghar", label: "Deoghar", id: 100 },
 ];
-
