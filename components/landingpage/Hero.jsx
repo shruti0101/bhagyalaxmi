@@ -45,5 +45,6 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
     </section>
+    
   );
 }
