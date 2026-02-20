@@ -779,19 +779,19 @@ export const products = [
 
   {
     "id": 25,
-    "slug": "panner-making-machine",
-    "name": "Panner Making Machine",
+    "slug": "paneer-making-machine",
+    "name": "Paneer Making Machine",
     "category": "curd-&-paneer-making-machine",
     "model": "CMM-2000LPH",
 
     "image": {
-      "src": "/products/pannerMachine.webp",
+      "src": "/products/paneerMachine.webp",
       "alt": "Paneer Making Machine 2000 LPH"
     },
 
     "images": [
       {
-        "src": "/products/pannerMachine.webp",
+        "src": "/products/paneerMachine.webp",
         "alt": "Stainless Steel Curd Making Machine"
       },
       {
