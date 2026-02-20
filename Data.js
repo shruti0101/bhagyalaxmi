@@ -777,6 +777,7 @@ export const products = [
     "metaDescription": "Curd Making Machine 2000 LPH with stainless steel body, 20HP power, 220V, 50Hz. Automatic, hygienic, high-volume curd processing machine for dairy industries."
   },
 
+  //paneer
   {
     "id": 25,
     "slug": "paneer-making-machine",
