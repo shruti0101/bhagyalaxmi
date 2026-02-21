@@ -35,7 +35,7 @@ export const categories = [
 
   { id: "milk-homogenizer-mixer", name: "Milk Homogenizer Mixer" },
 
-  { id: "milk-chiling-plant", name: "Milk Chiling Plant" },
+  { id: "milk-chilling-plant", name: "Milk Chilling Plant" },
 
   { id: "milk-processing-plant", name: "Milk Processing Plant" },
 

@@ -136,7 +136,7 @@ export default function ProductsPage() {
         )}
       </section>
 
-      {(activeCategory == "all" || activeCategory == "milk-chiling-plant" || activeCategory == "milk-pasteurizer" || activeCategory == "milk-processing-plant" || activeCategory == "milk-storage-tank") &&
+      {(activeCategory == "all" || activeCategory == "milk-chilling-plant" || activeCategory == "milk-pasteurizer" || activeCategory == "milk-processing-plant" || activeCategory == "milk-storage-tank") &&
         <CategoryCitySection activeCategory={activeCategory == "all" ? "mini-dairy-plant" : activeCategory} />}
 
       <Footer />

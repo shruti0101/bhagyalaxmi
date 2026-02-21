@@ -20,7 +20,7 @@ import {
 import Link from "next/link";
 
 export const categoryCityContent = {
-    "milk-chiling-plant": {
+    "milk-chilling-plant": {
         mainImg: "/newbg.webp",
         h2: (city) => `Milk Chilling Plant Manufacturer in ${city}`,
         intro: (city) => (

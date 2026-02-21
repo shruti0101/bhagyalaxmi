@@ -4,7 +4,7 @@ export const categories = [
   { id: "curd-&-paneer-making-machine", name: "Curd & Paneer Making Machine" },
   { id: "steam-boiler", name: "Steam Boiler", },
   { id: "milk-homogenizer-mixer", name: "Milk Homogenizer Mixer" },
-  { id: "milk-chiling-plant", name: "Milk Chiling Plant" },
+  { id: "milk-chilling-plant", name: "Milk Chilling Plant" },
   { id: "milk-processing-plant", name: "Milk Processing Plant" },
   { id: "milk-pasteurizer", name: "Milk Pasteurizer" },
   { id: "milk-storage-tank", name: "Milk Storage Tank" },
@@ -1088,8 +1088,8 @@ export const products = [
   {
     "id": 18,
     "slug": "milk-chilling-plant",
-    "name": "Milk Chiling Plant",
-    "category": "milk-chiling-plant",
+    "name": "Milk Chilling Plant",
+    "category": "milk-chilling-plant",
     "model": "MCP-12HP",
 
     "image": {
@@ -1177,7 +1177,7 @@ export const products = [
     "id": 19,
     "slug": "bulk-milk-chilling-plant",
     "name": "Bulk Milk Chilling Plant",
-    "category": "milk-chiling-plant",
+    "category": "milk-chilling-plant",
     "model": "BMCP-5000L",
 
     "image": {

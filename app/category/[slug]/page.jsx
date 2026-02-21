@@ -15,7 +15,7 @@ export async function generateMetadata({ params }) {
 
     const cityName = format(citySlug);
 
-    if (categorySlug === "milk-chiling-plant") {
+    if (categorySlug === "milk-chilling-plant") {
         return {
             title: `Milk Chilling Plant in ${cityName} | Automatic Bulk Milk Cooling System Manufacturer`,
             description: `Leading Milk Chilling Plant manufacturer in ${cityName} offering energy-efficient bulk milk cooling systems for dairy farms, milk processing units, and dairy industries with fast cooling and hygienic storage solutions.`,
