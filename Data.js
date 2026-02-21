@@ -7,6 +7,7 @@ export const categories = [
   { id: "milk-chiling-plant", name: "Milk Chiling Plant" },
   { id: "milk-processing-plant", name: "Milk Processing Plant" },
   { id: "milk-pasteurizer", name: "Milk Pasteurizer" },
+  { id: "milk-storage-tank", name: "Milk Storage Tank" },
   { id: "other", name: "Other Products" },
 ];
 
@@ -1687,7 +1688,7 @@ export const products = [
     "id": 23,
     "slug": "milk-storage-tank",
     "name": "Milk Storage Tank",
-    "category": "other",
+    "category": "milk-storage-tank",
     "model": "MST-2000L",
 
     "image": {
@@ -1964,4 +1965,38 @@ export const cites = [
   { href: "/bulk-milk-cooler-manufacturer-in-jaisalmer", label: "Jaisalmer", id: 98 },
   { href: "/bulk-milk-cooler-manufacturer-in-roorkee", label: "Roorkee", id: 99 },
   { href: "/bulk-milk-cooler-manufacturer-in-deoghar", label: "Deoghar", id: 100 },
+];
+
+export const catCites = [
+  // Delhi
+  { href: "-in-delhi", label: "Delhi", id: 1 },
+
+  // Core NCR
+  { href: "-in-noida", label: "Noida", id: 2 },
+  { href: "-in-greater-noida", label: "Greater Noida", id: 3 },
+  { href: "-in-ghaziabad", label: "Ghaziabad", id: 4 },
+  { href: "-in-faridabad", label: "Faridabad", id: 5 },
+  { href: "-in-gurgaon", label: "Gurgaon", id: 7 }, // optional alias
+
+  // Extended NCR (UP)
+  { href: "-in-meerut", label: "Meerut", id: 8 },
+  { href: "-in-hapur", label: "Hapur", id: 9 },
+  { href: "-in-bulandshahr", label: "Bulandshahr", id: 10 },
+  { href: "-in-baghpat", label: "Baghpat", id: 11 },
+  { href: "-in-modinagar", label: "Modinagar", id: 12 },
+  { href: "-in-khurja", label: "Khurja", id: 13 },
+  { href: "-in-jewar", label: "Jewar", id: 14 },
+
+  // Extended NCR (Haryana)
+  { href: "-in-rohtak", label: "Rohtak", id: 15 },
+  { href: "-in-sonipat", label: "Sonipat", id: 16 },
+  { href: "-in-panipat", label: "Panipat", id: 17 },
+  { href: "-in-jhajjar", label: "Jhajjar", id: 18 },
+  { href: "-in-rewari", label: "Rewari", id: 19 },
+  { href: "-in-palwal", label: "Palwal", id: 20 },
+  { href: "-in-hisar", label: "Hisar", id: 21 },
+
+  // Extended NCR (Rajasthan)
+  { href: "-in-alwar", label: "Alwar", id: 22 },
+  { href: "-in-bharatpur", label: "Bharatpur", id: 23 },
 ];

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { categories, products } from "@/Data";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/landingpage/Footer";
+import CategoryCitySection from "@/components/CategoryCitySection";
 
 export default function ProductsPage() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -31,6 +32,9 @@ export default function ProductsPage() {
     const cat = categories.find((c) => c.id === activeCategory);
     return cat ? cat.name : "Products";
   };
+
+  console.log(activeCategory);
+
 
   return (
     <>
@@ -61,16 +65,15 @@ export default function ProductsPage() {
       {/* ================= CATEGORY BAR ================= */}
       <div className="sticky top-0 z-40 bg-[#eef0f1] backdrop-blur border-b shadow-sm">
         <div className="w-full mx-auto px-10">
-          <div className="flex gap-10 overflow-x-auto scrollbar-hide justify-start md:justify-center">
+          <div className="flex gap-10 overflow-x-auto scrollbar-hide justify-start md:justify-center md:pl-16">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => handleCategoryChange(tab.id)}
                 className={`relative py-5 text-sm md:text-base font-semibold uppercase tracking-wider transition
-                  ${
-                    activeCategory === tab.id
-                      ? "text-emerald-700"
-                      : "text-gray-700 hover:text-emerald-700"
+                  ${activeCategory === tab.id
+                    ? "text-emerald-700"
+                    : "text-gray-700 hover:text-emerald-700"
                   }`}
               >
                 {tab.name}
@@ -126,12 +129,15 @@ export default function ProductsPage() {
                   </h2>
                 </div>
 
-         
+
               </Link>
             ))}
           </div>
         )}
       </section>
+
+      {(activeCategory == "all" || activeCategory == "milk-chiling-plant" || activeCategory == "milk-pasteurizer" || activeCategory == "milk-processing-plant" || activeCategory == "milk-storage-tank") &&
+        <CategoryCitySection activeCategory={activeCategory == "all" ? "mini-dairy-plant" : activeCategory} />}
 
       <Footer />
     </>
