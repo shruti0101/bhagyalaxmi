@@ -70,11 +70,7 @@ const Enquiry = ({ isOpen, onClose }) => {
               name="_subject"
               value="New Enquiry from Website"
             />
-            <input
-              type="hidden"
-              name="_next"
-              value="https://barbendingmachinesupplier.com/thank-you"
-            />
+          
 
             {/* Name */}
             <div className="flex items-center border rounded-lg px-4 py-3 bg-white shadow-sm focus-within:ring-2 focus-within:ring-blue-500">
