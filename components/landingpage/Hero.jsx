@@ -33,7 +33,7 @@ export default function Hero() {
           transition={{ duration: 1, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          {/* ✅ Next Image Responsive */}
+      
           <Image
             src={desktopImages[index % desktopImages.length]}
             alt="Hero banner"

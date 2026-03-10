@@ -287,7 +287,7 @@ export default function ProductDetailClient({ product, relatedProducts = [] }) {
                   <div className="w-full h-28 md:h-40 flex items-center justify-center overflow-hidden">
                     <Image
                       src={item.image.src}
-                      alt="Bar Bending Machine Supplier"
+                      alt="bulk milk cooler"
                       width={200}
                       height={150}
                       unoptimized

@@ -25,8 +25,8 @@ export const metadata = {
     "Milk Vending Machine",
     "Curd Making Machine",
   ],
-  authors: [{ name: "Bhagyalaxmi Industries" }],
-  robots: "index, follow",
+
+
 };
 
 export default function RootLayout({ children }) {
@@ -71,11 +71,7 @@ export default function RootLayout({ children }) {
           />
         </noscript>
 
-        {/* ✅ Google reCAPTCHA */}
-        <Script
-          src="https://www.google.com/recaptcha/api.js"
-          strategy="afterInteractive"
-        />
+      
         <Social />
         <Stickybutton />
         <ScrollToTop />
