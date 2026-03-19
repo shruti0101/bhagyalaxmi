@@ -32,7 +32,7 @@ const TermsConditions = () => {
                         Terms & Conditions – BhagyaLaxmi Industries
                     </h2>
                     <p className="text-gray-700 mb-6">
-                        These Terms & Conditions govern all orders and transactions made with BhagyaLaxmi Industries for bar bending services, steel reinforcement work, fabrication, and other related construction support services. By placing an order, the client agrees to abide by these Terms & Conditions.
+                        These Terms & Conditions govern all orders and transactions made with BhagyaLaxmi Industries for steel reinforcement work, fabrication, and other related construction support services. By placing an order, the client agrees to abide by these Terms & Conditions.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-6">

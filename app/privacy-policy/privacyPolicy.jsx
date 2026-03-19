@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
                         Privacy Policy – BhagyaLaxmi Industries
                     </h2>
                     <p className="text-gray-700 mb-6">
-                        BhagyaLaxmi Industries ("we," "our," or "us")respects the privacy of our clients, partners, and website visitors. This Privacy Policy explains how we collect, use, and protect your personal information when you interact with us for our bar bending services through our website, online platforms, or offline communications.
+                        BhagyaLaxmi Industries ("we," "our," or "us")respects the privacy of our clients, partners, and website visitors. This Privacy Policy explains how we collect, use, and protect your personal information when you interact with us for our services through our website, online platforms, or offline communications.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-6">
@@ -57,7 +57,7 @@ const PrivacyPolicy = () => {
                                     2. How We Use Your Information
                                 </h3>
                                 <ul className="list-disc list-inside text-sm text-gray-700 space-y-0.5">
-                                    <li>Processing bar bending and steel reinforcement service orders.</li>
+                                    <li>Processing  steel reinforcement service orders.</li>
                                     <li>Sending quotations, invoices, and project updates.</li>
                                     <li>Improving service quality and customer experience.</li>
                                     <li>Marketing communication with your consent.</li>

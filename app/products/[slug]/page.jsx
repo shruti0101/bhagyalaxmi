@@ -8,7 +8,7 @@ export async function generateMetadata({ params }) {
 
   if (!product) {
     return {
-      title: "Product Not Found - Shree Shakti Machines",
+      title: "Product Not Found ",
       description: "The product you are looking for does not exist.",
     };
   }

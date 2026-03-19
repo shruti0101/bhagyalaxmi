@@ -23,19 +23,9 @@ export const products = [
       "alt": "Bulk Milk Cooler 1500 Ltr"
     },
 
-    "images": [
-      {
-        "src": "/products/bpm/Automatic Bar Bender/2.webp",
-        "alt": "Rebar Bender 500 side view"
-      },
-      {
-        "src": "/products/bpm/Automatic Bar Bender/3.webp",
-        "alt": "Rebar Bender 500 side view"
-      }
-    ],
+   
 
-    "videoUrl": "https://youtu.be/Oh8Y-LRhUr4?si=CDNXOBrADoc3jM5l",
-
+   
     "description": [
       { "type": "h2", "text": "Product Overview of Bulk Milk Cooler 1500 Ltr" },
 
@@ -102,21 +92,12 @@ export const products = [
 
     "image": {
       "src": "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768389096/500L_Bulk_Milk_Cooler_tcegki.webp",
-      "alt": "Bar Bending Machine"
+      "alt": "Bulk Milk Cooler"
     },
 
-    "images": [
-      {
-        "src": "/products/bpm/Automatic Bar Bending Machine/2.webp",
-        "alt": "Bar Bending Machine"
-      },
-      {
-        "src": "/products/bpm/Automatic Bar Bending Machine/3.webp",
-        "alt": "Bar Bending Machine"
-      }
-    ],
+  
 
-    "videoUrl": "https://youtu.be/MRStEcGSAgo?si=o8cFN3ixD4_R46et",
+  
 
     "description": [
       { "type": "h2", "text": "Product Overview of Bulk Milk Cooler 500 Ltr" },
@@ -186,18 +167,9 @@ export const products = [
       "alt": "3000 L Bulk Milk Cooler"
     },
 
-    "images": [
-      {
-        "src": "/products/bpm/Automatic Rebar Bending Machine/2.webp",
-        "alt": "3000 L Bulk Milk Cooler Side View"
-      },
-      {
-        "src": "/products/bpm/Automatic Rebar Bending Machine/3.webp",
-        "alt": "3000 L Bulk Milk Cooler Back View"
-      }
-    ],
+  
 
-    "videoUrl": "https://youtu.be/Oh8Y-LRhUr4?si=D6bsRHXULLtBsemk",
+   
 
     "description": [
       { "type": "h2", "text": "Product Overview of 3000 L Bulk Milk Cooler" },
@@ -266,18 +238,9 @@ export const products = [
       "alt": "300L Vertical Bulk Milk Cooler"
     },
 
-    "images": [
-      {
-        "src": "/products/bpm/Bar Bending Machine Gw 50/2.webp",
-        "alt": "300L Vertical Bulk Milk Cooler Side View"
-      },
-      {
-        "src": "/products/bpm/Bar Bending Machine Gw 50/3.webp",
-        "alt": "300L Vertical Bulk Milk Cooler Back View"
-      }
-    ],
 
-    "videoUrl": "https://youtu.be/MRStEcGSAgo?si=iaL-Yg8bXJ6QL1i6",
+
+   
 
     "description": [
       {
@@ -348,18 +311,9 @@ export const products = [
       "src": "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768389097/Bulk_Milk_Cooler_Archives_ol6plr.webp",
       "alt": "5 KL Bulk Milk Cooler"
     },
-    "images": [
-      {
-        "src": "/products/bmc/5kl/2.webp",
-        "alt": "5 KL Bulk Milk Cooler"
-      },
-      {
-        "src": "/products/bmc/5kl/3.webp",
-        "alt": "5 KL Bulk Milk Cooler"
-      }
-    ],
+  
 
-    "videoUrl": "",
+
 
     "description": [
       {
@@ -416,18 +370,7 @@ export const products = [
       "alt": "D Shape Bulk Milk Cooler 1000L"
     },
 
-    "images": [
-      {
-        "src": "/products/bmc/d-shape/1000l/2.webp",
-        "alt": "Stainless Steel D Shape Bulk Milk Cooler 1000L"
-      },
-      {
-        "src": "/products/bmc/d-shape/1000l/3.webp",
-        "alt": "Automatic D Shape Bulk Milk Cooler 1000L"
-      }
-    ],
-
-    "videoUrl": "",
+   
 
     "description": [
       {
@@ -490,18 +433,7 @@ export const products = [
       "alt": "Stainless Steel Bulk Milk Cooler"
     },
 
-    "images": [
-      {
-        "src": "/products/bmc/stainless-steel/2.webp",
-        "alt": "SS 304 Bulk Milk Cooling Tank"
-      },
-      {
-        "src": "/products/bmc/stainless-steel/3.webp",
-        "alt": "Horizontal Bulk Milk Cooler"
-      }
-    ],
 
-    "videoUrl": "",
 
     "description": [
       {
@@ -578,18 +510,8 @@ export const products = [
       "alt": "Milk ATM Machine "
     },
 
-    "images": [
-      {
-        "src": "/products/milk-atm//2.webp",
-        "alt": "Automatic Milk ATM Machine "
-      },
-      {
-        "src": "/products/milk-atm//3.webp",
-        "alt": "Stainless Steel Milk ATM Machine"
-      }
-    ],
+  
 
-    "videoUrl": "",
 
     "description": [
       {
@@ -649,18 +571,9 @@ export const products = [
       "alt": "Automatic Milk Vending Machine"
     },
 
-    "images": [
-      {
-        "src": "/products/milk-vending/automatic/2.webp",
-        "alt": "Stainless Steel Automatic Milk Vending Machine"
-      },
-      {
-        "src": "/products/milk-vending/automatic/3.webp",
-        "alt": "Electric Automatic Milk Vending Machine"
-      }
-    ],
 
-    "videoUrl": "",
+
+  
 
     "description": [
       {
@@ -721,18 +634,9 @@ export const products = [
       "alt": "Curd Making Machine 2000 LPH"
     },
 
-    "images": [
-      {
-        "src": "/products/curd-making/2000lph/2.webp",
-        "alt": "Stainless Steel Curd Making Machine"
-      },
-      {
-        "src": "/products/curd-making/2000lph/3.webp",
-        "alt": "Automatic Curd Making Machine"
-      }
-    ],
+  
 
-    "videoUrl": "",
+
 
     "description": [
       {
@@ -791,18 +695,7 @@ export const products = [
       "alt": "Paneer Making Machine 2000 LPH"
     },
 
-    "images": [
-      {
-        "src": "/products/paneerMachine.webp",
-        "alt": "Stainless Steel Curd Making Machine"
-      },
-      {
-        "src": "/products/curd-making/2000lph/3.webp",
-        "alt": "Automatic Curd Making Machine"
-      }
-    ],
-
-    "videoUrl": "",
+  
 
 
     "metaTitle": "Paneer Making Machine 2000 LPH – Automatic Stainless Steel Dairy Equipment",
@@ -862,18 +755,8 @@ export const products = [
       "alt": "Steam Boiler 300 Kg"
     },
 
-    "images": [
-      {
-        "src": "/products/steam-boiler/300kg/2.webp",
-        "alt": "Wood Fired Steam Boiler 300 Kg"
-      },
-      {
-        "src": "/products/steam-boiler/300kg/3.webp",
-        "alt": "Industrial Steam Boiler 300 Kg"
-      }
-    ],
 
-    "videoUrl": "",
+   
 
     "description": [
       {
@@ -927,18 +810,7 @@ export const products = [
       "alt": "Electric Steam Boiler"
     },
 
-    "images": [
-      {
-        "src": "/products/steam-boiler/electric/2.webp",
-        "alt": "Automatic Electric Steam Boiler"
-      },
-      {
-        "src": "/products/steam-boiler/electric/3.webp",
-        "alt": "Industrial Electric Steam Boiler"
-      }
-    ],
-
-    "videoUrl": "",
+  
 
     "description": [
       {
@@ -1013,18 +885,7 @@ export const products = [
       "alt": "High Pressure Milk Homogenizer"
     },
 
-    "images": [
-      {
-        "src": "/products/milk-homogenizer/2.webp",
-        "alt": "Automatic High Pressure Milk Homogenizer"
-      },
-      {
-        "src": "/products/milk-homogenizer/3.webp",
-        "alt": "Stainless Steel Milk Homogenizer"
-      }
-    ],
 
-    "videoUrl": "",
 
     "description": [
       {
@@ -1097,18 +958,8 @@ export const products = [
       "alt": "Milk Chilling Plant"
     },
 
-    "images": [
-      {
-        "src": "/products/milk-chilling-plant/2.webp",
-        "alt": "Stainless Steel Milk Chilling Plant"
-      },
-      {
-        "src": "/products/milk-chilling-plant/3.webp",
-        "alt": "Automatic Milk Chilling Plant"
-      }
-    ],
+   
 
-    "videoUrl": "",
 
     "description": [
       {
@@ -1185,18 +1036,8 @@ export const products = [
       "alt": "Bulk Milk Chilling Plant"
     },
 
-    "images": [
-      {
-        "src": "/products/bulk-milk-chilling-plant/2.webp",
-        "alt": "Industrial Bulk Milk Chilling Unit"
-      },
-      {
-        "src": "/products/bulk-milk-chilling-plant/3.webp",
-        "alt": "Stainless Steel Milk Cooling System"
-      }
-    ],
+  
 
-    "videoUrl": "",
 
     "description": [
       {
@@ -1278,18 +1119,7 @@ export const products = [
       "alt": "Milk Pasteurizer Machine 1000 LPH"
     },
 
-    "images": [
-      {
-        "src": "/products/milk-pasteurizer/2.webp",
-        "alt": "Semi-Automatic Milk Pasteurizer Machine"
-      },
-      {
-        "src": "/products/milk-pasteurizer/3.webp",
-        "alt": "Industrial Milk Pasteurizer Machine"
-      }
-    ],
 
-    "videoUrl": "",
 
     "description": [
       {
@@ -1362,18 +1192,7 @@ export const products = [
       "alt": "Stainless Steel Milk Pasteurizer Plate 500 LPH"
     },
 
-    "images": [
-      {
-        "src": "/products/milk-pasteurizer-plate/2.webp",
-        "alt": "Automatic Stainless Steel Milk Pasteurizer Plate"
-      },
-      {
-        "src": "/products/milk-pasteurizer-plate/3.webp",
-        "alt": "Industrial Milk Pasteurizer Plate"
-      }
-    ],
 
-    "videoUrl": "",
 
     "description": [
       {
@@ -1446,18 +1265,7 @@ export const products = [
       "alt": "Milk Processing Plant"
     },
 
-    "images": [
-      {
-        "src": "/products/milk-processing-plant/2.webp",
-        "alt": "Automatic Milk Processing Plant"
-      },
-      {
-        "src": "/products/milk-processing-plant/3.webp",
-        "alt": "Stainless Steel Milk Processing Equipment"
-      }
-    ],
 
-    "videoUrl": "",
 
     "description": [
       {
@@ -1530,18 +1338,7 @@ export const products = [
       "alt": "Khoya Kadai LPG Diesel"
     },
 
-    "images": [
-      {
-        "src": "/products/khoya-kadai/1.webp",
-        "alt": "Bhagyalaxmi Khoya Making Machine"
-      },
-      {
-        "src": "/products/khoya-kadai/2.webp",
-        "alt": "LPG Diesel Khoya Kadai Manufacturer"
-      }
-    ],
 
-    "videoUrl": "",
 
     "description": [
       {
@@ -1609,18 +1406,7 @@ export const products = [
       "alt": "Stainless Steel Chemical Liquid Mixing Tank"
     },
 
-    "images": [
-      {
-        "src": "/products/mixing-tank/2.webp",
-        "alt": "Automatic Stainless Steel Chemical Mixing Tank"
-      },
-      {
-        "src": "/products/mixing-tank/3.webp",
-        "alt": "Industrial Chemical Mixing Tank 350L"
-      }
-    ],
 
-    "videoUrl": "",
 
     "description": [
       {
@@ -1696,18 +1482,7 @@ export const products = [
       "alt": "Milk Storage Tank"
     },
 
-    "images": [
-      {
-        "src": "/products/milk-storage-tank/2.webp",
-        "alt": "Stainless Steel Milk Storage Tank"
-      },
-      {
-        "src": "/products/milk-storage-tank/3.webp",
-        "alt": "Insulated Milk Holding Tank"
-      }
-    ],
 
-    "videoUrl": "",
 
     "description": [
       {
@@ -1786,18 +1561,7 @@ export const products = [
       "alt": "Stainless Steel Butter Churner Machine"
     },
 
-    "images": [
-      {
-        "src": "/products/butter-churner/1.webp",
-        "alt": "Bhagyalaxmi Butter Churner Machine"
-      },
-      {
-        "src": "/products/butter-churner/2.webp",
-        "alt": "Commercial Butter Churning Machine"
-      }
-    ],
-
-    "videoUrl": "",
+  
 
     "description": [
       {

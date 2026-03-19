@@ -5,6 +5,7 @@ import React from "react";
 const CitySection = () => {
     return (
         <>
+        
             <section className="py-5 bg-gray-100 px-4 md:px-20">
 
 

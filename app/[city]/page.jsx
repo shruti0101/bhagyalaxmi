@@ -1,39 +1,36 @@
 import CityPage from "./CityPage";
 import { notFound } from "next/navigation";
 
+
 export async function generateMetadata({ params }) {
-    const { city } = await params;
+  const { city } = params;
 
-    const rawCity = city.split("in-").pop();
+  const rawCity = city.split("in-").pop();
 
-    const cityName = rawCity
-        .split("-")
-        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-        .join(" ");
+  const cityName = rawCity
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
 
-    return {
-        title: `Bulk Milk Cooler Manufacturer in ${cityName} | Dairy Cooling Tank`,
-        description: `Leading Bulk Milk Cooler Manufacturer in ${cityName} offering energy-efficient, stainless steel milk cooling tanks for dairy farms, cooperatives & milk collection centers across ${cityName}.`,
-    };
+  return {
+    title: `Bulk Milk Cooler Manufacturer in ${cityName} | Dairy Cooling Tank`,
+    description: `Leading Bulk Milk Cooler Manufacturer in ${cityName} offering energy-efficient stainless steel milk cooling tanks for dairy farms and cooperatives.`,
+  };
 }
 
-const Page = async ({ params }) => {
-    const { city } = await params;
+const Page = ({ params }) => {
+  const { city } = params;
 
-    // 🔥 Must contain "-in-"
-    if (!city.includes("in-")) {
-        notFound();
-    }
+  // ✅ Check if slug exists in cities list
+  const validCity = cites.find(
+    (c) => c.href.replace("/", "") === city
+  );
 
-    // 🔥 Extract city part after "in-"
-    const cityName = city.split("in-")[1];
+  if (!validCity) {
+    notFound();
+  }
 
-    // 🔥 If city is empty or invalid → redirect to Home
-    if (!cityName || cityName.trim().length === 0) {
-        notFound();
-    }
-
-    return <CityPage city={city} />;
+  return <CityPage city={city} />;
 };
 
 export default Page;

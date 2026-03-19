@@ -18,7 +18,7 @@ import Popup from "@/components/Popup";
 import Footer from "@/components/landingpage/Footer";
 import CitySection from "@/components/CitySection";
 
-// import Gallery from "@/components/landingpage/Gallery";
+
 
 export default function Home() {
   return (
