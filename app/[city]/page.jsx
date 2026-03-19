@@ -1,3 +1,4 @@
+import { cites } from "@/Data";
 import CityPage from "./CityPage";
 import { notFound } from "next/navigation";
 
