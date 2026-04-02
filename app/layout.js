@@ -15,11 +15,11 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Bulk Milk Cooler for Dairy Farms | Reliable Cooling Solutions",
+  title: "Bulk Milk Cooler (BMC) Manufacturer| High-Quality Milk Cooling Solutions",
   description:
-    "Industrial Bulk Milk Coolers for hygienic milk storage. Trusted solution for dairy farmers, cooperatives, and processing units.",
+    "Looking for a reliable Bulk Milk Cooler (BMC) manufacturer ? Bhagyalaxmi Industries  provide energy-efficient, durable, and hygienic milk cooling solutions for dairy farms and milk collection centers.",
   keywords: [
-    "Bulk Milk Cooler Manufacturer",
+    "Bulk Milk Cooler (BMC) Manufacturer",
     "Milk Processing Equipment",
     "Dairy Machinery Manufacturer",
     "Milk Vending Machine",
@@ -71,7 +71,7 @@ export default function RootLayout({ children }) {
           />
         </noscript>
 
-      
+
         <Social />
         <Stickybutton />
         <ScrollToTop />

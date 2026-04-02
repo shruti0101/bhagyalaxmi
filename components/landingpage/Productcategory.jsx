@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 
 const categories = [
   {
-    title: "Bulk Milk Coolers",
+    title: "Bulk Milk Coolers (BMC)",
     desc: "Efficient cooling systems to preserve milk quality at collection centers.",
     image: "/prod/7.webp",
     icon: "/icons/milk.svg",

@@ -36,12 +36,12 @@ export default function AboutSection() {
 
             <p className="text-black text-[15px] sm:text-[16px] leading-[26px] sm:leading-[30px] mb-7 mt-[10px]">
               Bhagyalaxmi Industries is a <Link href={"/products"} >trusted{" "} </Link>
-              <Link href={"/products"} className="font-bold">bulk milk cooler manufacturer</Link> offering a complete
+              <Link href={"/products"} className="font-bold">bulk milk cooler (BMC) manufacturer</Link> offering a complete
               range of advanced <strong>dairy equipment</strong> designed to
               maintain milk quality, safety, and efficiency throughout the dairy
               process. Our product portfolio includes{" "}
               <strong>
-                Bulk Milk Cooler, Stainless Steel BMC, Milk Cooling Tank, Milk
+                Bulk Milk Cooler (BMC), Stainless Steel BMC, Milk Cooling Tank, Milk
                 Cooling Tank, and Cooling Tank,
               </strong>{" "}
               engineered for rapid chilling, energy efficiency, and hygienic
