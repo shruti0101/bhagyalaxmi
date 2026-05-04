@@ -2,6 +2,7 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import Link from "next/link";
 import { CheckCheck } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Image = lazy(() => import("next/image"));
 
@@ -175,12 +176,17 @@ export default function ProductSectionPremium() {
                 ))}
               </div>
 
-              <Link href="/contact-us">
-                <button className="mt-7 sm:mt-8 inline-flex items-center gap-2 bg-blue-500 text-white px-6 sm:px-8 py-3 sm:py-4 cursor-pointer rounded-xl font-semibold hover:shadow-lg hover:bg-blue-600 transition w-full sm:w-auto justify-center">
-                  Inquire Now
-                  <span className="text-xl">→</span>
-                </button>
-              </Link>
+              <a
+                href={`https://wa.me/9560156328?text=I want to enquire about ${product.name}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 sm:mt-8 inline-flex items-center gap-2 bg-[#7ccf00] text-white px-6 sm:px-8 py-3 sm:py-4 cursor-pointer rounded-xl font-semibold hover:shadow-lg hover:bg-green-600 transition w-full sm:w-auto justify-center"
+              >
+                Whatsapp Now
+                <span className="text-xl">
+                  <FaWhatsapp size={25} />
+                </span>
+              </a>
             </div>
           </div>
         </div>

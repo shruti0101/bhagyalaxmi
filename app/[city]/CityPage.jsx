@@ -50,6 +50,8 @@ export default function CityPage() {
             </h1>
         </section>
 
+
+
         {/* main */}
         <section className="mx-auto lg:px-15 px-5 py-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -80,6 +82,8 @@ export default function CityPage() {
                 </div>
             </div>
         </section>
+
+        <ProductSectionPremium />
 
         {/* why us */}
         <section className="mx-auto lg:px-15 px-5 py-8 bg-gray-100">
@@ -125,7 +129,7 @@ export default function CityPage() {
             </div>
         </section>
 
-        <ProductSectionPremium />
+        
         <ProductCategorySlider />
 
         {/* office */}
