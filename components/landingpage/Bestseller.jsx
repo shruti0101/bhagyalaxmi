@@ -3,12 +3,15 @@ import React, { useState, useEffect, lazy, Suspense } from "react";
 import Link from "next/link";
 import { CheckCheck } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { AiFillProduct } from "react-icons/ai";
+
 
 const Image = lazy(() => import("next/image"));
 
 const products = [
   {
     id: 1,
+    href:"/products/bulk-milk-cooler-500-ltr",
     badge: "Best Seller",
     name: "Bulk Milk Cooler (BMC)",
     image:
@@ -26,6 +29,8 @@ const products = [
   {
     id: 2,
     badge: "New",
+        href:"/products/milk-atm-machine",
+
     name: "Milk ATM Vending Machine",
     image:
       "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768389098/Milk_ATM_Machine_uvb64m.webp",
@@ -42,6 +47,8 @@ const products = [
   {
     id: 3,
     badge: "Hot",
+        href:"/products/milk-pasteurizer-machine-1000lph",
+
     name: "Milk Pasteurizer Machine",
     image:
       "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768389100/Stainless_Steel_Milk_Pasteurizer_Plate_txqdd4.webp",
@@ -58,6 +65,8 @@ const products = [
   {
     id: 4,
     badge: "Top Rated",
+        href:"/products/milk-processing-plant",
+
     name: "Milk Processing Plant",
     image:
       "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768389099/Milk_Processing_Plant_rptgnh.webp",
@@ -175,18 +184,30 @@ export default function ProductSectionPremium() {
                   </div>
                 ))}
               </div>
-
+                <div className="flex gap-2">
               <a
                 href={`https://wa.me/9560156328?text=I want to enquire about ${product.name}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-7 sm:mt-8 inline-flex items-center gap-2 bg-[#7ccf00] text-white px-6 sm:px-8 py-3 sm:py-4 cursor-pointer rounded-xl font-semibold hover:shadow-lg hover:bg-green-600 transition w-full sm:w-auto justify-center"
+                className="mt-7 sm:mt-8 inline-flex whitespace-nowrap items-center gap-2 bg-[#7ccf00] text-white px-4 sm:px-8 py-2 sm:py-4 cursor-pointer rounded-xl font-semibold hover:shadow-lg hover:bg-green-600 transition w-full sm:w-auto justify-center"
               >
                 Whatsapp Now
                 <span className="text-xl">
                   <FaWhatsapp size={25} />
                 </span>
               </a>
+              <Link
+                href={product.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 sm:mt-8 inline-flex whitespace-nowrap items-center gap-2 bg-blue-500 text-white px-4 sm:px-8 py-2 sm:py-4 cursor-pointer rounded-xl font-semibold hover:shadow-lg hover:bg-blue-600 transition w-full sm:w-auto justify-center"
+              >
+                View product
+                <span className="text-xl">
+                  <AiFillProduct size={25} />
+                </span>
+              </Link>
+              </div>
             </div>
           </div>
         </div>

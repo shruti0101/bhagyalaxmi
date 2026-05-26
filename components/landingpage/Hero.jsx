@@ -20,8 +20,8 @@ export default function Hero() {
   return (
     <section
       className="
-        relative w-full overflow-hidden
-        h-[190px] sm:h-[370px] md:h-[80vh] xl:h-[110vh] bg-[#F5F7F9]
+        relative w-full overflow-x-hidden
+        h-[190px] sm:h-[370px] md:h-[110vh] bg-[#F5F7F9]
       "
     >
       <AnimatePresence mode="sync">
@@ -37,9 +37,9 @@ export default function Hero() {
           <Image
             src={desktopImages[index % desktopImages.length]}
             alt="Hero banner"
-            width={3000}
-            height={3000}
-            className="w-full h-auto object-cover"
+            width={2500}
+            height={1500}
+            className="max-w-full  h-auto object-cover"
           />
 
         </motion.div>

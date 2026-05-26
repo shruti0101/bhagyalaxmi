@@ -1,35 +1,40 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { products } from "@/Data";
 import { toast } from "react-toastify";
 
+import {
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
+} from "firebase/auth";
+
+import { auth } from "@/utils/firebase";
+
 export default function Dealer({ isOpen, onClose }) {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [place, setPlace] = useState("");
-  const [city, setCity] = useState("");
-  const [customerType, setCustomerType] = useState("");
-  const [machine, setMachine] = useState("");
-  const [message, setMessage] = useState("");
+  const [otpSent, setOtpSent] = useState(false);
+  const [otpVerified, setOtpVerified] =
+    useState(false);
+
+  const [otp, setOtp] = useState("");
+
+  const [confirmation, setConfirmation] =
+    useState(null);
 
   useEffect(() => {
     if (isOpen) {
       setStatus("");
       setLoading(false);
-      setName("");
-      setEmail("");
-      setPhone("");
-      setPlace("");
-      setCity("");
-      setCustomerType("");
-      setMachine("");
-      setMessage("");
+
+      setOtp("");
+      setOtpSent(false);
+      setOtpVerified(false);
+      setConfirmation(null);
     }
   }, [isOpen]);
 
@@ -45,43 +50,187 @@ export default function Dealer({ isOpen, onClose }) {
     "Other",
   ];
 
-  const customerOptions = [
-    "Please choose an option",
-    "I'm a dealer",
-    "I'm a contractor",
-    "I'm a distributor",
-    "Other",
-  ];
+  const setupRecaptcha = () => {
+    if (!window.recaptchaVerifier) {
+      window.recaptchaVerifier =
+        new RecaptchaVerifier(
+          auth,
+          "recaptcha-container",
+          {
+            size: "invisible",
+          }
+        );
+    }
+
+    return window.recaptchaVerifier;
+  };
+
+  const sendOTP = async (phone) => {
+    try {
+      const verifier =
+        setupRecaptcha();
+
+      const result =
+        await signInWithPhoneNumber(
+          auth,
+          `+91${phone}`,
+          verifier
+        );
+
+      setConfirmation(result);
+
+      setOtpSent(true);
+
+      toast.success(
+        "OTP Sent Successfully"
+      );
+
+    } catch (err) {
+
+      console.log(err);
+
+      toast.error(
+        "Failed To Send OTP"
+      );
+    }
+  };
+
+  const verifyOTP = async () => {
+    try {
+
+      await confirmation.confirm(
+        otp
+      );
+
+      setOtpVerified(true);
+
+      toast.success(
+        "OTP Verified"
+      );
+
+      return true;
+
+    } catch (err) {
+
+      console.log(err);
+
+      toast.error(
+        "Invalid OTP"
+      );
+
+      return false;
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+
+    if (loading) return;
+
+    const formData =
+      new FormData(e.target);
+
     const data = {
-      platform: "BhagyaLaxmi Industries Dealer Inquiry Form",
-      platformEmail: "bhagyalaxmigroup12@gmail.com",
-      name: formData.get("name"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      product: formData.get("machine"),
-      place: formData.get("place"),
-      message: formData.get("message"),
+      platform:
+        "BhagyaLaxmi Industries Dealer Inquiry Form",
+
+      platformEmail:
+        "bhagyalaxmigroup12@gmail.com",
+
+      name:
+        formData.get("name"),
+
+      email:
+        formData.get("email"),
+
+      phone:
+        formData.get("phone"),
+
+      product:
+        formData.get("machine"),
+
+      place:
+        formData.get("place"),
+
+      message:
+        formData.get("message"),
     };
-    if (data.phone.toString().length < 10) return toast.error("Enter Valid Phone Number")
+
+    if (
+      !data.phone ||
+      data.phone.length < 10
+    ) {
+      return toast.error(
+        "Enter Valid Phone Number"
+      );
+    }
+
     try {
-      const res = await axios.post("https://brandbnalo.com/api/form/add", data);
-      toast.success("Message Send Successfully")
-      setStatus("Thank you! Your message has been sent.")
+
+      // SEND OTP
+      if (!otpSent) {
+        await sendOTP(
+          data.phone
+        );
+
+        return;
+      }
+
+      // VERIFY OTP
+      if (!otpVerified) {
+        const verified =
+          await verifyOTP();
+
+        if (!verified)
+          return;
+      }
+
+      // SUBMIT
+      setLoading(true);
+
+      await axios.post(
+        "https://brandbnalo.com/api/form/add",
+        data
+      );
+
+      toast.success(
+        "Message Send Successfully"
+      );
+
+      setStatus(
+        "Thank you! Your message has been sent."
+      );
+
       e.target.reset();
+
+      setOtp("");
+      setOtpSent(false);
+      setOtpVerified(false);
+      setConfirmation(null);
+
+      setTimeout(() => {
+        onClose();
+      }, 1200);
+
     } catch (err) {
-      console.log(err)
+
+      console.log(err);
+
+      toast.error(
+        "Submission Failed"
+      );
+
+    } finally {
+
+      setLoading(false);
     }
   };
 
   return (
     <div className="fixed inset-0 z-[3000] bg-black/60 flex items-center justify-center px-3 sm:px-4">
+
       <div className="relative w-full max-w-[900px] bg-white rounded-2xl shadow-2xl max-h-[90vh] overflow-hidden animate-[popup_0.25s_ease-out]">
 
-        {/* CLOSE */}
         <button
           onClick={onClose}
           className="absolute top-3 right-3 z-50 h-9 w-9 rounded-full bg-white shadow grid place-items-center text-gray-600 hover:text-black"
@@ -90,8 +239,9 @@ export default function Dealer({ isOpen, onClose }) {
         </button>
 
         <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-          {/* IMAGE */}
+
           <div className="hidden md:block relative">
+
             <Image
               src="/formbg.webp"
               alt="Dealer Enquiry"
@@ -99,79 +249,163 @@ export default function Dealer({ isOpen, onClose }) {
               priority
               className="object-cover"
             />
+
             <div className="absolute inset-0 bg-black/40 p-6 flex flex-col justify-end">
+
               <h3 className="text-white text-xl font-bold">
                 Dealer Enquiry Form
               </h3>
+
               <p className="text-white/90 text-sm mt-2">
-                Share your details and our team will contact you shortly.
+                Share your details and our
+                team will contact you shortly.
               </p>
+
             </div>
           </div>
 
-          {/* FORM */}
           <div className="p-4 sm:p-6 md:p-8 overflow-y-auto">
+
             <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-center">
-              Become Our <span className="text-blue-700">Dealer</span>
+              Become Our
+              <span className="text-blue-700">
+                {" "}Dealer
+              </span>
             </h2>
 
             <p className="text-center text-gray-600 text-xs sm:text-sm mt-2 mb-4">
               Fill the form below to get started.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <input className="input" placeholder="Name*" name="name" />
-                <input className="input" placeholder="Email*" type="email" name="email" />
-                <input className="input" placeholder="Phone*" type="tel" name="phone" />
-                {/* <input className="input" placeholder="Place*" /> */}
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-3"
+            >
 
-                <select className="input" name="place">
-                  {cities.map((c, i) => (
-                    <option key={i} value={i === 0 ? "" : c} disabled={i === 0}>
-                      {c}
-                    </option>
-                  ))}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+                <input
+                  className="input"
+                  placeholder="Name*"
+                  name="name"
+                />
+
+                <input
+                  className="input"
+                  type="email"
+                  name="email"
+                  placeholder="Email*"
+                />
+
+                <input
+                  className="input"
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone*"
+                />
+
+                <select
+                  className="input"
+                  name="place"
+                >
+                  {cities.map(
+                    (c, i) => (
+                      <option
+                        key={i}
+                        value={
+                          i === 0
+                            ? ""
+                            : c
+                        }
+                      >
+                        {c}
+                      </option>
+                    )
+                  )}
                 </select>
 
-                {/* <select className="input" name="place">
-                  {customerOptions.map((c, i) => (
-                    <option key={i} value={i === 0 ? "" : c} disabled={i === 0}>
-                      {c}
-                    </option>
-                  ))}
-                </select> */}
-
                 <div className="sm:col-span-2">
-                  <select className="input" name="machine">
-                    <option value="">Select Product*</option>
-                    {products.map((p) => (
-                      <option key={p.id} value={p.name}>
-                        {p.name}
-                      </option>
-                    ))}
+                  <select
+                    className="input"
+                    name="machine"
+                  >
+                    <option value="">
+                      Select Product*
+                    </option>
+
+                    {products.map(
+                      (p) => (
+                        <option
+                          key={p.id}
+                          value={p.name}
+                        >
+                          {p.name}
+                        </option>
+                      )
+                    )}
+
                   </select>
                 </div>
 
                 <div className="sm:col-span-2">
-                  <textarea className="input resize-none" rows={3} placeholder="Message" name="message" />
+
+                  <textarea
+                    rows={3}
+                    name="message"
+                    placeholder="Message"
+                    className="input resize-none"
+                  />
+
                 </div>
+
+                {otpSent && (
+
+                  <div className="sm:col-span-2">
+
+                    <input
+                      value={otp}
+                      onChange={(e) =>
+                        setOtp(
+                          e.target.value
+                        )
+                      }
+                      placeholder="Enter OTP"
+                      className="input"
+                    />
+
+                  </div>
+
+                )}
+
               </div>
 
               <button
                 type="submit"
-                disabled={loading}
+                disabled={
+                  loading ||
+                  otpVerified
+                }
                 className="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 rounded-xl font-semibold transition disabled:opacity-60"
               >
-                {loading ? "Sending..." : "Submit Enquiry →"}
+                {loading
+                  ? "Submitting..."
+                  : !otpSent
+                  ? "Submit Enquiry →"
+                  : !otpVerified
+                  ? "Verify OTP"
+                  : "Submitted"}
               </button>
 
+              <div id="recaptcha-container"></div>
+
               {status && (
-                <p className="text-center text-sm font-medium">{status}</p>
+                <p className="text-center text-sm font-medium">
+                  {status}
+                </p>
               )}
 
-
             </form>
+
           </div>
         </div>
       </div>
@@ -180,13 +414,17 @@ export default function Dealer({ isOpen, onClose }) {
         @keyframes popup {
           from {
             opacity: 0;
-            transform: translateY(20px) scale(0.97);
+            transform: translateY(20px)
+              scale(0.97);
           }
+
           to {
             opacity: 1;
-            transform: translateY(0) scale(1);
+            transform: translateY(0)
+              scale(1);
           }
         }
+
         .input {
           width: 100%;
           padding: 0.75rem 1rem;
@@ -196,11 +434,13 @@ export default function Dealer({ isOpen, onClose }) {
           background: #f9fafb;
           outline: none;
         }
+
         .input:focus {
           border-color: #2563eb;
           background: white;
         }
       `}</style>
+
     </div>
   );
 }

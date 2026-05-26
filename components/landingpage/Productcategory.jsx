@@ -11,30 +11,35 @@ import "swiper/css/navigation";
 const categories = [
   {
     title: "Bulk Milk Coolers (BMC)",
+    href:"/products/bulk-milk-cooler-1500-Ltr",
     desc: "Efficient cooling systems to preserve milk quality at collection centers.",
     image: "/prod/7.webp",
     icon: "/icons/milk.svg",
   },
   {
     title: "Milk Storage Tanks",
+    href:"/products/milk-storage-tank",
     desc: "Food-grade stainless steel tanks for hygienic milk storage.",
     image: "/prod/1.webp",
     icon: "/icons/tank.svg",
   },
    {
     title: "Milk Chilling Plant",
+    href:"/products/milk-chilling-plant",
     desc: "Efficient cooling systems to preserve milk quality at collection centers.",
     image: "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768459877/milk-chilling-plant_vezdki.webp",
     icon: "/icons/milk.svg",
   },
   {
     title: "Milk Pasteurizer",
+    href:"/products/milk-pasteurizer-machine-1000lph",
     desc: "Advanced pasteurization equipment ensuring food safety standards.",
     image: "/prod/2.webp",
     icon: "/icons/heat.svg",
   },
   {
     title: "Milk ATM",
+    href:"/products/milk-atm-machine",
     desc: "Compact dairy processing solutions for all scales of operation.",
     image: "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768389098/Milk_ATM_Machine_uvb64m.webp",
     icon: "/icons/factory.svg",
@@ -43,6 +48,7 @@ const categories = [
 
     {
     title: "Steam Boilers",
+    href:"/products/steam-boiler-300kg",
     desc: "Efficient cooling systems to preserve milk quality at collection centers.",
     image: "https://res.cloudinary.com/dzbkxqqo9/image/upload/v1768389100/Steam_Boiler_300_Kg_tgwmka.webp",
     icon: "/icons/milk.svg",
@@ -50,6 +56,7 @@ const categories = [
 
      {
     title: "Dairy Equipment",
+    href:"/products/khoya-kadai-lpg-diesel",
     desc: "Efficient cooling systems to preserve milk quality at collection centers.",
     image: "/prod/4.webp",
     icon: "/icons/milk.svg",
@@ -85,7 +92,7 @@ export default function ProductCategorySlider() {
           {categories.map((item, i) => (
             <SwiperSlide key={i}>
               {/* CARD */}
-              <div
+              <Link href={item.href}
                 className="relative bg-[#f4f6f1] rounded-[28px] overflow-visible shadow-xl
                 transition-all duration-300 ease-out
                 hover:-translate-y-[10px]
@@ -105,7 +112,7 @@ export default function ProductCategorySlider() {
                 </div>
 
                 {/* CONTENT */}
-                <div className="relative pt-5 px-[28px] pb-[56px] rounded-l-[28px] text-center bg-[#f4f6f1] rounded-b-[28px]">
+                <div className="relative pt-5 px-[28px] pb-[56px] text-center bg-[#f4f6f1] rounded-b-[28px]">
                   <h3 className="text-[20px] font-semibold text-[#1c103b] mb-[10px]">
                     {item.title}
                   </h3>
@@ -134,7 +141,7 @@ export default function ProductCategorySlider() {
                 >
                   <ArrowUpRight size={18} className="text-[#1c103b]" />
                 </div>
-              </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
