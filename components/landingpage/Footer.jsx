@@ -368,15 +368,14 @@ const Footer = () => {
           <span>© 2025 BhagyaLaxmi Industries, All Rights Reserved.</span>
 
           <span>
-            Website Designed By Promozione Branding Pvt. Ltd.
-            <a
-              href="https://promozionebranding.com/"
-              className="text-blue-500 font-bold hover:underline ml-1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Website Designing Company.
-            </a>
+            Website Designed By   Inquiry Bazaar Pvt. Ltd.  {" "}
+        <a
+          target="_blank"
+          href="https://inquirybazaar.com/"
+          className="text-[#FAAC18] hover:underline"
+        >
+           B2B Marketplace
+        </a>
           </span>
         </div>
       </div>
