@@ -20,7 +20,7 @@ export default function Hero() {
   return (
     <section
       className="
-        relative w-full overflow-x-hidden
+        relative w-full overflow-hidden
         h-[190px] sm:h-[370px] md:h-[110vh] bg-[#F5F7F9]
       "
     >
