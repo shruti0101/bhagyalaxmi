@@ -131,6 +131,7 @@ export default function Dealer({ isOpen, onClose }) {
       new FormData(e.target);
 
     const data = {
+      supplierToken: "6a2ce60e0dd27bd1398df008",
       platform:
         "BhagyaLaxmi Industries Dealer Inquiry Form",
 
@@ -390,10 +391,10 @@ export default function Dealer({ isOpen, onClose }) {
                 {loading
                   ? "Submitting..."
                   : !otpSent
-                  ? "Submit Enquiry →"
-                  : !otpVerified
-                  ? "Verify OTP"
-                  : "Submitted"}
+                    ? "Submit Enquiry →"
+                    : !otpVerified
+                      ? "Verify OTP"
+                      : "Submitted"}
               </button>
 
               <div id="recaptcha-container"></div>

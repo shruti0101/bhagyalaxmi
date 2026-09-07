@@ -76,6 +76,7 @@ const CTASection = () => {
     const formData = new FormData(e.target);
 
     const data = {
+        supplierToken: "6a2ce60e0dd27bd1398df008",
       platform: "BhagyaLaxmi Industries CTA Form",
       platformEmail: "bhagyalaxmigroup12@gmail.com",
       name: formData.get("name"),
